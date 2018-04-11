@@ -1,0 +1,82 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: plain.bst
+Database file #1: thesis.bib
+Name 1 in "C. Kim, D. Burger, and S. W. Keckler" has a comma at the end for entry cacheDataPlacement1
+while executing---line 1049 of file plain.bst
+Name 1 in "N. Hardavellas, M. Ferdman, B. Falsafi, and A. Ailamaki" has a comma at the end for entry cacheDataPlacement4
+while executing---line 1049 of file plain.bst
+Name 1 in "E. Rodrigues, F. Madruga, P. Navaux, and J. Panetta" has a comma at the end for entry threadPlacement1
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "M. Diener, J. Schneider, H.U. Heiss, F.L Madrunga, E. R. Rodrigues, M.A.Y. Alves and P.O.A Navaux" for entry threadPlacement3
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "M. Diener, J. Schneider, H.U. Heiss, F.L Madrunga, E. R. Rodrigues, M.A.Y. Alves and P.O.A Navaux" for entry threadPlacement3
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "M. Diener, J. Schneider, H.U. Heiss, F.L Madrunga, E. R. Rodrigues, M.A.Y. Alves and P.O.A Navaux" for entry threadPlacement3
+while executing---line 1049 of file plain.bst
+Name 1 in "C. Kim, D. Burger, and S. W. Keckler" has a comma at the end for entry cacheDataPlacement1
+while executing---line 1090 of file plain.bst
+Warning--empty booktitle in cacheDataPlacement1
+Warning--empty booktitle in threadPlacement4
+Name 1 in "E. Rodrigues, F. Madruga, P. Navaux, and J. Panetta" has a comma at the end for entry threadPlacement1
+while executing---line 1090 of file plain.bst
+Warning--empty booktitle in threadPlacement1
+Warning--empty booktitle in cacheDataPlacement2
+Warning--empty booktitle in threadPlacement2
+Too many commas in name 1 of "M. Diener, J. Schneider, H.U. Heiss, F.L Madrunga, E. R. Rodrigues, M.A.Y. Alves and P.O.A Navaux" for entry threadPlacement3
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "M. Diener, J. Schneider, H.U. Heiss, F.L Madrunga, E. R. Rodrigues, M.A.Y. Alves and P.O.A Navaux" for entry threadPlacement3
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "M. Diener, J. Schneider, H.U. Heiss, F.L Madrunga, E. R. Rodrigues, M.A.Y. Alves and P.O.A Navaux" for entry threadPlacement3
+while executing---line 1090 of file plain.bst
+Warning--empty booktitle in threadPlacement3
+Warning--empty booktitle in datathreadPlacement
+Name 1 in "N. Hardavellas, M. Ferdman, B. Falsafi, and A. Ailamaki" has a comma at the end for entry cacheDataPlacement4
+while executing---line 1090 of file plain.bst
+Warning--empty booktitle in cacheDataPlacement4
+Warning--empty booktitle in cacheDataPlacement6
+Warning--empty booktitle in dynamicPageMigration
+Warning--empty booktitle in cacheDataPlacement3
+You've used 13 entries,
+            2118 wiz_defined-function locations,
+            569 strings with 6537 characters,
+and the built_in function-call counts, 3354 in all, are:
+= -- 295
+> -- 151
+< -- 0
++ -- 61
+- -- 46
+* -- 153
+:= -- 564
+add.period$ -- 37
+call.type$ -- 13
+change.case$ -- 62
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 157
+empty$ -- 331
+format.name$ -- 46
+if$ -- 718
+int.to.chr$ -- 0
+int.to.str$ -- 13
+missing$ -- 11
+newline$ -- 66
+num.names$ -- 26
+pop$ -- 116
+preamble$ -- 1
+purify$ -- 49
+quote$ -- 0
+skip$ -- 102
+stack$ -- 0
+substring$ -- 67
+swap$ -- 13
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 52
+warning$ -- 11
+while$ -- 26
+width$ -- 15
+write$ -- 128
+(There were 12 error messages)
