@@ -4,20 +4,32 @@
 \contentsline {chapter}{\nonumberline List of Tables}{6}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{7}{section.1.1}
-\contentsline {section}{\numberline {1.2}Overview}{8}{section.1.2}
-\contentsline {section}{\numberline {1.3}Outline}{8}{section.1.3}
-\contentsline {chapter}{\numberline {2}Related Work/Background}{11}{chapter.2}
-\contentsline {section}{\numberline {2.1}Main components explained}{11}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}TLM}{11}{subsection.2.1.1}
-\contentsline {subsection}{\numberline {2.1.2}Cache}{11}{subsection.2.1.2}
-\contentsline {subsection}{\numberline {2.1.3}Cache{\_}Stats Module}{11}{subsection.2.1.3}
-\contentsline {subsection}{\numberline {2.1.4}TLM{\_}MEM Module}{11}{subsection.2.1.4}
-\contentsline {section}{\numberline {2.2}Data Placement/Migration for Caches}{12}{section.2.2}
-\contentsline {section}{\numberline {2.3}Task/Thread Placement}{13}{section.2.3}
-\contentsline {section}{\numberline {2.4}Data+Thread Migration}{13}{section.2.4}
-\contentsline {section}{\numberline {2.5}Dynamic Data Migration for TLM}{14}{section.2.5}
-\contentsline {chapter}{\numberline {3}Approach}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Concept}{15}{section.3.1}
-\contentsline {chapter}{\numberline {4}Evaluation}{19}{chapter.4}
-\contentsline {chapter}{\numberline {5}Conclusion and Outlook}{20}{chapter.5}
-\contentsline {chapter}{\nonumberline Bibliography}{21}{chapter*.5}
+\contentsline {section}{\numberline {1.2}Problem}{7}{section.1.2}
+\contentsline {section}{\numberline {1.3}Goals of Thesis}{8}{section.1.3}
+\contentsline {section}{\numberline {1.4}Drawbacks}{8}{section.1.4}
+\contentsline {section}{\numberline {1.5}Approach}{9}{section.1.5}
+\contentsline {section}{\numberline {1.6}Outline}{9}{section.1.6}
+\contentsline {chapter}{\numberline {2}Background and Related Work}{10}{chapter.2}
+\contentsline {section}{\numberline {2.1}Basic Concepts}{10}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Tile}{10}{subsection.2.1.1}
+\contentsline {subsubsection}{\nonumberline CPU core}{10}{section*.5}
+\contentsline {subsubsection}{\nonumberline TLM}{10}{section*.6}
+\contentsline {subsubsection}{\nonumberline Cache}{10}{section*.7}
+\contentsline {section}{\numberline {2.2}Related Work}{11}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Data Placement/Migration on Caches}{11}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Task/Thread Placement}{12}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Data and Thread Migration}{13}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Data Placement on TLM}{13}{subsection.2.2.4}
+\contentsline {subsubsection}{\nonumberline Static Data Placement on TLM}{13}{section*.8}
+\contentsline {subsubsection}{\nonumberline Dynamic Data Migration on TLM}{13}{section*.9}
+\contentsline {chapter}{\numberline {3}System Architecture}{14}{chapter.3}
+\contentsline {section}{\numberline {3.1}Local TLM Accesses}{14}{section.3.1}
+\contentsline {section}{\numberline {3.2}Remote TLM Accesses}{14}{section.3.2}
+\contentsline {chapter}{\numberline {4}Approach}{16}{chapter.4}
+\contentsline {section}{\numberline {4.1}Overview}{16}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Cache{\_}Stats Module}{17}{subsection.4.1.1}
+\contentsline {section}{\numberline {4.2}garbage}{17}{section.4.2}
+\contentsline {section}{\numberline {4.3}Concept}{18}{section.4.3}
+\contentsline {chapter}{\numberline {5}Evaluation}{23}{chapter.5}
+\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{24}{chapter.6}
+\contentsline {chapter}{\nonumberline Bibliography}{25}{chapter*.10}

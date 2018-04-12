@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{iffatseminarpaper}
+Iffat Brekhna.
+\newblock Cache coherency and data/task placement, 2016.
+
 \bibitem{cacheDataPlacement1}
 D.~Burger C.~Kim and S.~W. Keckler.
 \newblock An adaptive, non-uniform cache structure for wire-delay dominated

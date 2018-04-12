@@ -38,45 +38,45 @@ Warning--empty booktitle in cacheDataPlacement4
 Warning--empty booktitle in cacheDataPlacement6
 Warning--empty booktitle in dynamicPageMigration
 Warning--empty booktitle in cacheDataPlacement3
-You've used 13 entries,
+You've used 14 entries,
             2118 wiz_defined-function locations,
-            569 strings with 6537 characters,
-and the built_in function-call counts, 3354 in all, are:
-= -- 295
-> -- 151
+            573 strings with 6674 characters,
+and the built_in function-call counts, 3551 in all, are:
+= -- 312
+> -- 158
 < -- 0
-+ -- 61
-- -- 46
-* -- 153
-:= -- 564
-add.period$ -- 37
-call.type$ -- 13
-change.case$ -- 62
++ -- 64
+- -- 48
+* -- 159
+:= -- 596
+add.period$ -- 39
+call.type$ -- 14
+change.case$ -- 66
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 157
-empty$ -- 331
-format.name$ -- 46
-if$ -- 718
+cite$ -- 25
+duplicate$ -- 164
+empty$ -- 353
+format.name$ -- 48
+if$ -- 761
 int.to.chr$ -- 0
-int.to.str$ -- 13
+int.to.str$ -- 14
 missing$ -- 11
-newline$ -- 66
-num.names$ -- 26
-pop$ -- 116
+newline$ -- 70
+num.names$ -- 28
+pop$ -- 125
 preamble$ -- 1
-purify$ -- 49
+purify$ -- 52
 quote$ -- 0
-skip$ -- 102
+skip$ -- 110
 stack$ -- 0
-substring$ -- 67
-swap$ -- 13
+substring$ -- 72
+swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 52
+type$ -- 56
 warning$ -- 11
-while$ -- 26
-width$ -- 15
-write$ -- 128
+while$ -- 28
+width$ -- 16
+write$ -- 136
 (There were 12 error messages)
