@@ -1,35 +1,47 @@
 \select@language {english}
 \select@language {english}
-\contentsline {chapter}{\nonumberline List of Figures}{5}{chapter*.3}
-\contentsline {chapter}{\nonumberline List of Tables}{6}{chapter*.4}
-\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
-\contentsline {section}{\numberline {1.1}Motivation}{7}{section.1.1}
-\contentsline {section}{\numberline {1.2}Problem}{7}{section.1.2}
-\contentsline {section}{\numberline {1.3}Goals of Thesis}{8}{section.1.3}
-\contentsline {section}{\numberline {1.4}Drawbacks}{8}{section.1.4}
-\contentsline {section}{\numberline {1.5}Approach}{9}{section.1.5}
-\contentsline {section}{\numberline {1.6}Outline}{9}{section.1.6}
-\contentsline {chapter}{\numberline {2}Background and Related Work}{10}{chapter.2}
-\contentsline {section}{\numberline {2.1}Basic Concepts}{10}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Tile}{10}{subsection.2.1.1}
-\contentsline {subsubsection}{\nonumberline CPU core}{10}{section*.5}
-\contentsline {subsubsection}{\nonumberline TLM}{10}{section*.6}
-\contentsline {subsubsection}{\nonumberline Cache}{10}{section*.7}
-\contentsline {section}{\numberline {2.2}Related Work}{11}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Data Placement/Migration on Caches}{11}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Task/Thread Placement}{12}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Data and Thread Migration}{13}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Data Placement on TLM}{13}{subsection.2.2.4}
-\contentsline {subsubsection}{\nonumberline Static Data Placement on TLM}{13}{section*.8}
-\contentsline {subsubsection}{\nonumberline Dynamic Data Migration on TLM}{13}{section*.9}
-\contentsline {chapter}{\numberline {3}System Architecture}{14}{chapter.3}
-\contentsline {section}{\numberline {3.1}Local TLM Accesses}{14}{section.3.1}
-\contentsline {section}{\numberline {3.2}Remote TLM Accesses}{14}{section.3.2}
-\contentsline {chapter}{\numberline {4}Approach}{16}{chapter.4}
-\contentsline {section}{\numberline {4.1}Overview}{16}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}Cache{\_}Stats Module}{17}{subsection.4.1.1}
-\contentsline {section}{\numberline {4.2}garbage}{17}{section.4.2}
-\contentsline {section}{\numberline {4.3}Concept}{18}{section.4.3}
-\contentsline {chapter}{\numberline {5}Evaluation}{23}{chapter.5}
-\contentsline {chapter}{\numberline {6}Conclusion and Outlook}{24}{chapter.6}
-\contentsline {chapter}{\nonumberline Bibliography}{25}{chapter*.10}
+\contentsline {chapter}{\nonumberline List of Figures}{6}{chapter*.3}
+\contentsline {chapter}{\nonumberline List of Tables}{7}{chapter*.4}
+\contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}
+\contentsline {section}{\numberline {1.1}Motivation}{8}{section.1.1}
+\contentsline {section}{\numberline {1.2}Problem}{8}{section.1.2}
+\contentsline {section}{\numberline {1.3}Goals of Thesis}{9}{section.1.3}
+\contentsline {section}{\numberline {1.4}Drawbacks}{9}{section.1.4}
+\contentsline {section}{\numberline {1.5}Approach}{10}{section.1.5}
+\contentsline {section}{\numberline {1.6}Outline}{10}{section.1.6}
+\contentsline {chapter}{\numberline {2}Background and Related Work}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}Basic Concepts}{11}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Tile}{11}{subsection.2.1.1}
+\contentsline {subsubsection}{\nonumberline CPU core}{11}{section*.5}
+\contentsline {subsubsection}{\nonumberline TLM}{11}{section*.6}
+\contentsline {subsubsection}{\nonumberline Cache}{11}{section*.7}
+\contentsline {section}{\numberline {2.2}Related Work}{12}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Data Placement/Migration on Caches}{12}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Task/Thread Placement}{13}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Data and Thread Migration}{14}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Data Placement on TLM}{14}{subsection.2.2.4}
+\contentsline {subsubsection}{\nonumberline Static Data Placement on TLM}{14}{section*.8}
+\contentsline {subsubsection}{\nonumberline Dynamic Data Migration on TLM}{14}{section*.9}
+\contentsline {chapter}{\numberline {3}System Architecture}{15}{chapter.3}
+\contentsline {section}{\numberline {3.1}Types of Accesses to TLM}{15}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Local TLM Accesses}{15}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Remote TLM Accesses}{15}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}xxx}{15}{section.3.2}
+\contentsline {section}{\numberline {3.3}Modules Directly Used in the System for Implementing Thesis}{17}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Trace File}{17}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Vector Address Table}{17}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Cache Stats Module}{17}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}TLM Mem Module}{17}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Central Stats Module}{17}{subsection.3.3.5}
+\contentsline {section}{\numberline {3.4}Overview/System Design}{18}{section.3.4}
+\contentsline {chapter}{\numberline {4}Implementation}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}Tools and Technologies}{20}{section.4.1}
+\contentsline {section}{\numberline {4.2}Concept}{20}{section.4.2}
+\contentsline {section}{\numberline {4.3}Limitations}{24}{section.4.3}
+\contentsline {chapter}{\numberline {5}Experimental Setup}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Trace File}{25}{section.5.1}
+\contentsline {section}{\numberline {5.2}Script Runner}{25}{section.5.2}
+\contentsline {section}{\numberline {5.3}System Specifications}{25}{section.5.3}
+\contentsline {chapter}{\numberline {6}Evaluation}{26}{chapter.6}
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{27}{chapter.7}
+\contentsline {chapter}{\nonumberline Bibliography}{29}{chapter*.10}
