@@ -3,17 +3,19 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {1.1}{\ignorespaces Invasic Architecture~\cite {iNetworkAdapter}}}{9}{figure.1.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A Tile}}{12}{figure.2.1}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A Tile}}{13}{figure.2.1}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces A tile showing local accesses to a TLM}}{16}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A tile showing remote accesses to a TLM}}{16}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram showing where the trace file is placed}}{18}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram Showing Overview of the Modules Used}}{19}{figure.3.4}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces A tile showing local accesses to a TLM}}{18}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A tile showing remote accesses to a TLM}}{18}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Diagram showing where the trace file is placed}}{20}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Diagram Showing Overview of the Modules Used}}{21}{figure.3.4}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagram showing approach of the solution}}{21}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Flowchart showing process inside cache{\_}stats module}}{21}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Flowchart showing how the free address space in TLM is calculated}}{22}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Flowchart showing process inside central TLM{\_}STATS module}}{23}{figure.4.4}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Diagram illustrating the messages exchanged between different modules}}{23}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Flowchart illustrating how to determine a local and remote TLM access}}{24}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Flowchart showing how the free address space in TLM is calculated if the TLM is partially full}}{25}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Flowchart showing how the free address space in TLM is calculated}}{26}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Process to determine the TLM Block to migrate and the tile to migrate the TLM Block to}}{27}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Triggering Migration Commands}}{29}{figure.4.6}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

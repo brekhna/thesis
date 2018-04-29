@@ -81,3 +81,23 @@
 	year = "2016",
 	publisher = "Lehrstuhl für Integrierte Systeme, Technische Universität München",
 }
+@conference{gem5,
+	author="Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu,  Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, 		Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood",
+	title="The gem5 simulator",
+        year="May 2011 ",
+	publisher="ACM SIGARCH Computer Architecture News",
+	volume="39 Issue 2",
+	pages="1-7",
+}
+@conference{tlm,
+	author=" L. Cai and D. Gajski",
+	title=" Transaction Level Modeling: An Overview",
+	year="Oct. 2003",
+	publisher="proceedings of the Int. Conference on HW/SW Codesign and System Synthesis (CODES-ISSS)",
+	pages="19–24",
+}
+@misc{synopsys,
+	author="Synopsys",
+	title="SoC Architecture Analysis and Optimization for Performance and Power ",
+	howpublished={\url{https://www.synopsys.com/verification/virtual-prototyping/platform-architect.html}},
+}

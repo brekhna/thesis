@@ -63,11 +63,11 @@ Also, in static data placement once the data is placed on TLM's that placement i
   \label{fig:multi-core,tile}
 \end{figure}
 \section{Goals of Thesis}
-The goal of this thesis is to design, implement and evaluate a dynamic data placement technique for memory management at run time. The system will evaluate itself and find the best data placement to improve it's performance. 
+The goal of this thesis is to design, implement and evaluate a dynamic data placement technique for memory management at run time. The system will evaluate itself and find the best data placement to improve it's performance. \\
 \\
 The outcome will be a system which does not need external support to find the best placement for its memory but rather it will adapt itself to place the data at the best location which will in turn improve the performance. 
 \section{Drawbacks}
-The drawback of this thesis could be increased traffic in the processor since quite amount of data is sent back and forth in order to find the best data placement. Also, the modules used in this technique will need memory and that memory might not scale with increasing number of cores. 
+The drawback of this thesis could be increased traffic in the processor since quite a large amount of data is sent back and forth in order to find the best data placement. Also, the modules used in this technique will need memory and that memory might not scale with increasing number of cores. Another drawback is that the real time to run the simulation might increase as a large number of computations need to be done to run the dynamic data placement algorithm.\\
 \section{Approach}
 The steps followed to develop the Simulator Support for Dynamic Data Migration on a Distributed Shared Memory System ... are as follows:
 \begin{itemize}
@@ -93,11 +93,13 @@ In this chapter the necessary background information is introduced in order to u
 \\
 \section{Basic Concepts}
 \subsection{Tile}
-Figure \ref{fig:tile} shows a single tile. You can see in the figure that it composes of four CPU cores, L1 caches for every core, L2 cache which is shared between all the cores and a TLM memory which is also shared by all the cores.
+Figure \ref{fig:tile} shows a single tile. You can see in the figure that it composes of four CPU cores, L1 caches for every core, L2 cache which is shared between all the cores and a Tile Local Memory (TLM) which is also shared by all the cores. It also has a Bus which connects the cores to the L2 Cache and the TLM.
 \subsubsection{CPU core}
 A CPU core is the basic processing unit that receives instructions(from the user or application) and performs calculations based on those instructions. A processor can have a single core or multiple cores.  
 \subsubsection{TLM}
 TLM stands for Tile Local Memory. Each tile has its own TLM which is shared among all the cores of the tile~\cite{ankitThesis},~\cite{iNetworkAdapter}. This memory is cachable by the L1 caches of all the cores in the tile it sits on and by the L2 cache of any other tile. The TLM from one tile can be accessed by the core of another tile.\\
+\subsubsection{Bus}
+The bus connects the cores to the L2 Cache and the TLM and to other tiles. When accessing another tile the request has to go through a network adapter to be routed to the destination tile. We are using a AMBA Bus ....Iffat  
 \subsubsection{Cache}
 Cache is a temporary storage space which is made up of high-speed static RAM (sRAM). It stores information which has been recently accessed so that it can be quickly accessed at a later time. It operates on the principle that most programs access information or data over and over again so by having data in the SRAM the CPU does not access the slow DRAM again and again. A cache hit occurs when the processor core accesses data that is already present in the cache whereas a cache miss occurs when the data is not present in the cache and has to be fetched from the TLM or the main memory to the cache~\cite{iffatseminarpaper}. In our architecture we have two levels of caches:
 \begin{itemize}
@@ -126,7 +128,7 @@ In~\cite{datathreadPlacement} a mechanism called CDCS is presented which using a
 \subsection{Data Placement on TLM}
 \subsubsection{Static Data Placement on TLM}
 In static data placement the application is run twice. The first time it runs in order to find the best placement for the data and then for the second time it runs over the data placement done in the previous step. The disadvantages of this approach are that the data placement is fixed i.e even if some data block is becoming a bottleneck in performance the processor cannot migrate the memory block at rum time. It can only be changed by resetting the system. 
-\subsubsection{Dynamic Data Migration on TLM}
+\subsubsection{Dynamic Data Placement and Migration on TLM}
 In~\cite{dynamicPageMigration} the authors have proposed a dynamic page migration scheme for a multiprocessor architecture using point-to-point interconnects with a distributed global memory. They use the \textit{pivot} mechanism to regulate the dynamic migration of pages by keeping track of the access pattern to every local page in every distributed memory module. If the access pattern is unbalanced then the page pivots to the nearest neighbor in the direction which caused the unbalanced access pattern.\\
 \\
 In acquiring the results the authors assumed two sets of conditions:
@@ -134,12 +136,16 @@ In acquiring the results the authors assumed two sets of conditions:
 	\item infinite memory space model i.e it is assumed that the destination memory module always has free space
 	\item finite memory space model i.e a page is only allowed to migrate if its destination memory module has free space
 \end{itemize}
+The authors collected their results by seeing how the dynamic page migration scheme improved their number of hops. In all the cases the hops were reduced, but the effect is more dominant when the pivot factor (threhold value) is small. \\
+\\
 Ask Sven whether to put their results graphs here or not!
 \chapter{System Architecture}
 This chapter will illustrate and explain the architecture and design of the system. It will further explain each module in detail.
-\section{Types of Accesses to TLM}
+\section{Tile Local Memory}
+The Tile Local Memory (TLM) is a distributed-shared memory in the processor architecture. By distributed-shared we mean that it is distributed among all the tiles and can be accessed by core's placed remotely on neighboring or far away tiles. 
+\subsection{Types of Accesses to TLM}
 As mentioned in the previous chapter, figure \ref{fig:tile} depicts the inside of one tile. We have multiple such tiles in our processor hence the name multi-tile multi-core processor architecture.
-\subsection{Local TLM Accesses}
+\subsubsection{Local TLM Accesses}
 Figure \ref{fig:localaccesses} depicts a scenario where a core is accessing its own tiles TLM which makes it a local TLM access. In this scenario the data transfer is happening just inside the tile and there is no traffic going outside the tile to the bus. This takes less time as data is placed close to the core that uses it. 
 
 \begin{figure}
@@ -148,7 +154,7 @@ Figure \ref{fig:localaccesses} depicts a scenario where a core is accessing its 
   \caption{A tile showing local accesses to a TLM}
   \label{fig:localaccesses}
 \end{figure}
-\subsection{Remote TLM Accesses}
+\subsubsection{Remote TLM Accesses}
 Figure \ref{fig:remoteaccesses} depicts a scenario where a core is accessing another tiles TLM which makes it a remote TLM access. In this scenario the data transfer is happening over the bus and traffic is generated. Also, this takes more time since data is placed far away from the core that uses it. 
 
 \begin{figure}
@@ -157,24 +163,26 @@ Figure \ref{fig:remoteaccesses} depicts a scenario where a core is accessing ano
   \caption{A tile showing remote accesses to a TLM}
   \label{fig:remoteaccesses}
 \end{figure}
-\section{xxx}
-We want to reduce the number of remote TLM accesses since it takes more time to fetch data from a TLM which is places on another tile and less time to fetch data which is on a core's own tile.  
+\subsection{Goal}
+We want to reduce the number of remote TLM accesses since it takes more time to fetch data from a TLM which is places on another tile (as the request has to go on the bus through the network adapter to the other tile's bus) and less time to fetch data which is on a core's own tile.  
 \section{Modules Directly Used in the System for Implementing Thesis}
 \subsection{Trace File}
 How to explain ask from Sven! 
+\\
+We run a benchmark in gem5 full system simulator~\cite{gem5} to generate the trace-file which ---. 
 \subsection{Vector Address Table}
-The vector address table sits between the trace file and the CPU's as shown in Figure \ref{fig:traceFile}. This table contains the address translation of all the addresses from the DRAM to the TLM. At start all TLM's are empty which means every instruction has to access data from the DRAM. The vector address table is updated if the DRAM is accessed or if migration is triggered by the central TLM Stats module and that migration takes place.
+The vector address table sits between the trace file and the core's as shown in Figure \ref{fig:traceFile}. This table contains the address translation of all the addresses from the DRAM to the TLM. At start all TLM's are empty which means every instruction has to access data from the DRAM. The vector address table is updated if the DRAM is accessed or if migration is triggered by the Central Stats Module and if that migration takes place.
 \subsection{Cache Stats Module}
-The Cache{\_}Stats module is connected to the L1 and L2 Caches and is continuously getting updates from them regarding cache hits, misses, evictions etc per cache line. This module bring all the data together and at the end of the simulation prints the compulsory misses,conflict misses, evictions, local misses, remote misses, local hits, remote hits for all the caches. This module also calculates the number of local and remote access to the TLM block by using all the metrics mentioned above.
+The Cache{\_}Stats module is connected to the L1 and L2 Caches and is continuously getting updates from them regarding cache hits and misses per cache line. This module is responsible for calculating the cache hits and misses per TLM Block and to calculate for every TLM block the number of local and remote accesses. It also plays a important role in carrying out the data migration command as the migration command has to go through this module. 
 \subsection{TLM Mem Module}
 This is the Tile's Local Memory and has been explained in detail in chapter 2. This module also has the functionality to observe itself and calculate whether it is empty, is full or has free space. If it has free space then it can find the staring and ending address of all the free spaces. 
 \subsection{Central Stats Module}
 This is the main central module which all the Cache Stats modules and TLM Mem modules are reporting to. This module is responsible of finding whether migration shall take place or not and to send out invalidation commands for the data that has to be moved in case if migration has to be triggered. 
 
-\section{Overview/System Design}
-Figure~\ref{fig:overviewOfSolution} shows the overview of the modules involved in dynamic migration scheme. Every cache module is connected to a Cache{\_}Stats module. All these Cache{\_}Stats modules and the TLM{\_}MEM modules report to the Central Stats module at every given time interval (T$_{interval}$). The central Stats module does evaluation of this data and triggers migration if needed. \\
+\section{System Design}
+Figure~\ref{fig:overviewOfSolution} shows the overview of the modules involved in dynamic migration scheme. Every cache module is connected to a Cache{\_}Stats module. All these Cache{\_}Stats modules and the TLM{\_}MEM modules report to the Central Stats Module at every given time interval (T$_{interval}$). The Central Stats Module does evaluation of this data and triggers migration if needed. \\
 \\
-Also, the vector address table sits between the trace file and the CPU's as shown in Figure \ref{fig:traceFile}. Every instruction from the trace file first passes through the vector address table for address translation and then it is executed.
+Also, there is a vector address table which sits between the trace file and the CPU's as shown in Figure \ref{fig:traceFile}. Every instruction from the trace file first passes through the vector address table for address translation and then it is executed.
 
 \begin{figure}[h!]
   \includegraphics[width=0.7\linewidth]{traceFile.png}
@@ -190,53 +198,102 @@ Also, the vector address table sits between the trace file and the CPU's as show
   \label{fig:overviewOfSolution}
 \end{figure}
 \chapter{Implementation}
-In this chapter, the technologies used to develop the simulator have been discussed. We further talk in detail about what how the parameters responsible for data migration are calculated and the limitations that exists in the simulator. 
+In this chapter, the technologies, detailed approach of the system and the design used to develop the simulator have been discussed. We further talk in detail about what how the parameters responsible for data migration are calculated and the limitations that exists in the simulator. 
 \section{Tools and Technologies}
-
+The simulator is created in Synopsys Platform Architect MCO. Synopsys Platform Architect is a SystemC TLM standards-based graphical environment for capturing, configuring, simulating, and analyzing the system-level performance and power of multi-core systems and next generation SoC architectures~\cite{synopsys}.
+The system was programmed in SystemC TLM-2.0 as it is a system-level modeling language. It provides communication-oriented, event-driven simulation interference. TLM is transaction-level modeling in which the details of communication among modules are separated from the details of the implementation of the functional modules~\cite{tlm}. TLM-2.0 focuses on memory mapped bus modeling which is fast and accurate.
 \section{Concept}
-Figure \ref{fig:approachOfSolution} shows the concept of the dynamic migration scheme. It shows what messages/data are exchanged between the different modules explained/introduced above. At every given time interval (T$_{interval}$) the Cache{\_}Stats module sends the number of local and remote accesses of a TLM block to the  central TLM Stats module and the TLM{\_}MEM module sends its free address space to the central TLM stats module. This block size is equal to a number of cache lines and can be varied. The Central Stats module evaluates this data and sends a migrate command to the L2 Cache{\_}Stats module if migration shall be done.\\
+Figure \ref{fig:approachOfSolution} shows the messages exchanged between the Cache{\_}Stats, TLM Mem and Central Stats Module. At every given time interval (T$_{interval}$) the Cache{\_}Stats module sends the number of local and remote accesses of all the TLM blocks to the Central Stats module and the TLM{\_}MEM module sends its free address space to the Central Stats module. The TLM block size is equal to a variable number of cache lines that is determined at compile time by the user. The Central Stats module then evaluates this received data and sends a migrate command to the L2 Cache{\_}Stats module if it thinks that migration is needed. \\
+\\
+The next subsections will explain how the messages exchanged between the modules are calculated. 
 \begin{figure}
   \includegraphics[width=0.7\linewidth]{approachOfSolution.png}
   \centering
-  \caption{Diagram showing approach of the solution}
+  \caption{Diagram illustrating the messages exchanged between different modules}
   \label{fig:approachOfSolution}
 \end{figure}
-\\
-Figure \ref{fig:remoteLocalAccess} shows the how the metric for local access and remote access is calculated in the Cache{\_}Stats module. The TLM which is being accessed is compared with the current tile. If the two values are equal it means it is a request to the TLM of the same tile which means its a local access. If the two values are different it means it is a request for another tile's TLM and it is checked whether there is a L1 cache hit. If there is a L1 cache hit it means it is a local access and if it is a miss it is checked whether it is a L2 cache hit. If it is a hit it means it is a local access and if it is a miss it means it is a remote access.\\
+\subsection{Local and Remote Accesses to a TLM Block}
+Figure \ref{fig:remoteLocalAccess} shows the calculation behind the metric of local access and remote access to a TLM Block in the Cache{\_}Stats module. We compare the TLM number which is being accessed by a instruction with the current tile number (the tile where the cache stats module is placed). If the two values are equal it means it is a request to the TLM of the same tile which signifies it is a local access. If the two values are different it implies it is a request for another tile's TLM and we check whether there is a L1 cache hit or miss. If there is a L1 cache hit, it is a local access. However, if it is a L1 cache miss then we check whether it is a L2 cache hit or miss. If it is a hit then it a local access but if it is a miss then we have a remote access. \\
 \begin{figure}
-  \includegraphics[width=0.5\linewidth]{remoteLocalAccess.jpg}
+  \includegraphics[width=0.6\linewidth]{localandremote.png}
   \centering
-  \caption{Flowchart showing process inside cache{\_}stats module}
+  \caption{Flowchart illustrating how to determine a local and remote TLM access}
   \label{fig:remoteLocalAccess}
 \end{figure}
-\\
-Figure \ref{fig:freeSpaceTLM} shows how the free address space is calculated in the TLM{\_}MEM module. The vector address table is checked first and if it is empty it means all TLM's are empty. If the table is not empty and there is free space in a TLM, the starting and ending address of free space is extracted. If there is so free space in a TLM that is sent to the central TLM{\_}Stats module. \\
+
+\subsection{Free Address Space in TLM}
+Figure \ref{fig:freeSpaceTLM} shows how we find the free address space in the TLM{\_}MEM module. For calculating the free address space in the TLM we can have three scenarios. 
+\begin{enumerate}
+  \item TLM Empty 
+  \item TLM Partially Full
+  \item TLM Full
+\end{enumerate}
+\subsubsection{TLM Empty}
+If the vector address table is empty then we know straightaway that the TLM is empty. In that scenario, the starting and ending address of the TLM address space are sent to the Central Stats Module.\\ 
+\subsubsection{TLM Partially Full}
+If the vector address table is not empty we iterate over the table and extract the addresses belonging to the current tile's TLM. After we have these addresses we analyze them and determine the free address space in the TLM. The starting and ending address of one free space block is send to the Central Stats Module.\\
 \begin{figure}
-  \includegraphics[width=0.7\linewidth]{freeSpaceTLM.jpg}
+  \includegraphics[width=\linewidth]{tlmpartiallyempty.png}
+  \centering
+  \caption{Flowchart showing how the free address space in TLM is calculated if the TLM is partially full}
+  \label{fig:freeSpaceTLM}
+\end{figure}
+\subsubsection{TLM Full}
+In this case also the vector address table is not empty. We extract the addresses belonging to the current tile's TLM and if there isno space in the TLM we inform the Central Stats Module this by sending a invalid value.\\
+\begin{figure}
+  \includegraphics[width=\linewidth]{freespace.png}
   \centering
   \caption{Flowchart showing how the free address space in TLM is calculated}
   \label{fig:freeSpaceTLM}
 \end{figure}
-\\
-Figure \ref{fig:tlm_stats flowchart} shows the algorithm for determining when migration shall take place and which TLM block to migrate. First it is determined which node to migrate the TLM block to. This decision is based on the local and remote accesses to the specific TLM block. The tile with the maximum remote accesses to the TLM block is found and if these remote accesses are greater than local accesses to that TLM block it means it has to be migrated to the tile with the highest remote accesses. Then it is determined whether there is free space in the TLM of the tile to which the TLM block is to be migrated. If there is free space, a migration command is send to L2 Cache{\_|}Stats module. The migrate command is split to two commands, first reading data from the location from where data has to be migrated and then writing data at the new location. Once, the data is read a invalidation command is sent for that TLM Block/Cache Line(s) and the vector address table is updated. However, if there is no free space the block with the least number of local accesses is found in the TLM and that metric is compared with the remote accesses of the TLM block to be migrated. If the remote accesses metric is higher than the local accesses of the block with least number of local accesses a migration command is send to the L2 Cache{\_|}Stats module for this block i.e this block is migrated back to the DDR and free space is made for the incoming TLM block. Now with free space in the TLM a migration command is send to the  L2 Cache{\_|}Stats module for the block to be migrated.\\
-\\
+\subsection{Triggering Migrations}
+\subsubsection{Which TLM Block to Migrate and Tile to Migrate it to?}
+Figure \ref{fig:tiletomigrate} shows the the tile to migrate a certain TLM block is determined. In the Central Stats Module first it is determined whether a TLM Block shall be migrated or not and if it has to be migrated then it is decided which tile to migrate it to. This decision is based on the local and remote accesses to the specific TLM block (explained in detail above). For every TLM Block, the tile with the maximum remote accesses is found and if these remote accesses are greater than local accesses it means it has to be migrated to this tile.\\
 \begin{figure}
-  \includegraphics[width=0.7\linewidth]{tlm_stats(1).jpg}
+  \includegraphics[width=0.4\linewidth]{tiletomigrate.png}
   \centering
-  \caption{Flowchart showing process inside central TLM{\_}STATS module}
+  \caption{Process to determine the TLM Block to migrate and the tile to migrate the TLM Block to}
+  \label{fig:tiletomigrate}
+\end{figure}
+\subsubsection{When to Trigger Migrations?}
+Figure \ref{fig:tlm_stats flowchart} shows the algorithm for determining when migration shall take place. After we know the tile to which a specific TLM Block shall me migrated, it is determined whether there is free space in that tile's TLM. If there is free space, a migration command is send to L2 Cache{\_}Stats module. \\
+\\
+However, if there is no free space in the TLM, then the block with the least number of local accesses in the TLM is identified and this number of local accesses is compared with the number of remote accesses of the TLM block which is to be migrated. If the number of remote accesses of the TLM block to be migrated is higher than this number of local accesses a migration command is send to the L2 Cache{\_}Stats module for this block in-order to migrate it to the DDR i.e this block is migrated back to the DDR and free space is made for the incoming TLM block. Now with free space in the TLM a migration command is send to the  L2 Cache{\_}Stats module for the TLM block to be migrated to the tile. If the remote accesses of the TLM block to be migrated are less than the minimum local accesses in the TLM then the migration is flushed.\\
+\\
+In case all the local accesses to a TLM are equal and a minimum cannot be found then at random a TLM Block is picked and the local accesses are compared with the migrating TLM Block's remote accesses. If the former is smaller than the latter, the TLM block is migrated to the DDR and free space is made for the incoming TLM block. Now with free space in the TLM a migration command is send to the  L2 Cache{\_}Stats module for the TLM block to be migrated to the tile. \\
+\subsubsection{Migrate Command}
+The migrate command is split into two commands in the Cache{\_}Stats module; first reading data from the location from where data has to be migrated and then writing data at the new location to which the migration is taking place. Once, the data is read a invalidation command is sent to all L1 and L2 caches for that TLM Block and once the data is written the vector address table is updated.\\
+\begin{figure}
+  \includegraphics[width=\linewidth]{tlmstats.png}
+  \centering
+  \caption{Triggering Migration Commands}
   \label{fig:tlm_stats flowchart}
 \end{figure}
 
 \section{Limitations}
-
+Adding the dynamic data migration support to the simulator increased the real time of the simulation by quite an extend. 
 \chapter{Experimental Setup}
 This chapter will lay out the programs that assisted in running the experiments on the Synopsys Simulator. ??Moreover, it will also illustrate the specifications of the machine that was utilized to run the experiments.
-\section{Trace File}
-How was the trace file generated etc...
-\section{Script Runner}
-
+\section{The gem5 Simulator}
+The gem5 simulator~\cite{gem5} is a modular platform for computer system architecture research, encompassing system-level architecture as well as processor micro-architecture. We use the gem5 full system simulator to generate the trace file for the simulations. 
+\section{Platform Architect MCO}
+The simulator is designed in Synopsys Platform Architect MCO~\cite{synopsys}. It gives a graphical environment for configuring and analyzing the system. 
+\section{Writing Shell Script}
+A shell script for running the migration command is modified so that multiple simulations can run in parallel without the need to recompile the simulator. The maximum number if parallel simulations that we could run was four. This saved us considerable time in gathering results. 
+\section{\textit{Nice} Command}
+The script is run with \textit{nice} command~\cite{nice} which runs the simulation with a different priority then the usual. The simulation is run with a increased priority of nine.
+\section{Output Files}
+The output of the simulation is saved in different text files. The files important for this thesis are:
+\begin{itemize}
+\item Screen Log File
+\item Time Log File
+\end{itemize}
+\subsection{Screen Log File}
+The screen log file gives the virtual processing time (in nano seconds) of each processor and also of the entire system. It also gives the real time, the user time and the system time of running the simulations in minutes and seconds. Further it gives the total number of remote reads and remote writes of the simulation run and some other parameters and queue sizes that are not relevant for this thesis.\\
+\subsection{Time Log File}
+The time log file consists of the breakdown of the time (in nano seconds) that each processor took executing instructions on different tiles and on the TLM, L1-Cache, NPC, NoC, Bus etc. In other words it breaks down the time of
 \section{System Specifications}
-
+The simulations were run on a core i5 Intel processor with a Solid-State-Drive (SSD) --- in-order to reduce the real time for the simulations. 
 \chapter{Evaluation}
 
 \chapter{Conclusion and Outlook}

@@ -15,9 +15,34 @@ Too many commas in name 1 of "M. Diener, J. Schneider, H.U. Heiss, F.L Madrunga,
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "M. Diener, J. Schneider, H.U. Heiss, F.L Madrunga, E. R. Rodrigues, M.A.Y. Alves and P.O.A Navaux" for entry threadPlacement3
 while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1049 of file plain.bst
 Name 1 in "C. Kim, D. Burger, and S. W. Keckler" has a comma at the end for entry cacheDataPlacement1
 while executing---line 1090 of file plain.bst
 Warning--empty booktitle in cacheDataPlacement1
+Warning--empty booktitle in tlm
 Warning--empty booktitle in threadPlacement4
 Name 1 in "E. Rodrigues, F. Madruga, P. Navaux, and J. Panetta" has a comma at the end for entry threadPlacement1
 while executing---line 1090 of file plain.bst
@@ -35,48 +60,73 @@ Warning--empty booktitle in datathreadPlacement
 Name 1 in "N. Hardavellas, M. Ferdman, B. Falsafi, and A. Ailamaki" has a comma at the end for entry cacheDataPlacement4
 while executing---line 1090 of file plain.bst
 Warning--empty booktitle in cacheDataPlacement4
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
+while executing---line 1090 of file plain.bst
+Warning--empty booktitle in gem5
 Warning--empty booktitle in cacheDataPlacement6
 Warning--empty booktitle in dynamicPageMigration
 Warning--empty booktitle in cacheDataPlacement3
-You've used 14 entries,
+You've used 18 entries,
             2118 wiz_defined-function locations,
-            573 strings with 6674 characters,
-and the built_in function-call counts, 3551 in all, are:
-= -- 312
-> -- 158
-< -- 0
-+ -- 64
-- -- 48
-* -- 159
-:= -- 596
-add.period$ -- 39
-call.type$ -- 14
-change.case$ -- 66
+            594 strings with 7491 characters,
+and the built_in function-call counts, 4781 in all, are:
+= -- 438
+> -- 198
+< -- 3
++ -- 81
+- -- 60
+* -- 207
+:= -- 778
+add.period$ -- 53
+call.type$ -- 18
+change.case$ -- 84
 chr.to.int$ -- 0
-cite$ -- 25
-duplicate$ -- 164
-empty$ -- 353
-format.name$ -- 48
-if$ -- 761
+cite$ -- 31
+duplicate$ -- 224
+empty$ -- 464
+format.name$ -- 60
+if$ -- 1050
 int.to.chr$ -- 0
-int.to.str$ -- 14
-missing$ -- 11
-newline$ -- 70
-num.names$ -- 28
-pop$ -- 125
+int.to.str$ -- 18
+missing$ -- 13
+newline$ -- 90
+num.names$ -- 36
+pop$ -- 157
 preamble$ -- 1
-purify$ -- 52
+purify$ -- 66
 quote$ -- 0
-skip$ -- 110
+skip$ -- 169
 stack$ -- 0
-substring$ -- 72
-swap$ -- 14
-text.length$ -- 0
+substring$ -- 119
+swap$ -- 39
+text.length$ -- 3
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 56
-warning$ -- 11
-while$ -- 28
-width$ -- 16
-write$ -- 136
-(There were 12 error messages)
+type$ -- 72
+warning$ -- 13
+while$ -- 39
+width$ -- 20
+write$ -- 177
+(There were 36 error messages)
