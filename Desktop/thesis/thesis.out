@@ -23,7 +23,7 @@
 \BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Trace File}{section.3.2}% 23
 \BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Vector Address Table}{section.3.2}% 24
 \BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Cache Stats Module}{section.3.2}% 25
-\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 TLM Mem Module}{section.3.2}% 26
+\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Tile Local Memory Module}{section.3.2}% 26
 \BOOKMARK [2][-]{subsection.3.2.5}{3.2.5 Central Stats Module}{section.3.2}% 27
 \BOOKMARK [1][-]{section.3.3}{3.3 System Design}{chapter.3}% 28
 \BOOKMARK [0][-]{chapter.4}{4 Implementation}{}% 29
@@ -32,16 +32,17 @@
 \BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Local and Remote Accesses to a TLM Block}{section.4.2}% 32
 \BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Free Address Space in TLM}{section.4.2}% 33
 \BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 Triggering Migrations}{section.4.2}% 34
-\BOOKMARK [1][-]{section.4.3}{4.3 Limitations}{chapter.4}% 35
-\BOOKMARK [0][-]{chapter.5}{5 Experimental Setup}{}% 36
-\BOOKMARK [1][-]{section.5.1}{5.1 The gem5 Simulator}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.2}{5.2 Platform Architect MCO}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.3}{5.3 Writing Shell Script}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.4}{5.4 Nice Command}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.5}{5.5 Output Files}{chapter.5}% 41
-\BOOKMARK [2][-]{subsection.5.5.1}{5.5.1 Screen Log File}{section.5.5}% 42
-\BOOKMARK [2][-]{subsection.5.5.2}{5.5.2 Time Log File}{section.5.5}% 43
-\BOOKMARK [1][-]{section.5.6}{5.6 System Specifications}{chapter.5}% 44
-\BOOKMARK [0][-]{chapter.6}{6 Evaluation}{}% 45
-\BOOKMARK [0][-]{chapter.7}{7 Conclusion and Outlook}{}% 46
-\BOOKMARK [0][-]{chapter*.19}{Bibliography}{}% 47
+\BOOKMARK [1][-]{section.4.3}{4.3 Usability Improvement}{chapter.4}% 35
+\BOOKMARK [1][-]{section.4.4}{4.4 Limitations}{chapter.4}% 36
+\BOOKMARK [0][-]{chapter.5}{5 Experimental Setup}{}% 37
+\BOOKMARK [1][-]{section.5.1}{5.1 The gem5 Simulator}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.2}{5.2 Platform Architect MCO}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.3}{5.3 Writing Shell Script}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.4}{5.4 Nice Command}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.5}{5.5 Output Files}{chapter.5}% 42
+\BOOKMARK [2][-]{subsection.5.5.1}{5.5.1 Screen Log File}{section.5.5}% 43
+\BOOKMARK [2][-]{subsection.5.5.2}{5.5.2 Time Log File}{section.5.5}% 44
+\BOOKMARK [1][-]{section.5.6}{5.6 System Specifications}{chapter.5}% 45
+\BOOKMARK [0][-]{chapter.6}{6 Evaluation}{}% 46
+\BOOKMARK [0][-]{chapter.7}{7 Conclusion and Outlook}{}% 47
+\BOOKMARK [0][-]{chapter*.19}{Bibliography}{}% 48
