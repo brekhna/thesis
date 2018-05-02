@@ -1,8 +1,10 @@
 \begin{thebibliography}{10}
 
-\bibitem{iffatseminarpaper}
-Iffat Brekhna.
-\newblock Cache coherency and data/task placement, 2016.
+\bibitem{lispaper}
+Thomas~Wild Akshay~Srivatsa, Sven~Rheindt and Andreas Herkersdorf.
+\newblock Region based cache coherence for tiled mpsocs.
+\newblock System-on-Chip Conference (SOCC), 2017 30th IEEE International, Sept.
+  2017.
 
 \bibitem{cacheDataPlacement1}
 D.~Burger C.~Kim and S.~W. Keckler.
@@ -23,6 +25,10 @@ R.~Azimi D.~Tam and M.~Stumm.
   multiprocessors.
 \newblock Proceedings of the 2nd ACM SIGOPS/EuroSys European Conference on
   Computer Systems, 2007.
+
+\bibitem{invasive}
+DFG.
+\newblock Welcome to the pages of the tcrc 89.
 
 \bibitem{threadPlacement1}
 P.~Navaux E.~Rodrigues, F.~Madruga and J.~Panetta.
@@ -59,6 +65,10 @@ H.U. Heiss F.L Madrunga E. R. Rodrigues M.A.Y.~Alves M.~Diener, J.~Schneider
   multi-core processors.
 \newblock 12th IEEE International Conference on High Performance Computing and
   Communications, 2010.
+
+\bibitem{trace}
+E.~Fatehi P.~Gratz M.~Gebhart, J.~Hestness and S.~W. Keckler.
+\newblock Running parsec 2.1 on m5, October 2009.
 
 \bibitem{datathreadPlacement}
 P.~Tsai N.~Beckmann and D.~Sanchez.
