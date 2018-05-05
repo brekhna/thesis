@@ -19,6 +19,12 @@ L.~Cai and D.~Gajski.
 \newblock page 19–24. proceedings of the Int. Conference on HW/SW Codesign
   and System Synthesis (CODES-ISSS), Oct. 2003.
 
+\bibitem{tlb}
+D.~W. Clark and J.S Esner.
+\newblock Performance of the vax-11/780 translation buffer: Simulation and
+  measurements.
+\newblock volume~3, pages 31--62. ACM Trans. Comput. Syst, Feb. 1985.
+
 \bibitem{threadPlacement4}
 R.~Azimi D.~Tam and M.~Stumm.
 \newblock Thread clustering: Sharing-aware scheduling on smp-cmp-smt
@@ -106,6 +112,12 @@ Christoph Scheurich and Michel Dubois.
 \newblock Dynamic page migration in multiprocessors with distributed global
   memory.
 \newblock IEEE Transactions on Computers, 1989.
+
+\bibitem{dynamicpMigration}
+Christoph Scheurich and Michel Dubois.
+\newblock Dynamic memory allocation in a mesh-connected multiprocessor.
+\newblock pages 302--312. Proc. the 20th Hawaii Int. Conf. Syst. Sci., Jan.
+  1987.
 
 \bibitem{synopsys}
 Synopsys.

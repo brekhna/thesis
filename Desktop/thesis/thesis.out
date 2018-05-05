@@ -14,34 +14,45 @@
 \BOOKMARK [2][-]{subsection.2.2.2}{2.2.2 Task/Thread Placement}{section.2.2}% 14
 \BOOKMARK [2][-]{subsection.2.2.3}{2.2.3 Data and Thread Migration}{section.2.2}% 15
 \BOOKMARK [2][-]{subsection.2.2.4}{2.2.4 Data Placement on TLM}{section.2.2}% 16
-\BOOKMARK [0][-]{chapter.3}{3 System Architecture and Concept}{}% 17
-\BOOKMARK [1][-]{section.3.1}{3.1 Tools and Technologies}{chapter.3}% 18
-\BOOKMARK [1][-]{section.3.2}{3.2 Concept}{chapter.3}% 19
-\BOOKMARK [0][-]{chapter.4}{4 Implementation}{}% 20
-\BOOKMARK [1][-]{section.4.1}{4.1 Tile Local Memory}{chapter.4}% 21
-\BOOKMARK [2][-]{subsection.4.1.1}{4.1.1 Types of Accesses to TLM}{section.4.1}% 22
-\BOOKMARK [2][-]{subsection.4.1.2}{4.1.2 Goal}{section.4.1}% 23
-\BOOKMARK [1][-]{section.4.2}{4.2 Modules Directly Used in the System for Implementing Thesis}{chapter.4}% 24
-\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Trace File}{section.4.2}% 25
-\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Memory Management Unit}{section.4.2}% 26
-\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 Cache Stats Module}{section.4.2}% 27
-\BOOKMARK [2][-]{subsection.4.2.4}{4.2.4 Tile Local Memory Module}{section.4.2}% 28
-\BOOKMARK [2][-]{subsection.4.2.5}{4.2.5 Central Stats Module}{section.4.2}% 29
-\BOOKMARK [1][-]{section.4.3}{4.3 System Design}{chapter.4}% 30
-\BOOKMARK [2][-]{subsection.4.3.1}{4.3.1 Local and Remote Accesses to a TLM Block}{section.4.3}% 31
-\BOOKMARK [2][-]{subsection.4.3.2}{4.3.2 Free Address Space in TLM}{section.4.3}% 32
-\BOOKMARK [2][-]{subsection.4.3.3}{4.3.3 Triggering Migrations}{section.4.3}% 33
-\BOOKMARK [1][-]{section.4.4}{4.4 Usability Improvement}{chapter.4}% 34
-\BOOKMARK [1][-]{section.4.5}{4.5 Limitations}{chapter.4}% 35
+\BOOKMARK [0][-]{chapter.3}{3 Concept and System Architecture}{}% 17
+\BOOKMARK [1][-]{section.3.1}{3.1 Concept}{chapter.3}% 18
+\BOOKMARK [2][-]{subsection.3.1.1}{3.1.1 Tile Local Memory}{section.3.1}% 19
+\BOOKMARK [2][-]{subsection.3.1.2}{3.1.2 Goal}{section.3.1}% 20
+\BOOKMARK [1][-]{section.3.2}{3.2 Modules Directly Used in the System for Implementing Thesis}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.2.1}{3.2.1 Trace File}{section.3.2}% 22
+\BOOKMARK [2][-]{subsection.3.2.2}{3.2.2 Memory Management Unit}{section.3.2}% 23
+\BOOKMARK [2][-]{subsection.3.2.3}{3.2.3 Cache Stats Module}{section.3.2}% 24
+\BOOKMARK [2][-]{subsection.3.2.4}{3.2.4 Tile Local Memory Module}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.5}{3.2.5 Central Stats Module}{section.3.2}% 26
+\BOOKMARK [1][-]{section.3.3}{3.3 System Design}{chapter.3}% 27
+\BOOKMARK [0][-]{chapter.4}{4 Implementation}{}% 28
+\BOOKMARK [1][-]{section.4.1}{4.1 Tools and Technologies}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.2}{4.2 Dynamic Data Migration Process Mechanism}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{4.2.1 Local and Remote Accesses to a TLM Block}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{4.2.2 Free Address Space in TLM}{section.4.2}% 32
+\BOOKMARK [2][-]{subsection.4.2.3}{4.2.3 Triggering Migrations}{section.4.2}% 33
+\BOOKMARK [1][-]{section.4.3}{4.3 Usability Improvement}{chapter.4}% 34
+\BOOKMARK [1][-]{section.4.4}{4.4 Limitations}{chapter.4}% 35
 \BOOKMARK [0][-]{chapter.5}{5 Experimental Setup}{}% 36
-\BOOKMARK [1][-]{section.5.1}{5.1 The gem5 Simulator and Trace Files}{chapter.5}% 37
-\BOOKMARK [1][-]{section.5.2}{5.2 Platform Architect MCO}{chapter.5}% 38
-\BOOKMARK [1][-]{section.5.3}{5.3 Writing Shell Script}{chapter.5}% 39
-\BOOKMARK [1][-]{section.5.4}{5.4 Nice Command}{chapter.5}% 40
-\BOOKMARK [1][-]{section.5.5}{5.5 Output Files}{chapter.5}% 41
-\BOOKMARK [2][-]{subsection.5.5.1}{5.5.1 Screen Log File}{section.5.5}% 42
-\BOOKMARK [2][-]{subsection.5.5.2}{5.5.2 Time Log File}{section.5.5}% 43
-\BOOKMARK [1][-]{section.5.6}{5.6 System Specifications}{chapter.5}% 44
-\BOOKMARK [0][-]{chapter.6}{6 Evaluation}{}% 45
-\BOOKMARK [0][-]{chapter.7}{7 Conclusion and Outlook}{}% 46
-\BOOKMARK [0][-]{chapter*.15}{Bibliography}{}% 47
+\BOOKMARK [1][-]{section.5.1}{5.1 Size of Modules}{chapter.5}% 37
+\BOOKMARK [1][-]{section.5.2}{5.2 Properties of Modules}{chapter.5}% 38
+\BOOKMARK [1][-]{section.5.3}{5.3 The gem5 Simulator and Trace Files}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.4}{5.4 Platform Architect MCO}{chapter.5}% 40
+\BOOKMARK [1][-]{section.5.5}{5.5 Writing Shell Script}{chapter.5}% 41
+\BOOKMARK [1][-]{section.5.6}{5.6 Nice Command}{chapter.5}% 42
+\BOOKMARK [1][-]{section.5.7}{5.7 Output Files}{chapter.5}% 43
+\BOOKMARK [2][-]{subsection.5.7.1}{5.7.1 Screen Log File}{section.5.7}% 44
+\BOOKMARK [2][-]{subsection.5.7.2}{5.7.2 Time Log File}{section.5.7}% 45
+\BOOKMARK [1][-]{section.5.8}{5.8 System Specifications}{chapter.5}% 46
+\BOOKMARK [0][-]{chapter.6}{6 Evaluation}{}% 47
+\BOOKMARK [1][-]{section.6.1}{6.1 Dynamic Data Migration vs First Touch and Most Accessed}{chapter.6}% 48
+\BOOKMARK [2][-]{subsection.6.1.1}{6.1.1 Blackscholes}{section.6.1}% 49
+\BOOKMARK [2][-]{subsection.6.1.2}{6.1.2 Swaptions}{section.6.1}% 50
+\BOOKMARK [2][-]{subsection.6.1.3}{6.1.3 Fluidanimate}{section.6.1}% 51
+\BOOKMARK [2][-]{subsection.6.1.4}{6.1.4 Canneal}{section.6.1}% 52
+\BOOKMARK [1][-]{section.6.2}{6.2 Dynamic Data Placement for Different TLM Block Size}{chapter.6}% 53
+\BOOKMARK [1][-]{section.6.3}{6.3 Dynamic Data Placement for Different Time Interval \(Tinterval\)}{chapter.6}% 54
+\BOOKMARK [0][-]{chapter.7}{7 Conclusion and Outlook}{}% 55
+\BOOKMARK [1][-]{section.7.1}{7.1 Summary}{chapter.7}% 56
+\BOOKMARK [1][-]{section.7.2}{7.2 Future Work}{chapter.7}% 57
+\BOOKMARK [0][-]{chapter*.14}{Bibliography}{}% 58

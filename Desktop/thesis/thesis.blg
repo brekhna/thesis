@@ -3,7 +3,7 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis.bib
-I was expecting a `,' or a `}'---line 105 of file thesis.bib
+I was expecting a `,' or a `}'---line 113 of file thesis.bib
  :  title="Welcome to the pages of the TCRC 89 "
  :                                              Invasive Computing" (InvasIC)",
 I'm skipping whatever remains of this entry
@@ -52,6 +52,7 @@ Name 1 in "C. Kim, D. Burger, and S. W. Keckler" has a comma at the end for entr
 while executing---line 1090 of file plain.bst
 Warning--empty booktitle in cacheDataPlacement1
 Warning--empty booktitle in tlm
+Warning--empty booktitle in tlb
 Warning--empty booktitle in threadPlacement4
 Name 1 in "E. Rodrigues, F. Madruga, P. Navaux, and J. Panetta" has a comma at the end for entry threadPlacement1
 while executing---line 1090 of file plain.bst
@@ -100,46 +101,47 @@ while executing---line 1090 of file plain.bst
 Warning--empty booktitle in gem5
 Warning--empty booktitle in cacheDataPlacement6
 Warning--empty booktitle in dynamicPageMigration
+Warning--empty booktitle in dynamicpMigration
 Warning--empty booktitle in cacheDataPlacement3
-You've used 20 entries,
+You've used 22 entries,
             2118 wiz_defined-function locations,
-            603 strings with 7772 characters,
-and the built_in function-call counts, 5280 in all, are:
-= -- 481
-> -- 224
-< -- 3
-+ -- 91
-- -- 68
-* -- 229
-:= -- 860
-add.period$ -- 58
-call.type$ -- 20
-change.case$ -- 94
+            616 strings with 8130 characters,
+and the built_in function-call counts, 6147 in all, are:
+= -- 573
+> -- 250
+< -- 6
++ -- 101
+- -- 76
+* -- 276
+:= -- 982
+add.period$ -- 66
+call.type$ -- 22
+change.case$ -- 104
 chr.to.int$ -- 0
-cite$ -- 34
-duplicate$ -- 244
-empty$ -- 512
-format.name$ -- 68
-if$ -- 1157
+cite$ -- 38
+duplicate$ -- 286
+empty$ -- 587
+format.name$ -- 76
+if$ -- 1365
 int.to.chr$ -- 0
-int.to.str$ -- 20
-missing$ -- 14
-newline$ -- 99
-num.names$ -- 40
-pop$ -- 175
+int.to.str$ -- 22
+missing$ -- 16
+newline$ -- 109
+num.names$ -- 44
+pop$ -- 190
 preamble$ -- 1
-purify$ -- 74
+purify$ -- 82
 quote$ -- 0
-skip$ -- 188
+skip$ -- 226
 stack$ -- 0
-substring$ -- 129
-swap$ -- 41
-text.length$ -- 3
+substring$ -- 187
+swap$ -- 60
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 80
-warning$ -- 14
-while$ -- 43
-width$ -- 22
-write$ -- 194
+type$ -- 88
+warning$ -- 16
+while$ -- 51
+width$ -- 24
+write$ -- 217
 (There were 41 error messages)
