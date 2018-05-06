@@ -4,9 +4,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Table showing the size of the modules}}{31}{table.4.1}
+\contentsline {table}{\numberline {4.1}{\ignorespaces Table showing the size of the modules}}{34}{table.4.1}
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {5.1}{\ignorespaces Table showing Size of TLM, L1 Cache and L2 Cache}}{32}{table.5.1}
+\contentsline {table}{\numberline {5.1}{\ignorespaces TLM Configuration}}{35}{table.5.1}
+\contentsline {table}{\numberline {5.2}{\ignorespaces Address Range of each TLM}}{35}{table.5.2}
+\contentsline {table}{\numberline {5.3}{\ignorespaces Data Cache Configuration}}{36}{table.5.3}
+\contentsline {table}{\numberline {5.4}{\ignorespaces DDR Configuration}}{36}{table.5.4}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

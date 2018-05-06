@@ -1,5 +1,9 @@
 \begin{thebibliography}{10}
 
+\bibitem{systemc}
+Systemc.
+\newblock \url{http://accellera.org}.
+
 \bibitem{lispaper}
 Thomas~Wild Akshay~Srivatsa, Sven~Rheindt and Andreas Herkersdorf.
 \newblock Region based cache coherence for tiled mpsocs.
@@ -106,6 +110,11 @@ F.~Hijaz Q.~Shi and O.~Khan.
 \bibitem{iNetworkAdapter}
 Sven Rheindt.
 \newblock inetworkadapter documenation, 2016.
+
+\bibitem{akshay}
+Srivatsa~Akshay Sateesh.
+\newblock High level modelling and simulation of region based coherence in
+  multi-core systems, November 2015.
 
 \bibitem{dynamicPageMigration}
 Christoph Scheurich and Michel Dubois.

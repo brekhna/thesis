@@ -85,15 +85,17 @@ In this chapter the necessary background information is introduced in order to u
 \\
 \section{Basic Concepts}
 \subsection{Tile}
-Figure \ref{fig:tile} shows a single tile. You can see in the figure that it composes of four CPU cores, L1 caches for every core, L2 cache which is shared between all the cores and a Tile Local Memory (TLM) which is also shared by all the cores. It also has a Bus which connects the cores to the L2 Cache and the TLM. Each component of the tile is explained below.\\
+Figure \ref{fig:tile} shows a single tile. You can see in the figure that it composes of four cores, L1 caches for every core, L2 cache which is shared between all the cores and a Tile Local Memory (TLM) which is also shared by all the cores. It also has a Bus which connects the cores to the L2 Cache and the TLM. Each component of the tile is explained below.\\
 \par
-\textbf{Core}: A CPU Core is the basic processing unit that receives instructions (from the user or application) and performs calculations based on those instructions. A processor can have a single core or multiple cores. \\ 
+\textbf{Core}: A Core is the basic processing unit that receives instructions (from the user or application) and performs calculations based on those instructions. A processor can have a single core or multiple cores. \\ 
 \par
-\textbf{TLM}: TLM stands for Tile Local Memory. Each tile has its own TLM which is shared among all the CPU Cores of the tile~\cite{ankitThesis},~\cite{iNetworkAdapter}. This memory is cachable by the L1 caches of all the CPU Cores within the tile that it sits on and by the L2 cache of any other tile. The TLM from one tile can be accessed by the core of another tile.\\
+\textbf{TLM}: TLM stands for Tile Local Memory. Each tile has its own TLM which is shared among all the Cores of the tile~\cite{ankitThesis},~\cite{iNetworkAdapter}. This memory is cachable by the L1 caches of all the Cores within the tile that it sits on and by the L2 cache of any other tile. The TLM from one tile can be accessed by the core of another tile.\\
 \par
-\textbf{Bus}: The bus connects the CPU Core to the L2 Cache and the TLM. Also, when another tile has to be accessed the request goes through the bus to the network adapter.\\
+\textbf{Bus}: The bus connects the Core to the L2 Cache and the TLM. Also, when another tile has to be accessed the request goes through the bus to the network adapter.\\
 \par
 \textbf{Network Adapter (NA)}: The network adapter provides the interface between a tile and the network connection which is providing a connection to other tiles and the DDR.\\
+\par
+\textbf{Load Store Unit (LSU)}: The Load-Store Unit (LSU) is a communication path between different modules. It's main function is to receive, process and retransmit different requests from the modules that are connected to it.
 \par
 \textbf{Cache}: Cache is a temporary storage space which is made up of high-speed static RAM (sRAM). It stores information which has been recently accessed so that it can be quickly accessed at a later time. It operates on the principle that most programs access information or data over and over again so by having data in the SRAM the CPU does not access the slow DDR/DRAM again and again. A cache hit occurs when the processor core accesses data that is already present in the cache whereas a cache miss occurs when the data is not present in the cache and has to be fetched from the TLM or the main memory to the cache. In our architecture we have two levels of caches:
 \begin{itemize}
@@ -151,9 +153,9 @@ The authors compared a parameter called \textit{hop} for dynamic page migration 
 \chapter{Concept and System Architecture}
 This chapter will discuss the concept of our dynamic data migration scheme and will relate it to the state-of-the art discussed in Chapter 2. It will further explain the individual modules used in developing our scheme and will illustrate our system design.
 \section{Concept}
-In~\cite{dynamicPageMigration}, the authors have implemented a dynamic page migration scheme for a multiprocessor architecture which has mesh connection with a distributed-shared global memory as shown in figure \ref{fig:mesh}. We differ from their scheme in the sense that they have done data migration at the granularity of pages whereas we want to do it at the granularity of a TLM Block which can vary in size from one cache line to multiple cache lines. Also, our architecture differs from theirs as we have tiles (not processors) connected in a Network on Chip (NoC) as shown in figure \ref{fig:processor}.\\
+The basic idea is to bring data and tasks close together in order to save execution time used in transferring data back and forth. In~\cite{dynamicPageMigration}, the authors have implemented a dynamic page migration scheme for a multiprocessor architecture which has mesh connection with a distributed-shared global memory as shown in figure \ref{fig:mesh}. We differ from their scheme in the sense that they have done data migration at the granularity of pages whereas we want to do it at the granularity of a TLM Block which can vary in size from one cache line to multiple cache lines. Also, our architecture differs from theirs as we have tiles (not processors) connected in a Network on Chip (NoC) as shown in figure \ref{fig:processor}.\\
 \\
-In ~\cite{cacheDataPlacement1},~\cite{cacheDataPlacement3} and~\cite{cacheDataPlacement4} the authors have done dynamic data placement for the last level cache (LLC) in order to reduce the distance between the data blocks and the core requesting it. We also want to bring data and the core requesting the data close together but we dynamically migrate the distributed shared tile local memory (TLM) instead of the LLC. For that we need to monitor the accesses made to the TLM of every tile in order to decide if migration is needed or not. \\
+In ~\cite{cacheDataPlacement1},~\cite{cacheDataPlacement3} and~\cite{cacheDataPlacement4} the authors have done dynamic data placement for the last level cache (LLC) in order to reduce the distance between the data blocks and the core requesting it. We also want to bring data and the core requesting the data close together but we dynamically migrate the distributed shared tile local memory (TLM) instead of the LLC. For that we need to monitor the accesses made to the TLM of every tile in order to decide if migration is needed or not. The next section will explain how we monitor and categorize the accesses made to the TLM. \\
 \begin{figure}
   \includegraphics[width=\linewidth]{processor.png}
   \centering
@@ -163,9 +165,9 @@ In ~\cite{cacheDataPlacement1},~\cite{cacheDataPlacement3} and~\cite{cacheDataPl
 \subsection{Tile Local Memory}
 The Tile Local Memory (TLM) is a distributed-shared memory in the processor architecture. By distributed-shared we mean that it is distributed among all the tiles and can be accessed by core's placed remotely on neighboring or far away tiles. 
 \subsubsection{Types of Accesses to TLM}
-As mentioned in the previous chapter, figure \ref{fig:tile} depicts the inside of one tile. We have multiple such tiles in our processor hence the name multi-tile multi-core processor architecture. We have two kinds of accesses to the TLM:\\
+As mentioned in the previous chapter, figure \ref{fig:tile} depicts the inside of one tile. We have multiple such tiles in our processor as shown in figure \ref{fig:processor} hence the name multi-tile multi-core processor architecture. A TLM can have two kind of accesses to its data blocks:\\
 \par
-\textbf{Local TLM Accesses}: Figure \ref{fig:localaccesses} depicts a scenario where a core is accessing its own tile's TLM which makes it a local TLM access. In this scenario the data transfer is happening over the bus inside the tile and there is no traffic going outside the tile through the network adapter. This takes less time as data is placed close to the core that uses it. \\
+\textbf{Local TLM Accesses}: Figure \ref{fig:localaccesses} depicts a scenario where a core is accessing its own tile's local memory which makes it a local TLM access. In this scenario the data transfer is happening over the bus inside the tile and there is no traffic going outside the tile through the network adapter. This takes less time as data is placed close to the core that uses it. \\
 \begin{figure}
   \includegraphics[width=\linewidth]{localaccesses.png}
   \centering
@@ -173,7 +175,7 @@ As mentioned in the previous chapter, figure \ref{fig:tile} depicts the inside o
   \label{fig:localaccesses}
 \end{figure}
 \par
-\textbf{Remote TLM Accesses}: Figure \ref{fig:remoteaccesses} depicts a scenario where a core is accessing another tiles TLM which makes it a remote TLM access. In this scenario the data transfer is happening over the bus, through the network adapter and the NoC Router and global traffic is generated. This takes more time since data is placed far away from the core that uses it. 
+\textbf{Remote TLM Accesses}: Figure \ref{fig:remoteaccesses} depicts a scenario where a core is accessing another tile's local memory which makes it a remote TLM access. In this scenario the data transfer is happening over the bus, through the LSU and network adapter and then the NoC Router routes it in the direction of the destination tile. This global access takes more time since data is placed far away from the core that uses it. 
 \begin{figure}
   \includegraphics[width=\linewidth]{remoteaccesses.png}
   \centering
@@ -181,28 +183,64 @@ As mentioned in the previous chapter, figure \ref{fig:tile} depicts the inside o
   \label{fig:remoteaccesses}
 \end{figure}
 \subsection{Goal}
-We want to reduce the number of remote TLM accesses since it takes more time to fetch data from a TLM which is placed on another tile (as the request has to go on the bus through the network adapter and over the NoC Router in order to go to the other tile) and less time to fetch data which is on a core's own tile's TLM.  
+We want to reduce the number of remote TLM accesses since it takes more time to fetch data from a TLM which is placed on another tile (as the request has to go on the bus through the network adapter and over the NoC Router in order to go to the other tile) and less time to fetch data which is on a core's own TLM.  
 \section{Modules Directly Used in the System for Implementing Thesis}
 \subsection{Trace File}
-As we use a trace based processor model, we first generate and save the traces using the gem5 simulator~\cite{gem5}. We build gem5 for Alpha ISI and use the modified Linux kernel and disk image from~\cite{trace} to execute benchmarks in full system mode~\cite{lispaper}. This is basically the input to the simulator for which we want to find out the execution time. 
+As we use a trace based processor model, we first generate and save the traces in a file for different benchmarks using the gem5 simulator~\cite{gem5}. A trace file basically contains a set of read and write commands which is given to the simulator~\cite{akshay}. The commands are decoded by the processor (Read or Write) and are send to the rest of the modules for execution. A general trace in a trace file is depicted below:
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{c | c | c | c } 
+ \textbf{Time-stamp} &  \textbf{Core Number}  &  \textbf{RD/WR} &  \textbf{Address} \\ 
+\end{tabular}
+\end{center}
+\end{table}
+\begin{itemize}
+  \item \textbf{Time-stamp}: The time in nanoseconds at which the trace is executed.
+  \item \textbf{Core Number}: The core number which executed the trace.
+  \item \textbf{RD/WR}: This value is set to 1 for a read command and 2 for a write command. 
+  \item \textbf{Address}: The address to read data from or write data at.
+\end{itemize}
+Below are examples of traces for a read and write command followed by their explanations:
+\begin{center}
+ \begin{tabular}{c | c | c | c } 
+ \textbf{2000} &  \textbf{2}  &  \textbf{1} &  \textbf{41012345} \\ 
+\end{tabular}
+\end{center}
+At time 2000 ns, core 2 reads data from address 0x41012345.
+\begin{center}
+ \begin{tabular}{c | c | c | c } 
+ \textbf{3500} &  \textbf{7}  &  \textbf{2} &  \textbf{41000FFF} \\ 
+\end{tabular}
+\end{center}
+At time 3500 ns, core 7 writes data to address 0x41012345.\\
+\\
+It is important to note here that the traces of all the cores are present in one trace file. This means that all the cores access the same trace file as shown in figure~\ref{fig:traceFile}. Each core needs to decode and execute the traces which matches only with its core number.
 \subsection{Memory Management Unit}
-The Memory Management Unit (MMU) sits between the trace file and the CPU cores as shown in Figure \ref{fig:traceFile}. This unit is basically a table which contains the address translation of all the addresses from the DDR to the TLM. At start all TLM's are empty which means every instruction has to access data from the DDR. The memory management unit is updated if the DDR is accessed or if a migration triggered by the Central Stats Module takes place.
+The Memory Management Unit (MMU) sits between the trace file and the Cores as shown in Figure \ref{fig:traceFile}. This unit is basically a vector address table which contains the address translation of all the addresses from the DDR to the TLM. At start all TLM's are empty which means every instruction has to access data from the DDR. The memory management unit's vector address table is updated if the DDR is accessed or if a migration triggered by the Central Stats Module takes place.
+Below is a example of a vector address table with two entries.\\
+\begin{center}
+ \begin{tabular}{c | c } 
+ \textbf{31012345} &  \textbf{44012345} \\ 
+ \textbf{41000FFF} &  \textbf{40000FFF} \\ 
+\end{tabular}
+\end{center}
+The values signify that the data at address 0x31012345 has been migrated to the address 0x44012345. Similarly, the data at address 0x41000FFF has been migrated to the address 0x40000FFF.
 \subsection{Cache Stats Module}
-The Cache Stats module is connected to the L1 and L2 Caches and is continuously getting updates from them regarding cache hits and misses per cache line. This module is responsible for calculating the cache hits and misses per TLM Block. It also calculates the number of local and remote accesses for every TLM block. Cache Stats module also plays a important role in carrying out the data migration command as the migration command has to go through this module. 
+The Cache Stats Module is depicted in figure~\ref{fig:overviewOfSolution}. It is connected to the L1 and L2 Caches and is continuously getting updates from them regarding cache hits and misses per cache line. This module is responsible for calculating the cache hits and misses per TLM Block which can vary in size from 1 cache line to multiple cache lines. It also calculates the number of local and remote accesses for every TLM Block. Cache Stats Module also plays a important role in carrying out the data migration command as the migration command has to go through this module. 
 \subsection{Tile Local Memory Module}
 This is the Tile's Local Memory and has been explained in detail in chapter 2. This module has the functionality to observe itself and calculate whether it is empty, is full or has free space. If it has free space then it can find the starting and ending address of all the free spaces. 
 \subsection{Central Stats Module}
-This is the main central module to whom all the Cache Stats modules and TLM Mem modules report to every given time interval (T$_{interval}$). This module is responsible of finding whether migration shall take place or not. It also send out invalidation commands for the data that has to be moved in case if migration is triggered. 
+This is the main central module to whom all the Cache Stats Modules and TLM Modules report to every given time interval (T$_{interval}$). This module is responsible for evaluating the data and determining whether migration shall take place or not.
 \section{System Design}
-Figure~\ref{fig:overviewOfSolution} shows the overview of the modules involved in dynamic data migration scheme. Every cache module is connected to a Cache Stats module. All these Cache Stats modules and the TLM Mem modules report to the Central Stats Module at every given time interval (T$_{interval}$). The Central Stats Module does evaluation of this data and triggers migration if needed. \\
+Figure~\ref{fig:overviewOfSolution} shows the overview of the modules involved in dynamic data migration scheme. Every cache module is connected to a Cache Stats Module. All these Cache Stats Modules and the TLM Modules report to the Central Stats Module at every given time interval (T$_{interval}$). The Central Stats Module does evaluation of this data and triggers migration if needed. \\
 \begin{figure}
   \includegraphics[width=\linewidth]{moduleconnections.png}
   \centering
-  \caption{Figure illustrating the overview of the modules used.}
+  \caption{Overview and connections of the modules used.}
   \label{fig:overviewOfSolution}
 \end{figure}
 \\
-Also, there is a memory management unit which sits between the trace file and the CPU cores as shown in Figure \ref{fig:traceFile}. Every trace from the trace file first passes through the memory management unit for address translation and then it is executed.\\
+Also, there is a Memory Management Unit which sits between the trace file and the Cores as shown in Figure \ref{fig:traceFile}. Every trace from the trace file first passes through the Memory Management Unit for address translation and then it is executed.\\
 \begin{figure}[h!]
   \includegraphics[width=0.7\linewidth]{traceFile.png}
   \centering
@@ -211,11 +249,28 @@ Also, there is a memory management unit which sits between the trace file and th
 \end{figure}
 \chapter{Implementation}
 This chapter will talk about the technologies used to develop the system. It will further discuss the detailed approach of developing the dynamic data migration scheme. We further talk in detail about how the parameters responsible for data migration are calculated and the limitations that exists in the simulator. \\
-\section{Tools and Technologies}
-The simulator is created in Synopsys Platform Architect MCO. Synopsys Platform Architect is a SystemC TLM standards-based graphical environment for capturing, configuring, simulating, and analyzing the system-level performance and power of multi-core systems and next generation SoC architectures~\cite{synopsys}.
-The system was programmed in SystemC TLM-2.0 as it is a system-level modeling language. It provides communication-oriented, event-driven simulation interference. TLM is transaction-level modeling in which the details of communication among modules are separated from the details of the implementation of the functional modules~\cite{tlm}. TLM-2.0 focuses on memory mapped bus modeling which is fast and accurate.\\
+\section{Language and Tools}
+\subsection{SystemC}
+The simulator is modeled using SystemC~\cite{systemc}. SystemC is basically classified as a set of C++ classes rather than a language. It provides an event-driven simulation interface which enables the user to simulate concurrent processes and do system level modeling. One of the major concept used in SystemC is \textit{Transaction Level Modeling (TLM)}. In TLM the details of communication among modules are separated from the details of the implementation of the functional modules~\cite{tlm}. It provides defined rules for how different modules (namely known as \textit{Initiator} and \textit{Target}) should communicate with each other. \\
+\\
+The simulator is modeled using the TLM-2.0 standard protocol~\cite{systemc}. This standard supports two types of non-blocking communication i.e \textit{TLM-2.0 Two Phase Protocol} and \textit{TLM-2.0 Four Phase Protocol}~\cite{akshay}. Non-blocking communication means that function implementations never wait for the response from the target.
+\subsection{Synopsys Platform Architect}
+The simulator is powered by Synopsys Platform Architect Tool~\cite{synopsys}. Synopsys Platform Architect is a SystemC TLM standards-based graphical environment which can be used as a alternative to a SystemC top level module for binding the individual modules. With this tool the individual modules just need to be imported and connected together graphically. This makes the connection of multiple modules with multiple initiator-target socket pairs easier to design and debug.\\
+\\ Figure~\ref{fig:insidetile} represents the internal view of the tile in Synopsys Platform Architect Tool. It contains four cores, each core having its own private L1 cache. The L1 caches are connected together by a bus. Figure~\ref{fig:processorsynopsys} illustrates how the tiles are connected together in the processor architecture. The detailed explanation of the architecture design has been given in Chapter 3. It can be seen from figure~\ref{fig:insidetile} and figure~\ref{fig:processorsynopsys} that the graphical view of the tool helps in visualizing complex systems and makes the design phase easier which in turn makes testing and debugging easier.
+\begin{figure}
+  \includegraphics[width=\linewidth]{insidetile.png}
+  \centering
+  \caption{Intra-Tile Design View in Synopsys Platform Architect}
+  \label{fig:insidetile}
+\end{figure}
+\begin{figure}
+  \includegraphics[width=\linewidth]{processorsynopsys.png}
+  \centering
+  \caption{Inter-Tile Design View in Synopsys Platform Architect}
+  \label{fig:processorsynopsys}
+\end{figure}
 \section{Dynamic Data Migration Process Mechanism}
-Figure \ref{fig:approachOfSolution} shows the messages exchanged between the Cache Stats, TLM Mem and Central Stats Module. At every given time interval (T$_{interval}$) the Cache Stats module sends the number of local and remote accesses of all the TLM blocks to the Central Stats module and the TLM Mem module sends its free address space to the Central Stats module. The TLM block size is equal to a variable number of cache lines that is determined at compile time by the user. The Central Stats module then evaluates this received data and sends a migrate command to the L2 Cache Stats module if it thinks that migration is needed. \\
+Figure \ref{fig:approachOfSolution} shows the messages exchanged between the Cache Stats Module, TLM Module and Central Stats Module. At every given time interval (T$_{interval}$) the Cache Stats Module sends the number of local and remote accesses of all the TLM blocks to the Central Stats Module and the TLM Module sends its free address space to the Central Stats Module. The TLM block size is equal to a variable number of cache lines that is determined at compile time by the user. The Central Stats module then evaluates this received data and sends a migrate command to the L2 Cache Stats module if it thinks that migration is needed. \\
 \\
 The next subsections will explain how the messages exchanged between the modules are calculated. 
 \begin{figure}
@@ -234,7 +289,7 @@ Figure \ref{fig:remoteLocalAccess} shows the calculation behind the metric of lo
 \end{figure}
 
 \subsection{Free Address Space in TLM}
-Figure \ref{fig:freeSpaceTLM} shows how we find the free address space in the TLM MEM module. For calculating the free address space in the TLM we can have three scenarios. 
+Figure \ref{fig:freeSpaceTLM} shows how we find the free address space in the TLM Module. For calculating the free address space in the TLM we can have three scenarios. 
 \begin{figure}
   \includegraphics[width=\linewidth]{freespace.png}
   \centering
@@ -309,45 +364,112 @@ The memory needed for these modules also add quite an overhead to the system.
   \hline
 \end{tabular}
  \caption{Table showing the size of the modules}
- \label{fig:modules}
+ \label{table:modules}
 \end{center}
 \end{table}
-\\
+\\ 
 \\
 complexity of the algorithm
 \chapter{Experimental Setup}
 This chapter will lay out the programs that assisted in running the simulations. Moreover, it will also illustrate the specifications of the machine that were utilized to run the experiments.
-\section{Size of Modules}
-Table~\ref{table:Size} shows the size of the Tile Local Memory, L1 Caches and L2 Caches used in the simulations. 
+\section{Configuration of Component Modules}
+This section illustrates the configuration properties of the modules in the simulations used for the result gathering.
+\subsection{Configuration of TLM}
+Table~\ref{table:Size} shows the configuration of the tile local memory used in the simulations. The address bits are 24 which means the address of each TLM spans from the values shown in table~\ref{table:addressTLM}
 \begin{table}[h!]
 \begin{center}
- \begin{tabular}{||c c c c||} 
+ \begin{tabular}{|| c | c ||} 
  \hline
- Module & Size & Memory Usage   & Resource Utilization \\ [0.5 ex] 
+ \ \textbf{Paramater} & \textbf{Value}  \\ [0.5 ex] 
  \hline\hline
- TLM & xx & xxx & xxxx \\ 
+ \ \ \ \ \ \ \ \ Address Bits \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 24 \ \ \ \ \ \ \ \ \\ 
  \hline
- L1 Cache & xx & xxx & xxxx \\
+ \ \ \ \ \ \ \ \ Data Width\ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 8 \ \ \ \ \ \ \ \ \\
  \hline
- L2 Cache & xx & xxx & xxxx \\
- \hline\hline
- Total  & xx & xxx & xxxx \\
-  \hline
+ \ \ \ \ \ \ \ \ Size in MB \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 16 \ \ \ \ \ \ \ \  \\
+ \hline
 \end{tabular}
- \caption{Table showing Size of TLM, L1 Cache and L2 Cache}
+ \caption{TLM Configuration}
  \label{table:Size}
 \end{center}
 \end{table}
-\section{Properties of Modules}
-\section{The gem5 Simulator and Trace Files}
-The gem5 simulator~\cite{gem5} is a modular platform for computer system architecture research, encompassing system-level architecture as well as processor micro-architecture. We use the gem5 full system simulator to generate the trace file for the simulations. For all our simulations, we make use of workloads from the PARSEC Benchmark Suite~\cite{lispaper}. We choose four parallel workloads covering three application domains and generate their trace files:
+
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c ||} 
+ \hline
+ \ \textbf{TLM Number} & \textbf{Address Range}  \\ [0.5 ex] 
+ \hline\hline
+ \ \ \ \ \ \ \ \ TLM 0 \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 0x40000000 - 0x40FFFFFF \ \ \ \ \ \ \ \ \\ 
+ \hline
+ \ \ \ \ \ \ \ \ TLM 1\ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 0x41000000 - 0x41FFFFFF  \ \ \ \ \ \ \ \ \\
+ \hline
+ \ \ \ \ \ \ \ \ TLM 2 \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 0x42000000 - 0x42FFFFFF  \ \ \ \ \ \ \ \  \\
+ \hline
+  \ \ \ \ \ \ \ \ TLM 3 \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 0x43000000 - 0x43FFFFFF  \ \ \ \ \ \ \ \  \\
+  \hline
+\end{tabular}
+ \caption{Address Range of each TLM}
+ \label{table:addressTLM}
+\end{center}
+\end{table}
+
+\subsection{Configuration of Data Caches}
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c ||} 
+ \hline
+ \ \textbf{Parameter} & \textbf{Value}  \\ [0.5 ex] 
+ \hline\hline
+  Data Cache Line Size in Number of Words &  4  \\
+  \hline
+  Number of Data Cache Ways &  2  \\
+  \hline
+  Data Cache Replacement Policy  & Least Recently Replaced  \\ 
+ \hline
+  Write Policy  &  Write-through  \\
+  \hline
+\end{tabular}
+ \caption{Data Cache Configuration}
+ \label{table:properties}
+\end{center}
+\end{table}
+
+\subsection{Configuration of DDR}
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c ||} 
+ \hline
+ \ \textbf{Paramater} & \textbf{Value}  \\ [0.5 ex] 
+ \hline\hline
+ \ \ \ \ \ \ \ \ Address Bits \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 64 \ \ \ \ \ \ \ \ \\ 
+ \hline
+ \ \ \ \ \ \ \ \ Data Width\ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ xx \ \ \ \ \ \ \ \ \\
+ \hline
+ \ \ \ \ \ \ \ \ Size in GB \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \  \\
+ \hline
+ \ \ \ \ \ \ \ \ Address Range \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 0x00000000 - 0x3FFFFFFF \ \ \ \ \ \ \ \  \\
+  \hline
+\end{tabular}
+ \caption{DDR Configuration}
+ \label{table:DDR}
+\end{center}
+\end{table}
+\section{The Gem5 Simulator}
+The Gem5 simulator~\cite{gem5},~\cite{akshay} is a modular event driven platform for computer system architecture. It is used for research and can be used to simulate different computer architectures. It can be operated in two modes:
 \begin{itemize}
-\item Blackscholes, Swaptions (Financial Analysis)
+\item System Call Emulation (SE) Mode: In this mode, the user only needs to specify the binary file to be simulated.
+\item Full System (FS) Mode: In this mode, the benchmarks are booted on a dedicated operating system with proper scheduling support. 
+\end{itemize}
+ We use the Gem5 in Full System simulator mode in order to generate the trace file for our simulations. This mode results in higher accuracy than the SE mode.
+\section{Benchmarks}
+To evaluate the effectiveness of dynamic data migration, we need to choose some parallel benchmarks to run on the simulator. These benchmarks have to be executed with the Gem5 simulator in-order to have the memory access traces in a trace file which is then given as input to the simulator. For all our simulations, we make use of workloads from the PARSEC Benchmark Suite~\cite{lispaper},~\cite{trace}. We choose four parallel workloads covering three application domains and generate their trace files. The four workloads are: 
+\begin{itemize}
+\item Blackscholes (Financial Analysis)
+\item Swaptions (Financial Analysis)
 \item Canneal (Engineering)
 \item Fluidanimate (Animation)
 \end{itemize}
-\section{Platform Architect MCO}
-The simulator is designed in Synopsys Platform Architect MCO~\cite{synopsys}. It gives a graphical environment for configuring and analyzing the system. 
 \section{Writing Shell Script}
 A shell script for running the migration command is written so that multiple simulations can run in parallel without the need to recompile the simulator. The maximum number of parallel simulations that we could run was four. This saved us considerable time in gathering results. 
 \section{\textit{Nice} Command}

@@ -4,6 +4,13 @@
     year      = "1989",
     publisher = "IEEE Transactions on Computers",
 }
+@conference{dynamicpMigration,
+    author    = "Christoph Scheurich and Michel Dubois",
+    title     = "Dynamic Memory Allocation in a mesh-connected multiprocessor",
+    pages="302-312",
+    year      = "Jan. 1987",
+    publisher = "Proc. the 20th Hawaii Int. Conf. Syst. Sci.",
+}
 @misc{iNetworkAdapter,
 	author ="Sven Rheindt",
 	title ="iNetworkadapter Documenation",
@@ -14,7 +21,7 @@
 	author ="Ankit Kalbande",
 	title ="Hardware support for configurable cache-coherency in tiled many-core architectures",
 	year = "2015",
-        publisher = "Master's Thesis in Integrated Systems",
+        publisher = "Master's Thesis in Integrated Systems, Technical University of Munich",
 }
 @conference{cacheDataPlacement1,
     author    = "C. Kim, D. Burger, and S. W. Keckler",
@@ -106,6 +113,10 @@
 	title="Welcome to the pages of the TCRC 89 "Invasive Computing" (InvasIC)",
 	howpublished={\url{http://invasic.informatik.uni-erlangen.de/en/index.php}},
 }
+@misc{systemc,
+	title="SystemC",
+	howpublished={\url{http://accellera.org}},
+}
 @conference{lispaper,
 	author="Akshay Srivatsa, Sven Rheindt, Thomas Wild and  Andreas Herkersdorf",
 	title="Region Based Cache Coherence for Tiled MPSoCs",
@@ -117,6 +128,12 @@
 	title="Running parsec 2.1 on m5",
 	year="October 2009",
 	publisher="tech. rep., The University of Texas at Austin, Department of Computer Science",
+}
+@misc{akshay,
+	author="Srivatsa Akshay Sateesh",
+	title="High Level Modelling and Simulation of Region based Coherence in Multi-Core Systems",
+	year="November 2015",
+	publisher="Master's Thesis in Institute of Integrated Systems, Technical University of Munich",
 }
 @conference{tlb,
 	author="D. W. Clark and J.S Esner",

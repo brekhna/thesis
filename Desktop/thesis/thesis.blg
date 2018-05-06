@@ -43,6 +43,7 @@ Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, 
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "Nathan Binkert, Bradford Beckmann, Gabriel Black, Steven K. Reinhardt, Ali Saidi, Arkaprava Basu, Joel Hestness, Derek R. Hower,Tushar Krishna, Somayeh Sardashti, Rathijit Sen, Korey Sewell, Muhammad Shoaib, Nilay Vaish, Mark D. Hill and David A. Wood" for entry gem5
 while executing---line 1049 of file plain.bst
+Warning--to sort, need author or key in systemc
 Name 1 in "M. Gebhart, J. Hestness, E. Fatehi, P. Gratz, and S. W. Keckler" has a comma at the end for entry trace
 while executing---line 1049 of file plain.bst
 Too many commas in name 1 of "M. Gebhart, J. Hestness, E. Fatehi, P. Gratz, and S. W. Keckler" for entry trace
@@ -103,45 +104,45 @@ Warning--empty booktitle in cacheDataPlacement6
 Warning--empty booktitle in dynamicPageMigration
 Warning--empty booktitle in dynamicpMigration
 Warning--empty booktitle in cacheDataPlacement3
-You've used 22 entries,
+You've used 24 entries,
             2118 wiz_defined-function locations,
-            616 strings with 8130 characters,
-and the built_in function-call counts, 6147 in all, are:
-= -- 573
-> -- 250
+            624 strings with 8409 characters,
+and the built_in function-call counts, 6503 in all, are:
+= -- 605
+> -- 258
 < -- 6
-+ -- 101
-- -- 76
-* -- 276
-:= -- 982
-add.period$ -- 66
-call.type$ -- 22
-change.case$ -- 104
++ -- 105
+- -- 78
+* -- 287
+:= -- 1031
+add.period$ -- 70
+call.type$ -- 24
+change.case$ -- 111
 chr.to.int$ -- 0
-cite$ -- 38
-duplicate$ -- 286
-empty$ -- 587
-format.name$ -- 76
-if$ -- 1365
+cite$ -- 41
+duplicate$ -- 300
+empty$ -- 632
+format.name$ -- 78
+if$ -- 1448
 int.to.chr$ -- 0
-int.to.str$ -- 22
+int.to.str$ -- 24
 missing$ -- 16
-newline$ -- 109
-num.names$ -- 44
-pop$ -- 190
+newline$ -- 117
+num.names$ -- 46
+pop$ -- 207
 preamble$ -- 1
-purify$ -- 82
+purify$ -- 87
 quote$ -- 0
-skip$ -- 226
+skip$ -- 242
 stack$ -- 0
-substring$ -- 187
-swap$ -- 60
+substring$ -- 197
+swap$ -- 62
 text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 88
-warning$ -- 16
-while$ -- 51
-width$ -- 24
-write$ -- 217
+type$ -- 96
+warning$ -- 17
+while$ -- 53
+width$ -- 26
+write$ -- 232
 (There were 41 error messages)
