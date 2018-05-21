@@ -1,25 +1,27 @@
 \select@language {english}
 \select@language {english}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Invasic Architecture~\cite {iNetworkAdapter}}}{9}{figure.1.1}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Memory Wall~\cite {hennessy}}}{8}{figure.1.1}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Power Wall~\cite {chipmulticore}}}{9}{figure.1.2}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Invasic Architecture~\cite {iNetworkAdapter}}}{11}{figure.1.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces A Tile}}{13}{figure.2.1}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces A mesh-connected distributed global memory system with 16 processors~\cite {dynamicPageMigration}.}}{17}{figure.2.2}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A Tile}}{14}{figure.2.1}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces A mesh-connected distributed global memory system with 16 processors~\cite {dynamicPageMigration}.}}{18}{figure.2.2}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Our architecture.}}{19}{figure.3.1}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces A tile depicting local accesses to a TLM.}}{20}{figure.3.2}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces A tile depicting remote accesses to a TLM.}}{20}{figure.3.3}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Overview and connections of the modules used.}}{23}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Vector Address Table and Trace File Placement}}{24}{figure.3.5}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Our architecture.}}{20}{figure.3.1}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces A tile depicting local accesses to a TLM.}}{21}{figure.3.2}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces A tile depicting remote accesses to a TLM.}}{21}{figure.3.3}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Overview and connections of the modules used.}}{22}{figure.3.4}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Vector Address Table and Trace File Placement}}{23}{figure.3.5}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Intra-Tile Design View in Synopsys Platform Architect}}{26}{figure.4.1}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Inter-Tile Design View in Synopsys Platform Architect}}{27}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Messages exchanged between different modules.}}{27}{figure.4.3}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Flowchart illustrating how to determine a local and remote TLM access.}}{28}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Flowchart depicting how the free address space in the TLM is calculated.}}{29}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Flowchart showing how the free address space in TLM is calculated if the TLM is partially full.}}{30}{figure.4.6}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Process to determine the TLM Block to migrate and the tile to migrate the TLM Block to.}}{31}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Triggering Migration Commands}}{33}{figure.4.8}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Intra-Tile Design View in Synopsys Platform Architect}}{27}{figure.4.1}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Inter-Tile Design View in Synopsys Platform Architect}}{28}{figure.4.2}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Messages exchanged between different modules.}}{29}{figure.4.3}
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Process to determine the TLM Block to migrate and the tile to migrate the TLM Block to.}}{30}{figure.4.4}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Triggering Migration Commands}}{32}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Flowchart illustrating how to determine a local and remote TLM access.}}{32}{figure.4.6}
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Flowchart depicting how the free address space in the TLM is calculated.}}{33}{figure.4.7}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Flowchart showing how the free address space in TLM is calculated if the TLM is partially full.}}{34}{figure.4.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

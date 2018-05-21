@@ -3,10 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis.bib
-I was expecting a `,' or a `}'---line 113 of file thesis.bib
- :  title="Welcome to the pages of the TCRC 89 "
- :                                              Invasive Computing" (InvasIC)",
-I'm skipping whatever remains of this entry
 Name 1 in "C. Kim, D. Burger, and S. W. Keckler" has a comma at the end for entry cacheDataPlacement1
 while executing---line 1049 of file plain.bst
 Name 1 in "N. Hardavellas, M. Ferdman, B. Falsafi, and A. Ailamaki" has a comma at the end for entry cacheDataPlacement4
@@ -104,45 +100,45 @@ Warning--empty booktitle in cacheDataPlacement6
 Warning--empty booktitle in dynamicPageMigration
 Warning--empty booktitle in dynamicpMigration
 Warning--empty booktitle in cacheDataPlacement3
-You've used 24 entries,
+You've used 27 entries,
             2118 wiz_defined-function locations,
-            624 strings with 8409 characters,
-and the built_in function-call counts, 6503 in all, are:
-= -- 605
-> -- 258
-< -- 6
-+ -- 105
-- -- 78
-* -- 287
-:= -- 1031
-add.period$ -- 70
-call.type$ -- 24
-change.case$ -- 111
+            643 strings with 9088 characters,
+and the built_in function-call counts, 7597 in all, are:
+= -- 705
+> -- 325
+< -- 7
++ -- 130
+- -- 100
+* -- 353
+:= -- 1205
+add.period$ -- 78
+call.type$ -- 27
+change.case$ -- 130
 chr.to.int$ -- 0
-cite$ -- 41
-duplicate$ -- 300
-empty$ -- 632
-format.name$ -- 78
-if$ -- 1448
+cite$ -- 44
+duplicate$ -- 338
+empty$ -- 718
+format.name$ -- 100
+if$ -- 1685
 int.to.chr$ -- 0
-int.to.str$ -- 24
-missing$ -- 16
-newline$ -- 117
-num.names$ -- 46
-pop$ -- 207
+int.to.str$ -- 27
+missing$ -- 17
+newline$ -- 130
+num.names$ -- 54
+pop$ -- 238
 preamble$ -- 1
-purify$ -- 87
+purify$ -- 103
 quote$ -- 0
-skip$ -- 242
+skip$ -- 281
 stack$ -- 0
-substring$ -- 197
-swap$ -- 62
-text.length$ -- 6
+substring$ -- 244
+swap$ -- 74
+text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 96
+type$ -- 108
 warning$ -- 17
-while$ -- 53
-width$ -- 26
-write$ -- 232
-(There were 41 error messages)
+while$ -- 63
+width$ -- 29
+write$ -- 259
+(There were 40 error messages)

@@ -4,6 +4,10 @@
 Systemc.
 \newblock \url{http://accellera.org}.
 
+\bibitem{chipmulticore}
+S.~Wallentowitz A.~Herkersdorf and T.~Wild.
+\newblock Chip multi-core processors.
+
 \bibitem{lispaper}
 Thomas~Wild Akshay~Srivatsa, Sven~Rheindt and Andreas Herkersdorf.
 \newblock Region based cache coherence for tiled mpsocs.
@@ -36,10 +40,6 @@ R.~Azimi D.~Tam and M.~Stumm.
 \newblock Proceedings of the 2nd ACM SIGOPS/EuroSys European Conference on
   Computer Systems, 2007.
 
-\bibitem{invasive}
-DFG.
-\newblock Welcome to the pages of the tcrc 89.
-
 \bibitem{threadPlacement1}
 P.~Navaux E.~Rodrigues, F.~Madruga and J.~Panetta.
 \newblock Multi-core aware process mapping and its impact on communication
@@ -51,6 +51,10 @@ C.~Fensch and M.~Cintra.
 \newblock An os-based alternative to full hardware coherence on tiled cmps.
 \newblock International Symposium on High Performance Computer Architecture,
   2008.
+
+\bibitem{hennessy}
+J.~Hennessy and D.~Patterson.
+\newblock Computer architecture: A quantitative approach, 1996.
 
 \bibitem{nice}
 IBM.
@@ -79,6 +83,10 @@ H.U. Heiss F.L Madrunga E. R. Rodrigues M.A.Y.~Alves M.~Diener, J.~Schneider
 \bibitem{trace}
 E.~Fatehi P.~Gratz M.~Gebhart, J.~Hestness and S.~W. Keckler.
 \newblock Running parsec 2.1 on m5, October 2009.
+
+\bibitem{memorywall}
+Philip Machanick.
+\newblock Approaches to addressing the memory wall.
 
 \bibitem{datathreadPlacement}
 P.~Tsai N.~Beckmann and D.~Sanchez.
@@ -133,6 +141,14 @@ Synopsys.
 \newblock Soc architecture analysis and optimization for performance and power.
 \newblock
   \url{https://www.synopsys.com/verification/virtual-prototyping/platform-architect.html}.
+
+\bibitem{invasive}
+J\"urgen Teich, J\"org Henkel, Andreas Herkersdorf, Doris Schmitt-Landsiedel,
+  Wolfgang Schr\"oder-Preikschat, and Gregor Snelting.
+\newblock {Invasive Computing: An Overview}.
+\newblock In M.~H\"ubner and J.~Becker, editors, {\em Multiprocessor
+  System-on-Chip -- Hardware Design and Tool Integration}, pages 241--268.
+  Springer, Berlin, Heidelberg, 2011.
 
 \bibitem{cacheDataPlacement3}
 M.~Zhang and K.~Asanovic.

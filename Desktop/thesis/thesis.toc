@@ -4,70 +4,71 @@
 \contentsline {chapter}{\nonumberline List of Tables}{7}{chapter*.4}
 \contentsline {chapter}{\numberline {1}Introduction}{8}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivation}{8}{section.1.1}
-\contentsline {section}{\numberline {1.2}Problem}{8}{section.1.2}
+\contentsline {subsection}{\numberline {1.1.1}Memory Wall}{8}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.2}Power Wall}{9}{subsection.1.1.2}
+\contentsline {section}{\numberline {1.2}Problem}{10}{section.1.2}
 \contentsline {section}{\numberline {1.3}Goals of Thesis}{10}{section.1.3}
-\contentsline {section}{\numberline {1.4}Approach}{10}{section.1.4}
-\contentsline {section}{\numberline {1.5}Outline}{10}{section.1.5}
-\contentsline {chapter}{\numberline {2}Background and Related Work}{12}{chapter.2}
-\contentsline {section}{\numberline {2.1}Basic Concepts}{12}{section.2.1}
-\contentsline {subsection}{\numberline {2.1.1}Tile}{12}{subsection.2.1.1}
-\contentsline {section}{\numberline {2.2}Related Work}{13}{section.2.2}
+\contentsline {section}{\numberline {1.4}Approach}{11}{section.1.4}
+\contentsline {section}{\numberline {1.5}Outline}{12}{section.1.5}
+\contentsline {chapter}{\numberline {2}Background and Related Work}{13}{chapter.2}
+\contentsline {section}{\numberline {2.1}Basic Concepts}{13}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Tile}{13}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Related Work}{14}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Data Placement/Migration on Caches}{14}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Task/Thread Placement}{14}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Data and Thread Migration}{15}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Data Placement on TLM}{15}{subsection.2.2.4}
-\contentsline {subsubsection}{\nonumberline Static Data Placement on TLM}{15}{section*.5}
-\contentsline {subsubsection}{\nonumberline Dynamic Data Placement and Migration on TLM}{16}{section*.6}
-\contentsline {chapter}{\numberline {3}Concept and System Architecture}{18}{chapter.3}
-\contentsline {section}{\numberline {3.1}Concept}{18}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Tile Local Memory}{18}{subsection.3.1.1}
-\contentsline {subsubsection}{\nonumberline Types of Accesses to TLM}{19}{section*.7}
-\contentsline {subsection}{\numberline {3.1.2}Goal}{21}{subsection.3.1.2}
-\contentsline {section}{\numberline {3.2}Modules Directly Used in the System for Implementing Thesis}{21}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Trace File}{21}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Memory Management Unit}{22}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Cache Stats Module}{22}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Tile Local Memory Module}{22}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}Central Stats Module}{22}{subsection.3.2.5}
-\contentsline {section}{\numberline {3.3}System Design}{23}{section.3.3}
-\contentsline {chapter}{\numberline {4}Implementation}{25}{chapter.4}
-\contentsline {section}{\numberline {4.1}Language and Tools}{25}{section.4.1}
-\contentsline {subsection}{\numberline {4.1.1}SystemC}{25}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Synopsys Platform Architect}{25}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Dynamic Data Migration Process Mechanism}{26}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}Local and Remote Accesses to a TLM Block}{28}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}Free Address Space in TLM}{28}{subsection.4.2.2}
-\contentsline {subsubsection}{\nonumberline TLM Empty}{29}{section*.8}
-\contentsline {subsubsection}{\nonumberline TLM Partially Full}{29}{section*.9}
-\contentsline {subsubsection}{\nonumberline TLM Full}{29}{section*.10}
-\contentsline {subsection}{\numberline {4.2.3}Triggering Migrations}{30}{subsection.4.2.3}
-\contentsline {subsubsection}{\nonumberline Which TLM Block to Migrate and Tile to Migrate it to?}{30}{section*.11}
-\contentsline {subsubsection}{\nonumberline When to Trigger Migrations?}{30}{section*.12}
-\contentsline {subsubsection}{\nonumberline Migrate Command}{32}{section*.13}
-\contentsline {section}{\numberline {4.3}Usability Improvement}{32}{section.4.3}
-\contentsline {section}{\numberline {4.4}Limitations}{33}{section.4.4}
-\contentsline {chapter}{\numberline {5}Experimental Setup}{35}{chapter.5}
-\contentsline {section}{\numberline {5.1}Configuration of Component Modules}{35}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Configuration of TLM}{35}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Configuration of Data Caches}{36}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Configuration of DDR}{36}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}The Gem5 Simulator}{36}{section.5.2}
-\contentsline {section}{\numberline {5.3}Benchmarks}{36}{section.5.3}
-\contentsline {section}{\numberline {5.4}Writing Shell Script}{37}{section.5.4}
-\contentsline {section}{\numberline {5.5}\textit {Nice} Command}{37}{section.5.5}
-\contentsline {section}{\numberline {5.6}Output Files}{37}{section.5.6}
-\contentsline {subsection}{\numberline {5.6.1}Screen Log File}{37}{subsection.5.6.1}
-\contentsline {subsection}{\numberline {5.6.2}Time Log File}{38}{subsection.5.6.2}
-\contentsline {section}{\numberline {5.7}System Specifications}{38}{section.5.7}
-\contentsline {chapter}{\numberline {6}Evaluation}{39}{chapter.6}
-\contentsline {section}{\numberline {6.1}Dynamic Data Migration vs First Touch and Most Accessed}{39}{section.6.1}
-\contentsline {subsection}{\numberline {6.1.1}Blackscholes}{39}{subsection.6.1.1}
-\contentsline {subsection}{\numberline {6.1.2}Swaptions}{39}{subsection.6.1.2}
-\contentsline {subsection}{\numberline {6.1.3}Fluidanimate}{39}{subsection.6.1.3}
-\contentsline {subsection}{\numberline {6.1.4}Canneal}{39}{subsection.6.1.4}
-\contentsline {section}{\numberline {6.2}Dynamic Data Placement for Different TLM Block Size}{39}{section.6.2}
-\contentsline {section}{\numberline {6.3}Dynamic Data Placement for Different Time Interval (T$_{interval}$)}{39}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{40}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{40}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future Work}{40}{section.7.2}
-\contentsline {chapter}{\nonumberline Bibliography}{41}{chapter*.14}
+\contentsline {subsection}{\numberline {2.2.2}Task/Thread Placement}{15}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Data and Thread Migration}{16}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Data Placement on TLM}{16}{subsection.2.2.4}
+\contentsline {subsubsection}{\nonumberline Static Data Placement on TLM}{16}{section*.5}
+\contentsline {subsubsection}{\nonumberline Dynamic Data Placement and Migration on TLM}{17}{section*.6}
+\contentsline {chapter}{\numberline {3}Concept and System Architecture}{19}{chapter.3}
+\contentsline {section}{\numberline {3.1}Concept}{19}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Memory Accesses}{19}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Goal}{22}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}System Design}{22}{section.3.2}
+\contentsline {section}{\numberline {3.3}Modules Directly Used in the System for Implementing Thesis}{23}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Trace File}{23}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Memory Management Unit}{24}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Cache Stats Module}{24}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}Tile Local Memory Module}{25}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Central Stats Module}{25}{subsection.3.3.5}
+\contentsline {chapter}{\numberline {4}Implementation}{26}{chapter.4}
+\contentsline {section}{\numberline {4.1}Language and Tools}{26}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}SystemC}{26}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Synopsys Platform Architect}{26}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Dynamic Data Migration Process Mechanism}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Triggering Migrations}{29}{subsection.4.2.1}
+\contentsline {subsubsection}{\nonumberline Which TLM Block to Migrate and Tile to Migrate it to?}{29}{section*.7}
+\contentsline {subsubsection}{\nonumberline When to Trigger Migrations?}{29}{section*.8}
+\contentsline {subsubsection}{\nonumberline Migrate Command}{31}{section*.9}
+\contentsline {subsection}{\numberline {4.2.2}Local and Remote Accesses to a TLM Block}{31}{subsection.4.2.2}
+\contentsline {subsection}{\numberline {4.2.3}Free Address Space in TLM}{33}{subsection.4.2.3}
+\contentsline {subsubsection}{\nonumberline TLM Empty}{33}{section*.10}
+\contentsline {subsubsection}{\nonumberline TLM Partially Full}{33}{section*.11}
+\contentsline {subsubsection}{\nonumberline TLM Full}{34}{section*.12}
+\contentsline {section}{\numberline {4.3}Usability Improvement}{34}{section.4.3}
+\contentsline {section}{\numberline {4.4}Limitations}{35}{section.4.4}
+\contentsline {chapter}{\numberline {5}Experimental Setup}{36}{chapter.5}
+\contentsline {section}{\numberline {5.1}Configuration of Component Modules}{36}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Configuration of TLM}{36}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Configuration of Data Caches}{37}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Configuration of DDR}{37}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}The Gem5 Simulator}{37}{section.5.2}
+\contentsline {section}{\numberline {5.3}Benchmarks}{37}{section.5.3}
+\contentsline {section}{\numberline {5.4}Writing Shell Script}{38}{section.5.4}
+\contentsline {section}{\numberline {5.5}\textit {Nice} Command}{38}{section.5.5}
+\contentsline {section}{\numberline {5.6}Output Files}{38}{section.5.6}
+\contentsline {subsection}{\numberline {5.6.1}Screen Log File}{38}{subsection.5.6.1}
+\contentsline {subsection}{\numberline {5.6.2}Time Log File}{39}{subsection.5.6.2}
+\contentsline {section}{\numberline {5.7}System Specifications}{39}{section.5.7}
+\contentsline {chapter}{\numberline {6}Evaluation}{40}{chapter.6}
+\contentsline {section}{\numberline {6.1}Dynamic Data Migration vs First Touch and Most Accessed}{40}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Blackscholes}{40}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Swaptions}{40}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Fluidanimate}{40}{subsection.6.1.3}
+\contentsline {subsection}{\numberline {6.1.4}Canneal}{40}{subsection.6.1.4}
+\contentsline {section}{\numberline {6.2}Dynamic Data Placement for Different TLM Block Size}{40}{section.6.2}
+\contentsline {section}{\numberline {6.3}Dynamic Data Placement for Different Time Interval (T$_{interval}$)}{40}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusion and Outlook}{41}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{41}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future Work}{41}{section.7.2}
+\contentsline {chapter}{\nonumberline Bibliography}{43}{chapter*.13}
