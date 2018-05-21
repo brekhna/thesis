@@ -28,7 +28,7 @@
 \contentsline {section}{\numberline {3.3}Modules Directly Used in the System for Implementing Thesis}{23}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}Trace File}{23}{subsection.3.3.1}
 \contentsline {subsection}{\numberline {3.3.2}Memory Management Unit}{24}{subsection.3.3.2}
-\contentsline {subsection}{\numberline {3.3.3}Cache Stats Module}{24}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.3}Cache Stats Module}{25}{subsection.3.3.3}
 \contentsline {subsection}{\numberline {3.3.4}Tile Local Memory Module}{25}{subsection.3.3.4}
 \contentsline {subsection}{\numberline {3.3.5}Central Stats Module}{25}{subsection.3.3.5}
 \contentsline {chapter}{\numberline {4}Implementation}{26}{chapter.4}

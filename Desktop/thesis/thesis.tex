@@ -198,7 +198,7 @@ The Tile Local Memory (TLM) is a distributed-shared memory in the processor arch
 \subsection{Goal}
 We want to reduce the number of remote TLM accesses since it takes more time to fetch data from a TLM which is placed on another tile (as the request has to go on the bus through the network adapter and over the NoC Router in order to go to the other tile) and less time to fetch data which is on a core's own TLM.  
 \section{System Design}
-Figure~\ref{fig:overviewOfSolution} shows the overview of the modules involved in dynamic data migration scheme. Every cache module is connected to a Cache Stats Module. All these Cache Stats Modules and the TLM Modules report to the Central Stats Module at every given time interval (T$_{interval}$). The Central Stats Module does evaluation of this data and triggers migration if needed. \\
+Figure~\ref{fig:overviewOfSolution} shows the overview of the modules involved in dynamic data migration scheme. Every cache module is connected to a Cache Stats Module. All these Cache Stats Modules and the TLM Modules report to the Central Stats Module at every given time interval (T$_{interval}$). The Cache Stats Module sends its number of local and remote accesses to the data blocks (TLM Blocks) whereas the TLM Modules send its free address space to the Central Stats Module. The Central Stats Module does evaluation of this data and triggers migration if needed. The migration command is passed by the Central Stats Module to the Cache Stats Module connected to the L2 Cache.\\
 \begin{figure}
   \includegraphics[width=\linewidth]{moduleconnections.png}
   \centering
