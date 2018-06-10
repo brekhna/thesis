@@ -8,8 +8,8 @@
 \setup{%
   % de,                   % uncomment if your thesis is in German
   author=Iffat Brekhna, % your name
-  title={Simulator Support for Dynamic Data Migration},
-  date={May 21, 2018}, % submission date (today is used if unset)
+  title={Simulator Support for Dynamic Data Migration on a Distributed Shared Memory Architecture},
+  date={June 21, 2018}, % submission date (today is used if unset)
   type=master,        % thesis type [master, bachelor, research, internship, diplom]
   advisor=Sven Rheindt M.Sc, % your advisor (typically some PhD. student)
   supervisor=Prof. Dr. sc. techn. Andreas Herkersdorf, % your supervisor
@@ -26,9 +26,9 @@
 % --- Thesis abstract.
 %     For German thesis also provide an English version via the optional
 %     argument: \anstract[English]{German}
-\abstract{An abstract is defined as an abbreviated accurate
-  representation of the contents of a document. -- American National
-  Standards Institute (ANSI)}
+\abstract{The semi-conductor industry is moving towards developing a single chip multi-tile multi-core processor. Hence, parallel programming is experiencing a rapid growth with the advent of system on chip (SoC) architectures. Because of multiple tiles and cores on one chip these multi-tile multi-core processors deal with data processing at a high scale and complexity. Therefore, the bottleneck has shifted from computational complexities to data management techniques. In this thesis a dynamic data migration scheme has been introduced for a distributed-shared memory architecture with multiple cores and multiple tiles.\\
+\\
+The basic concept is to bring data and tasks close together to save execution time used in transferring data back and forth. We use data migration to achieve this goal and keep the task placement constant. In our architecture we have a tile local memory (TLM) which is distributed and shared among all the tiles. We use two metrics which determine whether migration shall take place or not; \textit{Local TLM Accesses} and \textit{Remote TLM Accesses}. A \textit{Local TLM Access} is basically a L1 or L2 cache hit or if a core is accessing the Tile Local Memory (TLM) of the tile it sits on. A \textit{Remote TLM Access} is a miss in both the L1 and L2 caches or in other words it is a scenario when a core is accessing data from the TLM of another tile.}
 \makeabstract
 \clearpage
 
@@ -170,7 +170,7 @@ This chapter will discuss the concept of our dynamic data migration scheme and w
 \section{Concept}
 The basic idea is to bring data and tasks close together in order to save execution time used in transferring data back and forth. In~\cite{dynamicPageMigration}, the authors have implemented a dynamic page migration scheme for a multiprocessor architecture which has mesh connection with a distributed-shared global memory as shown in figure \ref{fig:mesh}. Our architecture differs from theirs as we have tiles connected in a Network on Chip (NoC) as shown in figure \ref{fig:processor} whereas they have processors connected in a NoC.\\
 \\
-In~\cite{cacheDataPlacement1, cacheDataPlacement3, cacheDataPlacement4} the authors have done dynamic data placement for the last level cache (LLC) in order to reduce the distance between the data blocks and the core requesting it. We also want to bring data and the core requesting the data close together but we dynamically migrate data of the distributed shared tile local memory (TLM) instead of the LLC. In~\cite{threadPlacement4} the authors have used a thread scheduling mechanism which uses the performance monitoring unit (PMU) with hardware performance counters. For every thread the PSU maintain a summary vector which holds the signature of data regions accessed by a thread. In our scheme, we need to monitor the accesses made to the TLM of every tile in order to decide if migration is needed or not. The next section will explain how we monitor and categorize the accesses made to the TLM. \\
+In~\cite{cacheDataPlacement1, cacheDataPlacement3, cacheDataPlacement4} the authors have done dynamic data placement for the last level cache (LLC) in order to reduce the distance between the data blocks and the core requesting it. We also want to bring data and the core requesting the data close together but we dynamically migrate data of the distributed shared tile local memory (TLM) instead of the LLC. In~\cite{threadPlacement4} the authors have used a thread scheduling mechanism which uses the performance monitoring unit (PMU) with hardware performance counters. For every thread the PMU maintain a summary vector which holds the signature of data regions accessed by a thread. In our scheme, we need to monitor the accesses made to the TLM of every tile in order to decide if migration is needed or not. The next section will explain how we monitor and categorize the accesses made to the TLM. \\
 \begin{figure}
   \includegraphics[width=\linewidth]{processor.png}
   \centering
@@ -520,12 +520,24 @@ In this section the output of the simulator is analyzed for different TLM Block 
 
 \section{Dynamic Data Placement for Different Time Interval (T$_{interval}$)}
 In this section the output of the simulator is analyzed for different Time Interval (T$_{interval}$).
-\chapter{Conclusion and Outlook}
+\chapter{Summary and Future Work}
 This chapter will summarize the work done in the thesis and will give insights into how it can be used in future research. 
 \section{Summary}
-In this thesis a dynamic data migration scheme has been introduced for a distributed-shared memory architecture with multiple cores and multiple tiles. It describes how the data can be migrated from one tile's  local memory to another tiles local memory at run time. As a result, we don't need to find the best placement for the memory before running the application.
+The semi-conductor industry is moving towards developing a single chip multi-tile multi-core processor. Hence, parallel programming is experiencing a rapid growth with the advent of system on chip (SoC) architectures. Because of multiple tiles and cores on one chip these multi-tile multi-core processors deal with data processing at a high scale and complexity. Therefore, the bottleneck has shifted from computational complexities to data management techniques. In this thesis a dynamic data migration scheme has been introduced for a distributed-shared memory architecture with multiple cores and multiple tiles.\\
+\\
+The basic concept is to bring data and tasks close together to save execution time used in transferring data back and forth. We use data migration to achieve this goal and keep the task placement constant. In our architecture we have a tile local memory (TLM) which is distributed and shared among all the tiles. We use two metrics which determine whether migration shall take place or not; \textit{Local TLM Accesses} and \textit{Remote TLM Accesses}. A \textit{Local TLM Access} is basically a L1 or L2 cache hit or if a core is accessing the Tile Local Memory (TLM) of the tile it sits on. A \textit{Remote TLM Access} is a miss in both the L1 and L2 caches or in other words it is a scenario when a core is accessing data from the TLM of another tile. \\
+\\
+The system continuously monitors the number of local and remote accesses to every TLM block. The size of a TLM block can vary from one cache line to multiple cache lines and is set by the user at compile time. All these local and remote accesses metrics are sent to a Central Stats Module for evaluation at every specific time interval (T$_{interval}$) which is set by the user at compile time. In the Central Stats Module the metrics are evaluated and it determines whether a specific TLM block needs to be migrated or not.\\
+\\
+The system has the functionality to keep track of all the migrations carried out in a module called the Memory Management Unit (MMU) which sits between the trace file and the cores. The MMU has a vector address table which grows and shrinks dynamically. Whenever a new trace is to be executed; the system searches for the address in the MMU. If there is a entry corresponding to that address the MMU translates it to the new address where the data has been migrated to. If there is no entry for that address the trace is executed as it is. \\
+\\
+In addition to this, the system keeps track of the free space available in all the TLM's. Whenever a migration is triggered the system needs to make sure that there is free space in the TLM for data to be migrated in. In case there is no free space, data is migrated to the DDR in order to make space for the incoming data if need arises. If there is free space the migration is simply carried out. When a migration is triggered, invalidations need to be send for that address and the MMU needs to be updated after a successful migration. Any accesses to a address for which a migration is being carried out needs to be stalled until the migration has been successfully carried out and the MMU has been updated. Also, if one migration is being carried out and another migration is triggered for that same address; the second migration request needs to be carried out after the first one has been completed. \\
 \section{Future Work}
-
+Currently, when a access to a DRAM is made that data is cached in the L1 cache of the core or the L2 cache of the tile. This results in accesses to that data (TLM Block) to be considered as \textit{local accesses} as there is a cache hit. However, when this data (cache line) is evicted from the cache it is written back to the DDR instead of the tile local memory (TLM). This adds a huge overhead as the DDR is accessed multiple times in case of eviction. This is not a realistic scenario since in real life when data is evicted from the cache it is written to the RAM instead of the hard disk. In order to mimic this realistic scenario we use the First Touch policy to place data statically on the TLM's at compile time and then run the dynamic data migration algorithm. However, this needs to be augmented into the simulator so that in future all data resides in the DDR instead of the TLM at compile time and is \textit{migrated} to the TLM of the core which accesses it first.\\
+\\
+Another improvement in the simulator would be to make the data migration scheme self adaptable. Currently, we set the time interval at which all the stats are sent to the Central Stats Module and the TLM Block Size at compile time. In future the system can evaluate its cost function before a data migration takes place and then evaluate the effect of the migration once it is carried out. By keeping track of the effect the system can change its cost function dynamically by changing the time interval, TLM Block Size and migration threshold value at runtime.\\
+\\
+The current simulator can be further enhanced by adding task migration support to it in order to evaluate the effect of both data and task migration at the same time.
 % --- Bibliography
 \cleardoublepage
 \bibliographystyle{plain}
