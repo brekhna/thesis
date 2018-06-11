@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.28)  10 JUN 2018 14:42
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.28)  10 JUN 2018 19:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -897,7 +897,7 @@ Package hyperref Warning: Option `pdfstartview' has already been used,
 (hyperref)                setting the option has no effect on input line 21.
 
 Package hyperref Info: Option `pdfnewwindow' set `true' on input line 21.
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 25.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 24.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
@@ -905,18 +905,18 @@ File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 File: TUM_Logo_blau_rgb_p.png Graphic file (type png)
 
 <use TUM_Logo_blau_rgb_p.png>
-Package pdftex.def Info: TUM_Logo_blau_rgb_p.png used on input line 25.
+Package pdftex.def Info: TUM_Logo_blau_rgb_p.png used on input line 24.
 (pdftex.def)             Requested size: 53.98297pt x 28.45274pt.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 25.
+(Font)              <12> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 25.
+(Font)              <8> on input line 24.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 25.
+(Font)              <6> on input line 24.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 25.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 24.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 25.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 24.
  [1
 
 
@@ -926,7 +926,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 32--33
+Underfull \hbox (badness 10000) in paragraph at lines 31--32
 
  []
 
@@ -962,21 +962,21 @@ Chapter 1.
 <memorywall.png, id=432, 1117.17375pt x 550.055pt>
 File: memorywall.png Graphic file (type png)
  <use memorywall.png>
-Package pdftex.def Info: memorywall.png used on input line 52.
+Package pdftex.def Info: memorywall.png used on input line 51.
 (pdftex.def)             Requested size: 426.79141pt x 210.13097pt.
 
 <powerwall.png, id=436, 1536.74126pt x 818.05624pt>
 File: powerwall.png Graphic file (type png)
  <use powerwall.png>
-Package pdftex.def Info: powerwall.png used on input line 60.
+Package pdftex.def Info: powerwall.png used on input line 59.
 (pdftex.def)             Requested size: 426.79141pt x 227.19429pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--71
+Underfull \hbox (badness 10000) in paragraph at lines 57--70
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 58--71
+Underfull \hbox (badness 10000) in paragraph at lines 57--70
 
  []
 
@@ -987,12 +987,12 @@ Underfull \vbox (badness 4193) has occurred while \output is active []
 
 
  <./memorywall.png>] [9 <./powerwall.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 72--73
+Underfull \hbox (badness 10000) in paragraph at lines 71--72
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 74--75
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
@@ -1000,33 +1000,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 74--75
 File: multi-core,tile.png Graphic file (type png)
 
 <use multi-core,tile.png>
-Package pdftex.def Info: multi-core,tile.png used on input line 78.
+Package pdftex.def Info: multi-core,tile.png used on input line 77.
 (pdftex.def)             Requested size: 298.75269pt x 290.27003pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
+Underfull \hbox (badness 10000) in paragraph at lines 83--86
 
  []
 
 [10]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 90.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 90.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
  [11 <./multi-core,tile.png>] [12]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
 
  []
 
@@ -1035,67 +1035,67 @@ Underfull \hbox (badness 10000) in paragraph at lines 100--102
 ] <tile.png, id=482, 675.27281pt x 282.30469pt>
 File: tile.png Graphic file (type png)
  <use tile.png>
-Package pdftex.def Info: tile.png used on input line 122.
+Package pdftex.def Info: tile.png used on input line 121.
 (pdftex.def)             Requested size: 426.79141pt x 178.4258pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--135
+Underfull \hbox (badness 10000) in paragraph at lines 129--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--135
+Underfull \hbox (badness 10000) in paragraph at lines 129--134
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 130--135
+Underfull \hbox (badness 10000) in paragraph at lines 129--134
 
  []
 
 [14 <./tile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 136--139
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--139
+Underfull \hbox (badness 10000) in paragraph at lines 135--138
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 140--141
+Underfull \hbox (badness 10000) in paragraph at lines 139--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--145
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 146--147
+Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 150--157
+Underfull \hbox (badness 10000) in paragraph at lines 149--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--157
+Underfull \hbox (badness 10000) in paragraph at lines 149--156
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 150--157
+Underfull \hbox (badness 10000) in paragraph at lines 149--156
 
  []
 
 <meshconnected.png, id=532, 612.78937pt x 349.305pt>
 File: meshconnected.png Graphic file (type png)
  <use meshconnected.png>
-Package pdftex.def Info: meshconnected.png used on input line 163.
+Package pdftex.def Info: meshconnected.png used on input line 162.
 (pdftex.def)             Requested size: 298.75269pt x 170.29749pt.
 
 [17] [18 <./meshconnected.png>]
@@ -1103,15 +1103,15 @@ Chapter 3.
 <processor.png, id=554, 722.7pt x 387.69844pt>
 File: processor.png Graphic file (type png)
  <use processor.png>
-Package pdftex.def Info: processor.png used on input line 175.
+Package pdftex.def Info: processor.png used on input line 174.
 (pdftex.def)             Requested size: 426.79141pt x 228.95897pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 171--180
+Underfull \hbox (badness 10000) in paragraph at lines 170--179
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 181--182
+Underfull \hbox (badness 10000) in paragraph at lines 180--181
 
  []
 
@@ -1121,14 +1121,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 181--182
 File: localaccesses.png Graphic file (type png)
 
 <use localaccesses.png>
-Package pdftex.def Info: localaccesses.png used on input line 185.
+Package pdftex.def Info: localaccesses.png used on input line 184.
 (pdftex.def)             Requested size: 426.79141pt x 243.48181pt.
 
 <remoteaccesses.png, id=565, 688.82344pt x 393.72093pt>
 File: remoteaccesses.png Graphic file (type png)
 
 <use remoteaccesses.png>
-Package pdftex.def Info: remoteaccesses.png used on input line 193.
+Package pdftex.def Info: remoteaccesses.png used on input line 192.
 (pdftex.def)             Requested size: 426.79141pt x 243.94826pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1138,50 +1138,50 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: moduleconnections.png Graphic file (type png)
 
 <use moduleconnections.png>
-Package pdftex.def Info: moduleconnections.png used on input line 203.
+Package pdftex.def Info: moduleconnections.png used on input line 202.
 (pdftex.def)             Requested size: 426.79141pt x 194.65665pt.
  <traceFile.png, id=580, 405.01312pt x 378.66469pt>
 File: traceFile.png Graphic file (type png)
 
 <use traceFile.png>
-Package pdftex.def Info: traceFile.png used on input line 211.
+Package pdftex.def Info: traceFile.png used on input line 210.
 (pdftex.def)             Requested size: 298.75269pt x 279.32346pt.
  [22 <./moduleconnections.png>] [23 <./traceFile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 244--247
+Underfull \hbox (badness 10000) in paragraph at lines 243--246
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 248--250
+Underfull \hbox (badness 10000) in paragraph at lines 247--249
 
  []
 
 [24] [25]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 267--268
+Underfull \hbox (badness 10000) in paragraph at lines 266--267
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 270--273
+Underfull \hbox (badness 10000) in paragraph at lines 269--272
 
  []
 
 <insidetile.png, id=617, 818.05624pt x 401.5pt>
 File: insidetile.png Graphic file (type png)
  <use insidetile.png>
-Package pdftex.def Info: insidetile.png used on input line 277.
+Package pdftex.def Info: insidetile.png used on input line 276.
 (pdftex.def)             Requested size: 426.79141pt x 209.47348pt.
 
 <processorsynopsys.png, id=618, 481.8pt x 360.34625pt>
 File: processorsynopsys.png Graphic file (type png)
 
 <use processorsynopsys.png>
-Package pdftex.def Info: processorsynopsys.png used on input line 283.
+Package pdftex.def Info: processorsynopsys.png used on input line 282.
 (pdftex.def)             Requested size: 426.79141pt x 319.21158pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 274--288
+Underfull \hbox (badness 10000) in paragraph at lines 273--287
 
  []
 
@@ -1191,33 +1191,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 274--288
 File: approachOfSolution1.png Graphic file (type png)
 
 <use approachOfSolution1.png>
-Package pdftex.def Info: approachOfSolution1.png used on input line 293.
+Package pdftex.def Info: approachOfSolution1.png used on input line 292.
 (pdftex.def)             Requested size: 426.79141pt x 231.2119pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 289--298
+Underfull \hbox (badness 10000) in paragraph at lines 288--297
 
  []
 
 <tiletomigrate.png, id=629, 219.82124pt x 395.22656pt>
 File: tiletomigrate.png Graphic file (type png)
  <use tiletomigrate.png>
-Package pdftex.def Info: tiletomigrate.png used on input line 302.
+Package pdftex.def Info: tiletomigrate.png used on input line 301.
 (pdftex.def)             Requested size: 170.71396pt x 306.94269pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [27 <./insidetile.png>] [28 <./processorsynopsys.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 308--313
+Underfull \hbox (badness 10000) in paragraph at lines 307--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--313
+Underfull \hbox (badness 10000) in paragraph at lines 307--312
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 308--313
+Underfull \hbox (badness 10000) in paragraph at lines 307--312
 
  []
 
@@ -1225,23 +1225,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 308--313
 <tlmstats.png, id=651, 626.34pt x 401.24907pt>
 File: tlmstats.png Graphic file (type png)
  <use tlmstats.png>
-Package pdftex.def Info: tlmstats.png used on input line 316.
+Package pdftex.def Info: tlmstats.png used on input line 315.
 (pdftex.def)             Requested size: 426.79141pt x 273.42126pt.
 
 <localandremote.png, id=653, 412.54124pt x 395.97937pt>
 File: localandremote.png Graphic file (type png)
 
 <use localandremote.png>
-Package pdftex.def Info: localandremote.png used on input line 324.
+Package pdftex.def Info: localandremote.png used on input line 323.
 (pdftex.def)             Requested size: 256.07744pt x 245.80074pt.
  <freespace.png, id=655, 632.3625pt x 391.4625pt>
 File: freespace.png Graphic file (type png)
 
 <use freespace.png>
-Package pdftex.def Info: freespace.png used on input line 333.
+Package pdftex.def Info: freespace.png used on input line 332.
 (pdftex.def)             Requested size: 426.79141pt x 264.20786pt.
  [31] [32 <./tlmstats.png> <./localandremote.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 344--345
+Underfull \hbox (badness 10000) in paragraph at lines 343--344
 
  []
 
@@ -1249,20 +1249,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 344--345
 File: tlmpartiallyempty.png Graphic file (type png)
 
 <use tlmpartiallyempty.png>
-Package pdftex.def Info: tlmpartiallyempty.png used on input line 348.
+Package pdftex.def Info: tlmpartiallyempty.png used on input line 347.
 (pdftex.def)             Requested size: 298.75269pt x 239.5471pt.
  [33 <./freespace.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 354--355
+Underfull \hbox (badness 10000) in paragraph at lines 353--354
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 358--361
+Underfull \hbox (badness 10000) in paragraph at lines 357--360
 
  []
 
 [34 <./tlmpartiallyempty.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 366--389
+Underfull \hbox (badness 10000) in paragraph at lines 365--388
 
  []
 
@@ -1276,67 +1276,67 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ] [37]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 491.
+(Font)              using `OT1/cmss/bx/n' instead on input line 490.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 500--501
+Underfull \hbox (badness 10000) in paragraph at lines 499--500
 
  []
 
 [38] [39]
 Chapter 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 521.
+(Font)              <17.28> on input line 520.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 521.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 521.
+(hyperref)                removing `math shift' on input line 520.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 521.
+(hyperref)                removing `subscript' on input line 520.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 520.
 
 [40
 
 ]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--535
+Underfull \hbox (badness 10000) in paragraph at lines 525--534
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--535
+Underfull \hbox (badness 10000) in paragraph at lines 525--534
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--535
+Underfull \hbox (badness 10000) in paragraph at lines 525--534
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--535
+Underfull \hbox (badness 10000) in paragraph at lines 525--534
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 526--535
+Underfull \hbox (badness 10000) in paragraph at lines 525--534
 
  []
 
 [41
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 536--542
+Underfull \hbox (badness 10000) in paragraph at lines 535--541
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 536--542
+Underfull \hbox (badness 10000) in paragraph at lines 535--541
 
  []
 
@@ -1367,12 +1367,12 @@ _ 2 . 3 . 0 / com . ibm .
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 549.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 548.
  [49]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 549.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 548.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 549.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 549.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 548.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 548.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 0A3854FBFFD49957916F81BDF2491F67;4603.
 
@@ -1382,7 +1382,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 549.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 548.
  ) 
 Here is how much of TeX's memory you used:
  16690 strings out of 493304
