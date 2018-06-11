@@ -45,6 +45,14 @@ The basic concept is to bring data and tasks close together to save execution ti
 
 \chapter{Introduction}
 \section{Motivation}
+\subsection{Power Wall}
+In a single core system, the speed of the processors is determined by its frequency. Hence, increasing the processors speed means to increase its operating frequency which in terms increases the power dissipation. The bottleneck here is the \textit{power density} which is the power per die area. With increasing frequency a point is reached when the power density is similar to that of a core of a nuclear reactor and if we extrapolate the graph we reach to the power density of a rocket nozzle. This makes it quite challenging to dissipate the heat and run the system efficiently. Hence, a maximum frequency is reached due to the limitations on power dissipations. This scenario is called the \textit{power wall} as shown in figure~\ref{fig:powerwall}. The solution to this is to use multiple cores at a frequency which gives feasible power dissipations in-order to achieve high computing speeds which gave rise to multi-core computing.\\
+\begin{figure}[h!]
+  \includegraphics[width=\linewidth]{powerwall.png}
+  \centering
+  \caption{Power Wall~\cite{chipmulticore}}
+  \label{fig:powerwall}
+\end{figure}
 \subsection{Memory Wall}
 The \textit{memory wall} is a situation where the improvement of the speed of dynamic random access memory (DRAM) does not scale with the fast improvement of the processor speed hence resulting in a gap between the two technologies which lowers the speeds of the overall system~\cite{memorywall}. It is illustrated in figure~\ref{fig:memorywall}. You can see in the figure that there is a gap between the improvements in processor performance and memory performance which is increasing with time. We need to bridge this gap in order to speed up processors and hence the concept of caches and memory management techniques are introduced.\\
 \begin{figure}[h!]
@@ -53,16 +61,8 @@ The \textit{memory wall} is a situation where the improvement of the speed of dy
   \caption{Memory Wall~\cite{hennessy}}
   \label{fig:memorywall}
 \end{figure}
-\subsection{Power Wall}
-In a single core system, the speed of the processors is determined by its frequency. Hence, increasing the processors speed means to increase its operating frequency which in terms increases the power dissipation. Hence, a maximum frequency is reached due to the limitations on power dissipations. This can be seen in figure~\ref{fig:powerwall}. The solution to this is to use multiple cores at a frequency which gives feasible power dissipations in-order to achieve high computing speeds.\\
-\begin{figure}[h!]
-  \includegraphics[width=\linewidth]{powerwall.png}
-  \centering
-  \caption{Power Wall~\cite{chipmulticore}}
-  \label{fig:powerwall}
-\end{figure}
 \\
-Current research in semi-conductor industry is towards developing a single chip multi-tile multi-core processor. Hence, parallel programming is experiencing a rapid growth with the advent of system on chip (SoC) architectures. One example of such a system is the Invasic architecture~\cite{invasive} as shown in Figure \ref{fig:multi-core,tile}. The main idea of Invasic architecture is to introduce ``resource aware programming" support so that a program has the ability to explore its surroundings and dynamically spread its computations to neighboring processors~\cite{invasive}. Because of multiple tiles and cores on one chip these processors deal with data processing at a high scale and complexity. Therefore, the bottleneck has shifted from computational complexities to data management techniques.\\
+Due to the memory wall and power wall described above current research in semi-conductor industry is towards developing a single chip multi-tile multi-core processor. Hence, parallel programming is experiencing a rapid growth with the advent of system on chip (SoC) architectures. One example of such a system is the Invasic architecture~\cite{invasive} as shown in Figure \ref{fig:multi-core,tile}. The main idea of Invasic architecture is to introduce ``resource aware programming" support so that a program has the ability to explore its surroundings and dynamically spread its computations to neighboring processors~\cite{invasive}. Because of multiple tiles and cores on one chip these processors deal with data processing at a high scale and complexity. Therefore, the bottleneck has shifted from computational complexities to data management techniques.\\
 \\
 Modern, scalable multiprocessor system-on-chip (MPSoC) platform's memory access time depends on where the memory is located relative to the core which accesses the memory. In other words (MPSoC) platform's have Non-Uniform Memory Access (NUMA) properties because it has a distributed shared memory (DSM) architecture, hence application performance is highly influenced by data-to-task locality. The goal is to bring tasks and data closer together to increase overall performance. This is a twofold and complementary problem consisting of data and or task migration. In this thesis, we will look into data migration and see how it improves the performance of the MPSoC.\\
 \\
