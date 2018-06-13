@@ -25,9 +25,11 @@
 % --- Thesis abstract.
 %     For German thesis also provide an English version via the optional
 %     argument: \anstract[English]{German}
-\abstract{The semi-conductor industry is moving towards developing a single chip multi-tile multi-core processor. Hence, parallel programming is experiencing a rapid growth with the advent of system on chip (SoC) architectures. Because of multiple tiles and cores on one chip these multi-tile multi-core processors deal with data processing at a high scale and complexity. Therefore, the bottleneck has shifted from computational complexities to data management techniques. In this thesis a dynamic data migration scheme has been introduced for a distributed-shared memory architecture with multiple cores and multiple tiles.\\
-\\
-The basic concept is to bring data and tasks close together to save execution time used in transferring data back and forth. We use data migration to achieve this goal and keep the task placement constant. In our architecture we have a tile local memory (TLM) which is distributed and shared among all the tiles. We use two metrics which determine whether migration shall take place or not; \textit{Local TLM Accesses} and \textit{Remote TLM Accesses}. A \textit{Local TLM Access} is basically a L1 or L2 cache hit or if a core is accessing the Tile Local Memory (TLM) of the tile it sits on. A \textit{Remote TLM Access} is a miss in both the L1 and L2 caches or in other words it is a scenario when a core is accessing data from the TLM of another tile.}
+\abstract{
+
+
+Current processor architectures have shifted from microarchitecture to macroarchitecture which implies that processors with multiple tiles and cores are introduced. These processors have non-uniform memory access (NUMA) properties where the memory access time depends on how close the memory (data) and tasks (cores) are located. In order to reduce the distance between the tasks and data, processors which have a distributed-shared memory architecture are introduced where the memory is distributed and shared among all the tiles. We use a similar architecture called the Invasive Architecture which is a multi-tile multi-core processor with a distributed-shared memory architecture. To study the effects on performance of a data and/or task management techniques we need to have simulator support for such schemes in the existing simulator. In this thesis the simulator support for a dynamic data migration (DDM) scheme is build into the current simulator and it's performance is evaluated. DDM migrates data at run time from one location to another so that the distance between the tasks and data is reduced which in turn hopefully saves execution time which would have otherwise been used in transferring data back and forth.
+}
 \makeabstract
 \clearpage
 
@@ -90,11 +92,11 @@ The steps followed to develop the Simulator Support for Dynamic Data Migration a
   \item Literature Review: Find and read relevant work that has already been done for bringing the data and process/task together. Choose one approach on how to bring data and task together and find relevant ideas to understanding the concept better. 
   \item Design: Here we decide which technologies to use and how to design our system for optimal results. We want a design that is easy to change, extend, optimize and is scalable. Also, we decide how we will evaluate our system eventually and what metrics we will use in result gathering. 
   \item Implementation: Implement the design of the solution. 
-  \item Evaluation and Testing: Compare the results of thesis with static data placement results. --complete this after you get results iffat!!!
+  \item Evaluation and Testing: Compare the performance of dynamic data migration with static data placement techniques.
 \end{itemize}
 \section{Outline}
 The work is structured as follows. In Chapter 1 a brief introduction of the problem is given along with the motivation to solve it and then a brief overview of the solution is given.
-In Chapter 2 the basic concepts needed to understand how dynamic data migration is implemented are explained along with the work already done related to this thesis is given. In Chapter 3 the system architecture is introduced i.e the modules added for implementing dynamic data migration are introduced and explained. In Chapter 4 the implementation is explained in detail. In Chapter 5 the the programs that assisted or were used for running the simulations before gathering results are given. In Chapter 6 the results are presented. It shows how the performance has changed with the proposed solution implementation.In Chapter 7 a summary is given and some suggestions for future works in this domain. 
+In Chapter 2 the basic concepts needed to understand how dynamic data migration is implemented are explained along with the work already done related to this thesis is given. In Chapter 3 the system architecture is introduced i.e the modules added for implementing dynamic data migration are introduced and explained. In Chapter 4 the implementation is explained in detail. In Chapter 5 the the programs that assisted or were used for running the simulations before gathering results are given. In Chapter 6 the results are presented. It shows how the performance has changed with the proposed solution implementation. In Chapter 7 a summary is given and some suggestions for future works in this domain. 
 \chapter{Background and Related Work}
 In this chapter the necessary background information is introduced in order to understand the thesis. Moreover, we will discuss the related work in this domain of research.\\
 \\
@@ -296,7 +298,7 @@ The next subsections will explain how the messages exchanged between the modules
 \end{figure}
 \subsection{Triggering Migrations}
 \subsubsection{Which TLM Block to Migrate and Tile to Migrate it to?}
-Figure \ref{fig:tiletomigrate} shows how the tile to migrate a certain TLM block is determined. In the Central Stats Module first it is determined whether a TLM Block shall be migrated or not and if it has to be migrated then it is decided which tile to migrate it to. This decision is based on the local and remote accesses to the specific TLM block (explained in detail in the next subsections). For every TLM Block, the tile with the maximum remote accesses is found and if these remote accesses are greater than local accesses it means it has to be migrated to this tile.\\
+Figure \ref{fig:tiletomigrate} shows how the tile to migrate a certain TLM block is determined. In the Central Stats Module first it is determined whether a TLM block shall be migrated or not and if it has to be migrated then it is decided which tile to migrate it to. This decision is based on the local and remote accesses to the specific TLM block (explained in detail in the next subsections). For every TLM block, the tile with the maximum remote accesses is found and if these remote accesses are greater than local accesses it means it has to be migrated to this tile.\\
 \begin{figure}
   \includegraphics[width=0.4\linewidth]{tiletomigrate.png}
   \centering
@@ -304,11 +306,11 @@ Figure \ref{fig:tiletomigrate} shows how the tile to migrate a certain TLM block
   \label{fig:tiletomigrate}
 \end{figure}
 \subsubsection{When to Trigger Migrations?}
-Figure \ref{fig:tlm_stats flowchart} shows the algorithm for determining when migration shall take place. After we know the tile to which a specific TLM Block shall be migrated, it is determined whether there is free space in that tile's local memory. If there is free space, a migration command is send to L2 Cache Stats module. \\
+Figure \ref{fig:tlm_stats flowchart} shows the algorithm for determining when migration shall take place. After we know the tile to which a specific TLM block shall be migrated, it is determined whether there is free space in that tile's local memory. If there is free space, a migration command is send to L2 Cache Stats module. \\
 \\
-However, if there is no free space in the TLM, then the block with the least number of local accesses in the TLM is identified and this number of local accesses is compared with the number of remote accesses of the TLM block which is to be migrated. If the number of remote accesses of the TLM block to be migrated is higher than this number of local accesses a migration command is send to the L2 Cache Stats module for this block in-order to migrate it to the DDR i.e this block is migrated back to the DDR and free space is made for the incoming TLM block. Now with free space in the TLM a migration command is send to the  L2 Cache Stats module for the TLM block to be migrated to the tile. If the remote accesses of the TLM block to be migrated are less than the minimum local accesses in the TLM then the migration is flushed.\\
+However, if there is no free space in the TLM, then the block with the least number of local accesses in the TLM is identified and this number of local accesses is compared with the number of remote accesses of the TLM block which is to be migrated. If the number of remote accesses of the TLM block to be migrated is higher than this number of local accesses the data between the two memory location is swapped which means a migration command is send to the L2 Cache Stats module for the TLM block in the TLM which is full i.e the TLM block in the TLM which is full is copied to a buffer in order to make space for the incoming TLM block. Now with free space in the TLM a migration command is send to the L2 Cache Stats module of the incoming TLM block. Once this migration is completed the value in the buffer is copied into this memory location. If the remote accesses of the TLM block to be migrated are less than the minimum local accesses in the TLM then the migration is flushed.\\
 \\
-In case all the local accesses to a TLM are equal and a minimum cannot be found then at random a TLM Block is picked and the local accesses are compared with the migrating TLM Block's remote accesses. If the former is smaller than the latter, the TLM block is migrated to the DDR and free space is made for the incoming TLM block. Now with free space in the TLM a migration command is send to the  L2 Cache Stats module for the TLM block to be migrated to the tile. \\
+In case all the local accesses to a TLM are equal and a minimum cannot be found then at random a TLM Block is picked and the local accesses are compared with the migrating TLM Block's remote accesses. If the former is smaller than the latter, the TLM block is swapped with the incoming TLM block. Otherwise the migration is flushed.\\
 \subsubsection{Migrate Command}
 The migrate command is split into two commands in the Cache Stats module; first reading data from the location from where data has to be migrated and then writing data at the new location to which the migration is taking place. Once, the data is read a invalidation command is sent to all L1 and L2 caches for that TLM Block and once the data is written the vector address table in the memory management unit is updated. If a request is made to a address whose migration is in transition i.e data has been read from that address and invalidations have been sent to L1 and L2 caches but it has not been written to the new address yet, that request is pushed to a priority queue and is completed once the migration is complete and the vector address table is updated.\\
 \begin{figure}
@@ -358,7 +360,7 @@ Adding the dynamic data migration support to the simulator increased the real ti
 \\
 In the simulator the main modules added because of the dynamic data migration scheme are:
 \begin{itemize}
-  \item Twenty Cache Stats modules
+  \item Twenty-one Cache Stats modules
   \item One Central Stats module 
   \item One Vector Address Table
 \end{itemize}

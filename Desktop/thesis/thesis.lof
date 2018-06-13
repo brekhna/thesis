@@ -19,7 +19,7 @@
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Messages exchanged between different modules.}}{29}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Process to determine the TLM Block to migrate and the tile to migrate the TLM Block to.}}{30}{figure.4.4}
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Triggering Migration Commands}}{32}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Flowchart illustrating how to determine a local and remote TLM access.}}{32}{figure.4.6}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Flowchart illustrating how to determine a local and remote TLM access.}}{33}{figure.4.6}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Flowchart depicting how the free address space in the TLM is calculated.}}{33}{figure.4.7}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Flowchart showing how the free address space in TLM is calculated if the TLM is partially full.}}{34}{figure.4.8}
 \addvspace {10\p@ }

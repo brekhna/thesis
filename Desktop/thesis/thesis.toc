@@ -41,9 +41,9 @@
 \contentsline {subsubsection}{\nonumberline When to Trigger Migrations?}{29}{section*.8}
 \contentsline {subsubsection}{\nonumberline Migrate Command}{31}{section*.9}
 \contentsline {subsection}{\numberline {4.2.2}Local and Remote Accesses to a TLM Block}{31}{subsection.4.2.2}
-\contentsline {subsection}{\numberline {4.2.3}Free Address Space in TLM}{33}{subsection.4.2.3}
-\contentsline {subsubsection}{\nonumberline TLM Empty}{33}{section*.10}
-\contentsline {subsubsection}{\nonumberline TLM Partially Full}{33}{section*.11}
+\contentsline {subsection}{\numberline {4.2.3}Free Address Space in TLM}{32}{subsection.4.2.3}
+\contentsline {subsubsection}{\nonumberline TLM Empty}{32}{section*.10}
+\contentsline {subsubsection}{\nonumberline TLM Partially Full}{34}{section*.11}
 \contentsline {subsubsection}{\nonumberline TLM Full}{34}{section*.12}
 \contentsline {section}{\numberline {4.3}Usability Improvement}{34}{section.4.3}
 \contentsline {section}{\numberline {4.4}Limitations}{35}{section.4.4}

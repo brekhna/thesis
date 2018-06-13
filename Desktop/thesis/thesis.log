@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.28)  11 JUN 2018 21:05
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.28)  13 JUN 2018 20:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -925,12 +925,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <12> not available
 ] [2
 
 
-]
-Underfull \hbox (badness 10000) in paragraph at lines 31--32
-
- []
-
-[3
+] [3
 
 ] (./thesis.toc
 Underfull \vbox (badness 1776) has occurred while \output is active []
@@ -962,21 +957,21 @@ Chapter 1.
 <powerwall.png, id=431, 863.225pt x 440.64626pt>
 File: powerwall.png Graphic file (type png)
  <use powerwall.png>
-Package pdftex.def Info: powerwall.png used on input line 51.
+Package pdftex.def Info: powerwall.png used on input line 53.
 (pdftex.def)             Requested size: 426.79141pt x 217.8617pt.
 
 <memorywall.png, id=436, 1117.17375pt x 550.055pt>
 File: memorywall.png Graphic file (type png)
  <use memorywall.png>
-Package pdftex.def Info: memorywall.png used on input line 59.
+Package pdftex.def Info: memorywall.png used on input line 61.
 (pdftex.def)             Requested size: 426.79141pt x 210.13097pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--70
+Underfull \hbox (badness 10000) in paragraph at lines 59--72
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--70
+Underfull \hbox (badness 10000) in paragraph at lines 59--72
 
  []
 
@@ -984,12 +979,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 57--70
 
 
  <./powerwall.png>] [9 <./memorywall.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 71--72
+Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 73--74
+Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
@@ -997,33 +992,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 73--74
 File: multi-core,tile.png Graphic file (type png)
 
 <use multi-core,tile.png>
-Package pdftex.def Info: multi-core,tile.png used on input line 77.
+Package pdftex.def Info: multi-core,tile.png used on input line 79.
 (pdftex.def)             Requested size: 298.75269pt x 290.27003pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 83--86
+Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
 [10]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 89.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 89.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
  [11 <./multi-core,tile.png>] [12]
 Chapter 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 99--101
+Underfull \hbox (badness 10000) in paragraph at lines 101--103
 
  []
 
@@ -1032,40 +1027,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 99--101
 ] <tile.png, id=482, 675.27281pt x 282.30469pt>
 File: tile.png Graphic file (type png)
  <use tile.png>
-Package pdftex.def Info: tile.png used on input line 121.
+Package pdftex.def Info: tile.png used on input line 123.
 (pdftex.def)             Requested size: 426.79141pt x 178.4258pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--134
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--134
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 129--134
+Underfull \hbox (badness 10000) in paragraph at lines 131--136
 
  []
 
 [14 <./tile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 135--138
+Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 135--138
+Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 143--144
+Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
 
@@ -1074,25 +1064,30 @@ Underfull \hbox (badness 10000) in paragraph at lines 145--146
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
+
+ []
+
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 149--156
+Underfull \hbox (badness 10000) in paragraph at lines 151--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--156
+Underfull \hbox (badness 10000) in paragraph at lines 151--158
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 149--156
+Underfull \hbox (badness 10000) in paragraph at lines 151--158
 
  []
 
 <meshconnected.png, id=532, 612.78937pt x 349.305pt>
 File: meshconnected.png Graphic file (type png)
  <use meshconnected.png>
-Package pdftex.def Info: meshconnected.png used on input line 162.
+Package pdftex.def Info: meshconnected.png used on input line 164.
 (pdftex.def)             Requested size: 298.75269pt x 170.29749pt.
 
 [17] [18 <./meshconnected.png>]
@@ -1100,15 +1095,15 @@ Chapter 3.
 <processor.png, id=554, 698.61pt x 356.0803pt>
 File: processor.png Graphic file (type png)
  <use processor.png>
-Package pdftex.def Info: processor.png used on input line 174.
+Package pdftex.def Info: processor.png used on input line 176.
 (pdftex.def)             Requested size: 426.79141pt x 217.53467pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 170--179
+Underfull \hbox (badness 10000) in paragraph at lines 172--181
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 180--181
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
@@ -1118,14 +1113,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 180--181
 File: localaccesses.png Graphic file (type png)
 
 <use localaccesses.png>
-Package pdftex.def Info: localaccesses.png used on input line 184.
+Package pdftex.def Info: localaccesses.png used on input line 186.
 (pdftex.def)             Requested size: 426.79141pt x 243.48181pt.
 
 <remoteaccesses.png, id=565, 688.82344pt x 393.72093pt>
 File: remoteaccesses.png Graphic file (type png)
 
 <use remoteaccesses.png>
-Package pdftex.def Info: remoteaccesses.png used on input line 192.
+Package pdftex.def Info: remoteaccesses.png used on input line 194.
 (pdftex.def)             Requested size: 426.79141pt x 243.94826pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1135,50 +1130,50 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 File: moduleconnections.png Graphic file (type png)
 
 <use moduleconnections.png>
-Package pdftex.def Info: moduleconnections.png used on input line 202.
+Package pdftex.def Info: moduleconnections.png used on input line 204.
 (pdftex.def)             Requested size: 426.79141pt x 194.65665pt.
  <traceFile.png, id=580, 405.01312pt x 378.66469pt>
 File: traceFile.png Graphic file (type png)
 
 <use traceFile.png>
-Package pdftex.def Info: traceFile.png used on input line 210.
+Package pdftex.def Info: traceFile.png used on input line 212.
 (pdftex.def)             Requested size: 298.75269pt x 279.32346pt.
  [22 <./moduleconnections.png>] [23 <./traceFile.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 243--246
+Underfull \hbox (badness 10000) in paragraph at lines 245--248
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 247--249
+Underfull \hbox (badness 10000) in paragraph at lines 249--251
 
  []
 
 [24] [25]
 Chapter 4.
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--267
+Underfull \hbox (badness 10000) in paragraph at lines 268--269
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 269--272
+Underfull \hbox (badness 10000) in paragraph at lines 271--274
 
  []
 
 <insidetile.png, id=617, 818.05624pt x 401.5pt>
 File: insidetile.png Graphic file (type png)
  <use insidetile.png>
-Package pdftex.def Info: insidetile.png used on input line 276.
+Package pdftex.def Info: insidetile.png used on input line 278.
 (pdftex.def)             Requested size: 426.79141pt x 209.47348pt.
 
 <processorsynopsys.png, id=618, 481.8pt x 360.34625pt>
 File: processorsynopsys.png Graphic file (type png)
 
 <use processorsynopsys.png>
-Package pdftex.def Info: processorsynopsys.png used on input line 282.
+Package pdftex.def Info: processorsynopsys.png used on input line 284.
 (pdftex.def)             Requested size: 426.79141pt x 319.21158pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 273--287
+Underfull \hbox (badness 10000) in paragraph at lines 275--289
 
  []
 
@@ -1188,33 +1183,33 @@ Underfull \hbox (badness 10000) in paragraph at lines 273--287
 File: approachOfSolution1.png Graphic file (type png)
 
 <use approachOfSolution1.png>
-Package pdftex.def Info: approachOfSolution1.png used on input line 292.
+Package pdftex.def Info: approachOfSolution1.png used on input line 294.
 (pdftex.def)             Requested size: 426.79141pt x 231.2119pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 288--297
+Underfull \hbox (badness 10000) in paragraph at lines 290--299
 
  []
 
 <tiletomigrate.png, id=629, 219.82124pt x 395.22656pt>
 File: tiletomigrate.png Graphic file (type png)
  <use tiletomigrate.png>
-Package pdftex.def Info: tiletomigrate.png used on input line 301.
+Package pdftex.def Info: tiletomigrate.png used on input line 303.
 (pdftex.def)             Requested size: 170.71396pt x 306.94269pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [27 <./insidetile.png>] [28 <./processorsynopsys.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 307--312
+Underfull \hbox (badness 10000) in paragraph at lines 309--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--312
+Underfull \hbox (badness 10000) in paragraph at lines 309--314
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 307--312
+Underfull \hbox (badness 10000) in paragraph at lines 309--314
 
  []
 
@@ -1222,44 +1217,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 307--312
 <tlmstats.png, id=651, 626.34pt x 401.24907pt>
 File: tlmstats.png Graphic file (type png)
  <use tlmstats.png>
-Package pdftex.def Info: tlmstats.png used on input line 315.
+Package pdftex.def Info: tlmstats.png used on input line 317.
 (pdftex.def)             Requested size: 426.79141pt x 273.42126pt.
 
 <localandremote.png, id=653, 412.54124pt x 395.97937pt>
 File: localandremote.png Graphic file (type png)
 
 <use localandremote.png>
-Package pdftex.def Info: localandremote.png used on input line 323.
+Package pdftex.def Info: localandremote.png used on input line 325.
 (pdftex.def)             Requested size: 256.07744pt x 245.80074pt.
- <freespace.png, id=655, 632.3625pt x 391.4625pt>
+ [31] <freespace.png, id=661, 632.3625pt x 391.4625pt>
 File: freespace.png Graphic file (type png)
 
 <use freespace.png>
-Package pdftex.def Info: freespace.png used on input line 332.
+Package pdftex.def Info: freespace.png used on input line 334.
 (pdftex.def)             Requested size: 426.79141pt x 264.20786pt.
- [31] [32 <./tlmstats.png> <./localandremote.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 343--344
+
+Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
-<tlmpartiallyempty.png, id=668, 493.845pt x 395.97937pt>
+<tlmpartiallyempty.png, id=662, 493.845pt x 395.97937pt>
 File: tlmpartiallyempty.png Graphic file (type png)
 
 <use tlmpartiallyempty.png>
-Package pdftex.def Info: tlmpartiallyempty.png used on input line 347.
+Package pdftex.def Info: tlmpartiallyempty.png used on input line 349.
 (pdftex.def)             Requested size: 298.75269pt x 239.5471pt.
- [33 <./freespace.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 353--354
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 357--360
+ [32 <./tlmstats.png>] [33 <./localandremote.png> <./freespace.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
 [34 <./tlmpartiallyempty.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 365--388
+Underfull \hbox (badness 10000) in paragraph at lines 359--362
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 367--390
 
  []
 
@@ -1273,67 +1268,67 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 ] [37]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 490.
+(Font)              using `OT1/cmss/bx/n' instead on input line 492.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 499--500
+Underfull \hbox (badness 10000) in paragraph at lines 501--502
 
  []
 
 [38] [39]
 Chapter 6.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <17.28> on input line 520.
+(Font)              <17.28> on input line 522.
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 520.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `subscript' on input line 520.
+(hyperref)                removing `math shift' on input line 522.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 520.
+(hyperref)                removing `subscript' on input line 522.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 522.
 
 [40
 
 ]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--534
+Underfull \hbox (badness 10000) in paragraph at lines 527--536
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--534
+Underfull \hbox (badness 10000) in paragraph at lines 527--536
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--534
+Underfull \hbox (badness 10000) in paragraph at lines 527--536
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--534
+Underfull \hbox (badness 10000) in paragraph at lines 527--536
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 525--534
+Underfull \hbox (badness 10000) in paragraph at lines 527--536
 
  []
 
 [41
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 535--541
+Underfull \hbox (badness 10000) in paragraph at lines 537--543
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 535--541
+Underfull \hbox (badness 10000) in paragraph at lines 537--543
 
  []
 
@@ -1364,12 +1359,12 @@ _ 2 . 3 . 0 / com . ibm .
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 548.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 550.
  [49]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 548.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 550.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 548.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 548.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 550.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 550.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: FF62301114F6FD5A28956F7C91AC6D39;4603.
 
@@ -1379,7 +1374,7 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 548.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 550.
  ) 
 Here is how much of TeX's memory you used:
  16690 strings out of 493304
@@ -1388,7 +1383,7 @@ Here is how much of TeX's memory you used:
  19649 multiletter control sequences out of 15000+600000
  17293 words of font info for 44 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 72i,9n,73p,1171b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,9n,73p,1242b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist
@@ -1400,7 +1395,7 @@ onts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt
 12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb></usr
 /share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (49 pages, 1151766 bytes).
+Output written on thesis.pdf (49 pages, 1151390 bytes).
 PDF statistics:
  845 PDF objects out of 1000 (max. 8388607)
  738 compressed objects within 8 object streams
