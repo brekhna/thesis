@@ -164,3 +164,11 @@ year={2011}
 	publisher="Morgan Kauffmann, San Francisco, CA",
 	edition = "2nd edition",
 }
+@inproceedings{sven,
+	author = "Sven Rheindt, Andreas Schenk, Akshay Srivatsa, Thomas Wild and Andreas Herkersdorf", 
+	title = "CaCAO: Complex and Compositional Atomic Operations for NoC-based Manycore Platforms",
+	booktitle = "ARCS 2018 - 31st International Conference on Architecture of Computing Systems",
+	address = "Braunschweig, Germany",
+	year = "2018",
+	language = "en",
+}

@@ -136,6 +136,14 @@ Christoph Scheurich and Michel Dubois.
 \newblock pages 302--312. Proc. the 20th Hawaii Int. Conf. Syst. Sci., Jan.
   1987.
 
+\bibitem{sven}
+Akshay Srivatsa Thomas~Wild Sven~Rheindt, Andreas~Schenk and Andreas
+  Herkersdorf.
+\newblock Cacao: Complex and compositional atomic operations for noc-based
+  manycore platforms.
+\newblock In {\em ARCS 2018 - 31st International Conference on Architecture of
+  Computing Systems}, Braunschweig, Germany, 2018.
+
 \bibitem{synopsys}
 Synopsys.
 \newblock Soc architecture analysis and optimization for performance and power.

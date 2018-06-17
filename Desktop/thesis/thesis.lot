@@ -11,5 +11,8 @@
 \contentsline {table}{\numberline {5.3}{\ignorespaces Data Cache Configuration}}{37}{table.5.3}
 \contentsline {table}{\numberline {5.4}{\ignorespaces DDR Configuration}}{37}{table.5.4}
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {6.1}{\ignorespaces Execution times in (\textbf {in nano-seconds}). The block size is one cache line and the time interval is 1000 nsec}}{40}{table.6.1}
+\contentsline {table}{\numberline {6.2}{\ignorespaces Execution times in (\textbf {in nano-seconds}). The block size is four cache lines and the time interval is 500 nsec}}{41}{table.6.2}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Blackscholes: execution times in (\textbf {in nano-seconds}) for varying block sizes and time intervals}}{43}{table.6.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

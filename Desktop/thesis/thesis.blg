@@ -3,6 +3,8 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: thesis.aux
 The style file: plain.bst
 Database file #1: thesis.bib
+Too many commas in name 1 of "Sven Rheindt, Andreas Schenk, Akshay Srivatsa, Thomas Wild and Andreas Herkersdorf" for entry sven
+while executing---line 1049 of file plain.bst
 Name 1 in "C. Kim, D. Burger, and S. W. Keckler" has a comma at the end for entry cacheDataPlacement1
 while executing---line 1049 of file plain.bst
 Name 1 in "N. Hardavellas, M. Ferdman, B. Falsafi, and A. Ailamaki" has a comma at the end for entry cacheDataPlacement4
@@ -99,46 +101,48 @@ Warning--empty booktitle in gem5
 Warning--empty booktitle in cacheDataPlacement6
 Warning--empty booktitle in dynamicPageMigration
 Warning--empty booktitle in dynamicpMigration
+Too many commas in name 1 of "Sven Rheindt, Andreas Schenk, Akshay Srivatsa, Thomas Wild and Andreas Herkersdorf" for entry sven
+while executing---line 1090 of file plain.bst
 Warning--empty booktitle in cacheDataPlacement3
-You've used 27 entries,
+You've used 28 entries,
             2118 wiz_defined-function locations,
-            643 strings with 9088 characters,
-and the built_in function-call counts, 7597 in all, are:
-= -- 705
-> -- 325
+            649 strings with 9360 characters,
+and the built_in function-call counts, 7872 in all, are:
+= -- 731
+> -- 338
 < -- 7
-+ -- 130
-- -- 100
-* -- 353
-:= -- 1205
-add.period$ -- 78
-call.type$ -- 27
-change.case$ -- 130
++ -- 135
+- -- 104
+* -- 367
+:= -- 1252
+add.period$ -- 81
+call.type$ -- 28
+change.case$ -- 135
 chr.to.int$ -- 0
-cite$ -- 44
-duplicate$ -- 338
-empty$ -- 718
-format.name$ -- 100
-if$ -- 1685
+cite$ -- 45
+duplicate$ -- 352
+empty$ -- 744
+format.name$ -- 104
+if$ -- 1745
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 17
-newline$ -- 130
-num.names$ -- 54
-pop$ -- 238
+int.to.str$ -- 28
+missing$ -- 18
+newline$ -- 135
+num.names$ -- 56
+pop$ -- 247
 preamble$ -- 1
-purify$ -- 103
+purify$ -- 107
 quote$ -- 0
-skip$ -- 281
+skip$ -- 287
 stack$ -- 0
-substring$ -- 244
-swap$ -- 74
+substring$ -- 249
+swap$ -- 75
 text.length$ -- 7
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 108
+type$ -- 112
 warning$ -- 17
-while$ -- 63
-width$ -- 29
-write$ -- 259
-(There were 40 error messages)
+while$ -- 65
+width$ -- 30
+write$ -- 270
+(There were 42 error messages)

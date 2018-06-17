@@ -12,17 +12,20 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces A tile depicting local accesses to a TLM.}}{21}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces A tile depicting remote accesses to a TLM.}}{21}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Overview and connections of the modules used.}}{22}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Vector Address Table and Trace File Placement}}{23}{figure.3.5}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Trace File and MMU}}{23}{figure.3.5}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces Intra-Tile Design View in Synopsys Platform Architect}}{27}{figure.4.1}
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Inter-Tile Design View in Synopsys Platform Architect}}{28}{figure.4.2}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Messages exchanged between different modules.}}{29}{figure.4.3}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Messages exchanged between the Cache Stats, TLM and Central Stats Modules.}}{29}{figure.4.3}
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Process to determine the TLM Block to migrate and the tile to migrate the TLM Block to.}}{30}{figure.4.4}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Triggering Migration Commands}}{32}{figure.4.5}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Flowchart illustrating how to determine a local and remote TLM access.}}{33}{figure.4.6}
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Triggering Migration Commands}}{31}{figure.4.5}
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Flowchart illustrating how to determine a local and remote TLM access.}}{32}{figure.4.6}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Flowchart depicting how the free address space in the TLM is calculated.}}{33}{figure.4.7}
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Flowchart showing how the free address space in TLM is calculated if the TLM is partially full.}}{34}{figure.4.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Bar Chart comparing the execution times for all the three trace files}}{41}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Bar Chart comparing the execution times for all the three trace files}}{42}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Graph showing how the execution time varies with varying block size for Blackscholes}}{42}{figure.6.3}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

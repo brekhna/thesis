@@ -51,14 +51,11 @@
 \BOOKMARK [2][-]{subsection.5.6.2}{5.6.2 Time Log File}{section.5.6}% 51
 \BOOKMARK [1][-]{section.5.7}{5.7 System Specifications}{chapter.5}% 52
 \BOOKMARK [0][-]{chapter.6}{6 Evaluation}{}% 53
-\BOOKMARK [1][-]{section.6.1}{6.1 Dynamic Data Migration vs First Touch and Most Accessed}{chapter.6}% 54
-\BOOKMARK [2][-]{subsection.6.1.1}{6.1.1 Blackscholes}{section.6.1}% 55
-\BOOKMARK [2][-]{subsection.6.1.2}{6.1.2 Swaptions}{section.6.1}% 56
-\BOOKMARK [2][-]{subsection.6.1.3}{6.1.3 Fluidanimate}{section.6.1}% 57
-\BOOKMARK [2][-]{subsection.6.1.4}{6.1.4 Canneal}{section.6.1}% 58
-\BOOKMARK [1][-]{section.6.2}{6.2 Dynamic Data Placement for Different TLM Block Size}{chapter.6}% 59
-\BOOKMARK [1][-]{section.6.3}{6.3 Dynamic Data Placement for Different Time Interval \(Tinterval\)}{chapter.6}% 60
-\BOOKMARK [0][-]{chapter.7}{7 Summary and Future Work}{}% 61
-\BOOKMARK [1][-]{section.7.1}{7.1 Summary}{chapter.7}% 62
-\BOOKMARK [1][-]{section.7.2}{7.2 Future Work}{chapter.7}% 63
-\BOOKMARK [0][-]{chapter*.13}{Bibliography}{}% 64
+\BOOKMARK [1][-]{section.6.1}{6.1 Dynamic Data Migration vs First Touch and No Data Placement}{chapter.6}% 54
+\BOOKMARK [1][-]{section.6.2}{6.2 Blackscholes}{chapter.6}% 55
+\BOOKMARK [1][-]{section.6.3}{6.3 Swaptions}{chapter.6}% 56
+\BOOKMARK [1][-]{section.6.4}{6.4 Canneal}{chapter.6}% 57
+\BOOKMARK [0][-]{chapter.7}{7 Summary and Future Work}{}% 58
+\BOOKMARK [1][-]{section.7.1}{7.1 Summary}{chapter.7}% 59
+\BOOKMARK [1][-]{section.7.2}{7.2 Future Work}{chapter.7}% 60
+\BOOKMARK [0][-]{chapter*.13}{Bibliography}{}% 61

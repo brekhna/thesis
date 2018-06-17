@@ -48,7 +48,7 @@ Current processor architectures have shifted from microarchitecture to macroarch
 \chapter{Introduction}
 \section{Motivation}
 \subsection{Power Wall}
-In a single core system, the speed of the processors is determined by its frequency. Hence, increasing the processors speed means to increase its operating frequency which in terms increases the power dissipation. The bottleneck here is the \textit{power density} which is the power per die area. With increasing frequency a point is reached when the power density is similar to that of a core of a nuclear reactor and if we extrapolate the graph we reach to the power density of a rocket nozzle. This makes it quite challenging to dissipate the heat and run the system efficiently. Hence, a maximum frequency is reached due to the limitations on power dissipations. This scenario is called the \textit{power wall} as shown in figure~\ref{fig:powerwall}. The solution to this is to use multiple cores at a frequency which gives feasible power dissipations in-order to achieve high computing speeds which gave rise to multi-core computing.\\
+In a single core system, the speed of the processor is determined by its frequency. Hence, increasing the processor's speed means to increase its operating frequency which in terms increases the power dissipation. The bottleneck here is the \textit{power density} which is the power per die area. With increasing frequency a point is reached when the power density is similar to that of a core of a nuclear reactor and if we extrapolate the graph we reach to the power density of that inside a rocket nozzle. This makes it quite challenging to dissipate the heat and run the system efficiently. Hence, a maximum frequency is reached due to the limitations on power dissipations. This scenario is called the \textit{power wall} as shown in figure~\ref{fig:powerwall}. The solution to this is to use multiple cores at a frequency which gives feasible power dissipations in-order to achieve high computing speeds which gave rise to multi-core computing.\\
 \begin{figure}[h!]
   \includegraphics[width=\linewidth]{powerwall.png}
   \centering
@@ -66,11 +66,11 @@ The \textit{memory wall} is a situation where the improvement of the speed of dy
 \\
 Due to the memory wall and power wall described above current research in semi-conductor industry is towards developing a single chip multi-tile multi-core processor. Hence, parallel programming is experiencing a rapid growth with the advent of system on chip (SoC) architectures. One example of such a system is the Invasic architecture~\cite{invasive} as shown in Figure \ref{fig:multi-core,tile}. The main idea of Invasic architecture is to introduce ``resource aware programming" support so that a program has the ability to explore its surroundings and dynamically spread its computations to neighboring processors~\cite{invasive}. Because of multiple tiles and cores on one chip these processors deal with data processing at a high scale and complexity. Therefore, the bottleneck has shifted from computational complexities to data management techniques.\\
 \\
-Modern, scalable multiprocessor system-on-chip (MPSoC) platform's memory access time depends on where the memory is located relative to the core which accesses the memory. In other words (MPSoC) platform's have Non-Uniform Memory Access (NUMA) properties because it has a distributed shared memory (DSM) architecture, hence application performance is highly influenced by data-to-task locality. The goal is to bring tasks and data closer together to increase overall performance. This is a twofold and complementary problem consisting of data and or task migration. In this thesis, we will look into data migration and see how it improves the performance of the MPSoC.\\
+Modern, scalable multiprocessor system-on-chip (MPSoC) platform's memory access time depends on where the memory is located relative to the core which accesses the memory. In other words (MPSoC) platform's have Non-Uniform Memory Access (NUMA) properties because it has a distributed shared memory (DSM) architecture, hence application performance is highly influenced by data-to-task locality~\cite{sven, lispaper}. The goal is to bring tasks and data closer together to increase overall performance. This is a twofold and complementary problem consisting of data and or task migration. In this thesis, we will look into data migration and see how it improves the performance of the MPSoC.\\
 \\
-We propose a dynamic data migration (DDM) scheme in which the data is migrated dynamically at run time from one Tile Local Memory (TLM) to another TLM if the need arises. This is the major differentiating factor of our approach from the current research in the group; managing data placement at run time rather than at compile time.
+We propose a dynamic data migration (DDM) scheme in which the data is migrated dynamically at run time from one Tile Local Memory (TLM) or DDR to another TLM or DDR if the need arises. This is the major differentiating factor of our approach from the current research in the group; managing data placement at run time rather than at compile time.
 \section{Problem}
-In~\cite{lispaper} the research in the group has been described. The authors explain how data is placed on the tile local memory. They divide the data used by an application at the granularity of memory pages and place them on the local memory according to the ideal location that is derived based on the task-to-data mapping techniques. They propose two techniques on how to do this task-to-data mapping:\\
+In~\cite{lispaper} the research in the group has been described. The authors explain how data is placed on the TLM. They divide the data used by an application at the granularity of memory pages and place them on the local memory according to the ideal location that is derived based on the task-to-data mapping techniques. They propose two techniques on how to do this task-to-data mapping:\\
 \par
 \textit{First Touch Policy}: As the names suggest, in first touch the memory blocks are migrated to the TLM of the tile that accesses the data first~\cite{lispaper}. The drawback of first touch policy is that data can be placed at a local memory far away from the core that accesses it frequently hence increasing the memory access time. You cannot change the location of data at run time even if it is giving performance disadvantages.\\ 
 \par
@@ -96,7 +96,7 @@ The steps followed to develop the Simulator Support for Dynamic Data Migration a
 \end{itemize}
 \section{Outline}
 The work is structured as follows. In Chapter 1 a brief introduction of the problem is given along with the motivation to solve it and then a brief overview of the solution is given.
-In Chapter 2 the basic concepts needed to understand how dynamic data migration is implemented are explained along with the work already done related to this thesis is given. In Chapter 3 the system architecture is introduced i.e the modules added for implementing dynamic data migration are introduced and explained. In Chapter 4 the implementation is explained in detail. In Chapter 5 the the programs that assisted or were used for running the simulations before gathering results are given. In Chapter 6 the results are presented. It shows how the performance has changed with the proposed solution implementation. In Chapter 7 a summary is given and some suggestions for future works in this domain. 
+In Chapter 2 the basic concepts needed to understand how dynamic data migration is implemented are explained along with the work already done related to this thesis is given. In Chapter 3 the system architecture is introduced i.e the modules added for implementing dynamic data migration are introduced and explained. In Chapter 4 the implementation is explained in detail. In Chapter 5 the the programs that assisted or were used for running the simulations before gathering results are given. In Chapter 6 the results are presented. It shows how the performance has changed with the proposed solution implementation. In Chapter 7 a summary is given along with some suggestions for future works in this domain. 
 \chapter{Background and Related Work}
 In this chapter the necessary background information is introduced in order to understand the thesis. Moreover, we will discuss the related work in this domain of research.\\
 \\
@@ -106,7 +106,7 @@ Figure \ref{fig:tile} shows a single tile. You can see in the figure that it com
 \par
 \textbf{Core}: A Core is the basic processing unit that receives instructions (from the user or application) and performs calculations based on those instructions. A processor can have a single core or multiple cores.  
 \par
-\textbf{TLM}: TLM stands for Tile Local Memory. Each tile has its own TLM which is shared among all the Cores of the tile~\cite{ankitThesis},~\cite{iNetworkAdapter}. This memory is cachable by the L1 caches of all the Cores within the tile that it sits on and by the L2 cache of any other tile. The TLM from one tile can be accessed by the core of another tile.
+\textbf{TLM}: TLM stands for Tile Local Memory. Each tile has its own TLM which is shared among all the Cores of the tile~\cite{ankitThesis, iNetworkAdapter}. This memory is cachable by the L1 caches of all the Cores within the tile that it sits on and by the L2 cache of any other tile. The TLM from one tile can be accessed by the core of another tile.
 \par
 \textbf{Bus}: The bus connects the Core to the L2 Cache and the TLM. Also, when another tile has to be accessed the request goes through the bus to the network adapter.
 \par
@@ -179,9 +179,9 @@ In~\cite{cacheDataPlacement1, cacheDataPlacement3, cacheDataPlacement4} the auth
   \label{fig:processor}
 \end{figure}
 \subsection{Memory Accesses}
-The Tile Local Memory (TLM) is a distributed-shared memory in the processor architecture. By distributed-shared we mean that it is distributed among all the tiles and can be accessed by core's placed remotely on neighboring or far away tiles. As mentioned in the previous chapter, figure \ref{fig:tile} depicts the inside of one tile. We have multiple such tiles in our processor as shown in figure \ref{fig:processor} hence the name multi-tile multi-core processor architecture. A TLM can have two kind of accesses to its data blocks:\\
+The Tile Local Memory (TLM) is a distributed-shared memory in the processor architecture. By distributed-shared we mean that it is distributed among all the tiles and can be accessed by cores placed remotely on neighboring or far away tiles. As mentioned in the previous chapter, figure \ref{fig:tile} depicts the inside of one tile. We have multiple such tiles in our processor as shown in figure \ref{fig:processor} hence the name multi-tile multi-core processor architecture. A TLM can have two kind of accesses to its data blocks:\\
 \par
-\textbf{Local TLM Accesses}: Figure \ref{fig:localaccesses} depicts different scenarios of when a request is considered a Local TLM Access. In tile 0 a core is accessing its own tile's local memory which makes it a local TLM access. Also, in tile 1 a core is accessing data from a address of another tile's local memory but that data is cached in the L1 cache of the core requesting the data hence it becomes a Local TLM Access. Another scenario is a core in tile 1 accessing data from address of another tile's local memory but that data is cached in the L2 cache of the tile. It is again considered a Local TLM Access. In a Local TLM Access, the data transfer is happening over the bus inside the tile and there is no traffic going outside the tile through the network adapter. This takes less time as data is placed close to the core that uses it. \\
+\textbf{Local TLM Accesses}: Figure \ref{fig:localaccesses} depicts different scenarios of when a request is considered a Local TLM Access. In tile 0 a core is accessing its local tile's memory which makes it a local TLM access. Also, in tile 1 a core is accessing data from a address of another tile's local memory but that data is cached in the L1 cache of the core requesting the data hence it becomes a Local TLM Access. Another scenario is a core in tile 1 accessing data from address of another tile's local memory but that data is cached in the L2 cache of the tile. It is again considered a Local TLM Access. In a Local TLM Access, the data transfer is happening over the bus inside the tile and there is no traffic going outside the tile through the network adapter. This takes less time as data is placed close to the core that uses it. \\
 \begin{figure}
   \includegraphics[width=\linewidth]{localaccesses.png}
   \centering
@@ -211,7 +211,7 @@ Also, there is a Memory Management Unit which sits between the trace file and th
 \begin{figure}[h!]
   \includegraphics[width=0.7\linewidth]{traceFile.png}
   \centering
-  \caption{Vector Address Table and Trace File Placement}
+  \caption{Trace File and MMU}
   \label{fig:traceFile}
 \end{figure}
 \section{Modules Directly Used in the System for Implementing Thesis}
@@ -246,7 +246,7 @@ At time 3500 ns, core 7 writes data to address 0x41000FFF.\\
 \\
 It is important to note here that the traces of all the cores are present in one trace file. This means that all the cores access the same trace file as shown in figure~\ref{fig:traceFile}. Each core needs to decode and execute the traces which matches only with its core number.
 \subsection{Memory Management Unit}
-The Memory Management Unit (MMU) sits between the trace file and the Cores as shown in Figure \ref{fig:traceFile}. This unit is basically a vector address table which contains the address translation of all the addresses from the DDR to the TLM. At start all TLM's are empty which means every instruction has to access data from the DDR. The memory management unit's vector address table is updated if the DDR is accessed or if a migration triggered by the Central Stats Module takes place.
+The Memory Management Unit (MMU) sits between the trace file and the cores as shown in Figure \ref{fig:traceFile}. This unit is basically a vector address table which contains the address translation of all the addresses from the DDR to the TLM. At start all TLM's are empty which means every instruction has to access data from the DDR. The memory management unit's is updated if a migration triggered by the Central Stats Module takes place.
 Below is a example of a vector address table with two entries.\\
 \begin{center}
  \begin{tabular}{c | c } 
@@ -261,11 +261,11 @@ The values signify that the data at address 0x31012345 has been migrated to the 
 \subsection{Cache Stats Module}
 The Cache Stats Module is depicted in figure~\ref{fig:overviewOfSolution}. It is connected to the L1 and L2 Caches and is continuously getting updates from them regarding cache hits and misses per cache line. This module is responsible for calculating the cache hits and misses per TLM Block which can vary in size from 1 cache line to multiple cache lines. It also calculates the number of local and remote accesses for every TLM Block. Cache Stats Module also plays a important role in carrying out the data migration command as the migration command has to go through this module. 
 \subsection{Tile Local Memory Module}
-This is the Tile's Local Memory and has been explained in detail in chapter 2. This module has the functionality to observe itself and calculate whether it is empty, is full or has free space. If it has free space then it can find the starting and ending address of all the free spaces. 
+This is the Tile's Local Memory and has been explained in detail in chapter 2. This module has the functionality to observe itself and calculate whether it is empty or has free space. If it has free space then it can find the starting and ending address of all the free spaces. 
 \subsection{Central Stats Module}
-This is the main central module to whom all the Cache Stats Modules and TLM Modules report to every given time interval (T$_{interval}$). This module is responsible for evaluating the data and determining whether migration shall take place or not.
+This is the main central module to whom all the Cache Stats Modules and TLM Modules report to every given time interval (T$_{interval}$). This module is responsible for evaluating the data and determining whether migration(s) shall take place or not.
 \chapter{Implementation}
-This chapter will talk about the technologies used to develop the system. It will further discuss the detailed approach of developing the dynamic data migration scheme. We further talk in detail about how the parameters responsible for data migration are calculated and the limitations that exists in the simulator. \\
+This chapter will talk about the technologies used to develop the system. It will also discuss the detailed approach of developing the dynamic data migration scheme. We further talk in detail about how the parameters responsible for data migration are calculated and the limitations that exists in the simulator. \\
 \section{Language and Tools}
 \subsection{SystemC}
 The simulator is modeled using SystemC~\cite{systemc}. SystemC is basically classified as a set of C++ classes rather than a language. It provides an event-driven simulation interface which enables the user to simulate concurrent processes and do system level modeling. One of the major concept used in SystemC is \textit{Transaction Level Modeling (TLM)}. In TLM the details of communication among modules are separated from the details of the implementation of the functional modules~\cite{tlm}. It provides defined rules for how different modules (namely known as \textit{Initiator} and \textit{Target}) should communicate with each other. \\
@@ -273,7 +273,7 @@ The simulator is modeled using SystemC~\cite{systemc}. SystemC is basically clas
 The simulator is modeled using the TLM-2.0 standard protocol~\cite{systemc}. This standard supports two types of non-blocking communication i.e \textit{TLM-2.0 Two Phase Protocol} and \textit{TLM-2.0 Four Phase Protocol}~\cite{akshay}. Non-blocking communication means that function implementations never wait for the response from the target.
 \subsection{Synopsys Platform Architect}
 The simulator is powered by Synopsys Platform Architect Tool~\cite{synopsys}. Synopsys Platform Architect is a SystemC TLM standards-based graphical environment which can be used as a alternative to a SystemC top level module for binding the individual modules. With this tool the individual modules just need to be imported and connected together graphically. This makes the connection of multiple modules with multiple initiator-target socket pairs easier to design and debug.\\
-\\ Figure~\ref{fig:insidetile} represents the internal view of the tile in Synopsys Platform Architect Tool. It contains four cores, each core having its own private L1 cache. The L1 caches are connected together by a bus. Figure~\ref{fig:processorsynopsys} illustrates how the tiles are connected together in the processor architecture. The detailed explanation of the architecture design has been given in Chapter 3. It can be seen from figure~\ref{fig:insidetile} and figure~\ref{fig:processorsynopsys} that the graphical view of the tool helps in visualizing complex systems and makes the design phase easier which in turn makes testing and debugging easier.
+\\ Figure~\ref{fig:insidetile} represents the internal view of the tile in Synopsys Platform Architect Tool. It contains four cores, each core having its own private L1 cache and a TLM. The L1 caches are connected together by a bus. Figure~\ref{fig:processorsynopsys} illustrates how the tiles are connected together in the processor architecture. The detailed explanation of the architecture design has been given in Chapter 3. It can be seen from figure~\ref{fig:insidetile} and figure~\ref{fig:processorsynopsys} that the graphical view of the tool helps in visualizing complex systems and makes the design phase easier which in turn makes testing and debugging easier.
 \begin{figure}
   \includegraphics[width=\linewidth]{insidetile.png}
   \centering
@@ -287,20 +287,20 @@ The simulator is powered by Synopsys Platform Architect Tool~\cite{synopsys}. Sy
   \label{fig:processorsynopsys}
 \end{figure}
 \section{Dynamic Data Migration Process Mechanism}
-Figure \ref{fig:approachOfSolution} shows the messages exchanged between the Cache Stats Module, TLM Module and Central Stats Module. At every given time interval (T$_{interval}$) the Cache Stats Module sends the number of local and remote accesses of all the TLM blocks to the Central Stats Module and the TLM Module sends its free address space to the Central Stats Module. The TLM block size is equal to a variable number of cache lines that is determined at compile time by the user. The Central Stats module then evaluates this received data and sends a migrate command to the L2 Cache Stats module if it thinks that migration is needed. \\
+Figure \ref{fig:approachOfSolution} shows the messages exchanged between the Cache Stats Module, TLM Module and Central Stats Module. At every given time interval (T$_{interval}$) the Cache Stats Module sends the number of local and remote accesses of all the TLM blocks to the Central Stats Module and the TLM Module sends its free address space to the Central Stats Module. The TLM block size is equal to a variable number of cache lines that is determined at compile time by the user. The Central Stats module then evaluates this received data and sends a migrate command to the L2 Cache Stats module if the need arises. \\
 \\
 The next subsections will explain how the messages exchanged between the modules are calculated. 
 \begin{figure}
   \includegraphics[width=\linewidth]{approachOfSolution1.png}
   \centering
-  \caption{Messages exchanged between different modules.}
+  \caption{Messages exchanged between the Cache Stats, TLM and Central Stats Modules.}
   \label{fig:approachOfSolution}
 \end{figure}
 \subsection{Triggering Migrations}
 \subsubsection{Which TLM Block to Migrate and Tile to Migrate it to?}
-Figure \ref{fig:tiletomigrate} shows how the tile to migrate a certain TLM block is determined. In the Central Stats Module first it is determined whether a TLM block shall be migrated or not and if it has to be migrated then it is decided which tile to migrate it to. This decision is based on the local and remote accesses to the specific TLM block (explained in detail in the next subsections). For every TLM block, the tile with the maximum remote accesses is found and if these remote accesses are greater than local accesses it means it has to be migrated to this tile.\\
+Figure \ref{fig:tiletomigrate} shows how the tile to migrate a certain TLM block is determined in the Central Stats Module. For every TLM Block the local and remote accesses are sent by the Cache Stats Module to the Central Stats Module. For every TLM Block, first it is checked whether it is a DDR address or a TLM address. If it is a DDR address the tile with the highest number if local accesses is found and that is the tile to migrate the DDR address (TLM Block) to. This is because a DDR address can be a remote access only when it is placed in the DDR, else it is cached in and is always a local access. If the address is not a DDR address then the tile with the maximum number of remote accesses is found. These number of local accesses are compared to the local accesses for the TLM Block. If these remote accesses are greater then the local accesses then it signifies that it has to be migrated to this tile. \\
 \begin{figure}
-  \includegraphics[width=0.4\linewidth]{tiletomigrate.png}
+  \includegraphics[width=\linewidth]{tiletomigrate.png}
   \centering
   \caption{Process to determine the TLM Block to migrate and the tile to migrate the TLM Block to.}
   \label{fig:tiletomigrate}
@@ -308,7 +308,7 @@ Figure \ref{fig:tiletomigrate} shows how the tile to migrate a certain TLM block
 \subsubsection{When to Trigger Migrations?}
 Figure \ref{fig:tlm_stats flowchart} shows the algorithm for determining when migration shall take place. After we know the tile to which a specific TLM block shall be migrated, it is determined whether there is free space in that tile's local memory. If there is free space, a migration command is send to L2 Cache Stats module. \\
 \\
-However, if there is no free space in the TLM, then the block with the least number of local accesses in the TLM is identified and this number of local accesses is compared with the number of remote accesses of the TLM block which is to be migrated. If the number of remote accesses of the TLM block to be migrated is higher than this number of local accesses the data between the two memory location is swapped which means a migration command is send to the L2 Cache Stats module for the TLM block in the TLM which is full i.e the TLM block in the TLM which is full is copied to a buffer in order to make space for the incoming TLM block. Now with free space in the TLM a migration command is send to the L2 Cache Stats module of the incoming TLM block. Once this migration is completed the value in the buffer is copied into this memory location. If the remote accesses of the TLM block to be migrated are less than the minimum local accesses in the TLM then the migration is flushed.\\
+However, if there is no free space in the TLM, then the block with the least number of local accesses in the TLM is identified and this number of local accesses is compared with the number of remote accesses of the TLM block which is to be migrated. If the number of remote accesses of the TLM block to be migrated is higher than this number of local accesses the data between the two memory locations is swapped which means a migration command is send to the L2 Cache Stats module for the TLM block in the TLM which is full i.e the TLM block in the TLM which is full is copied to a buffer in order to make space for the incoming TLM block. Now with free space in the TLM a migration command is send to the L2 Cache Stats module of the incoming TLM block. Once this migration is completed the value in the buffer is copied into this memory location. If the remote accesses of the TLM block to be migrated are less than the minimum local accesses in the TLM then the migration is flushed.\\
 \\
 In case all the local accesses to a TLM are equal and a minimum cannot be found then at random a TLM Block is picked and the local accesses are compared with the migrating TLM Block's remote accesses. If the former is smaller than the latter, the TLM block is swapped with the incoming TLM block. Otherwise the migration is flushed.\\
 \subsubsection{Migrate Command}
@@ -320,7 +320,7 @@ The migrate command is split into two commands in the Cache Stats module; first 
   \label{fig:tlm_stats flowchart}
 \end{figure}
 \subsection{Local and Remote Accesses to a TLM Block}
-Figure \ref{fig:remoteLocalAccess} shows the calculation behind the metric of local access and remote access to a TLM Block in the Cache Stats module. We compare the TLM number which is being accessed by a instruction with the current tile number (the tile where the cache stats module is placed). If the two values are equal it means it is a request to the TLM of the same tile which signifies it is a local access. If the two values are different it implies it is a request for another tile's TLM and we check whether there is a L1 cache hit or miss. If there is a L1 cache hit, it is a local access. However, if it is a L1 cache miss then we check whether it is a L2 cache hit or miss. If it is a hit then it a local access but if it is a miss then we have a remote access. \\
+Figure \ref{fig:remoteLocalAccess} shows the calculation behind the metric of local access and remote access to a TLM Block in the Cache Stats module. We compare the TLM number which is being accessed by a trace with the current tile number (the tile where the cache stats module is placed). If the two values are equal it means it is a request to the TLM of the same tile which signifies it is a local access. If the two values are different it implies it is a request for another tile's TLM and we check whether there is a L1 cache hit or miss. If there is a L1 cache hit, it is a local access. However, if it is a L1 cache miss then we check whether it is a L2 cache hit or miss. If it is a hit then it a local access but if it is a miss then we have a remote access. \\
 \begin{figure}
   \includegraphics[width=0.6\linewidth]{localandremote.png}
   \centering
@@ -352,32 +352,32 @@ If the vector address table in the memory management unit is not empty we iterat
   \label{fig:freeSpaceTLM}
 \end{figure}
 \subsubsection{TLM Full}
-In this case also the vector address table in the memory management unit is not empty. We extract the addresses belonging to the current tile's TLM and if there isno space in the TLM we inform the Central Stats Module this by sending a invalid value.\\
+In this case also the vector address table in the memory management unit is not empty. We extract the addresses belonging to the current tile's TLM and if there is no space in the TLM we inform the Central Stats Module this by sending a invalid value.\\
 \section{Usability Improvement}
-In the simulator we have now given an option to turn dynamic data migration on and off by setting a parameter from the command line or from within the tool Synopsys. It makes the result gathering phase quicker. Also, since the TLM Block size and the time interval (T$_{interval}$) are variable and can be changed by the user; the change in performance or execution time by varying these two parameters can be analyzed.
+In the simulator we have now given an option to turn dynamic data migration on and off by setting a parameter from the command line or from within the tool Synopsys. It makes the result gathering phase easier and quicker. Also, since the TLM Block size and the time interval (T$_{interval}$) are variable and can be changed by the user; the change in performance or execution time by varying these two parameters can be analyzed.
 \section{Limitations}
-Adding the dynamic data migration support to the simulator increased the real time of the simulation by quite an extend. \\
+Adding the dynamic data migration support to the simulator increases the real time of the simulation due to the high number of computations that are being done to determine migrations. \\
 \\
 In the simulator the main modules added because of the dynamic data migration scheme are:
 \begin{itemize}
   \item Twenty-one Cache Stats modules
   \item One Central Stats module 
-  \item One Vector Address Table
+  \item One Memory Management Unit
 \end{itemize}
-The memory needed for these modules also add quite an overhead to the system. 
+Also, the memory requirements increases due to these modules as shown in the table below. 
 \begin{table}[h!]
 \begin{center}
- \begin{tabular}{||c c c c||} 
+ \begin{tabular}{||c c ||} 
  \hline
- Module & Size & Memory Usage   & Resource Utilization \\ [0.5 ex] 
+ Module & Size \\ [0.5 ex] 
  \hline\hline
- Cache Stats Module & xx & xxx & xxxx \\ 
+ Cache Stats Module & xx \\ 
  \hline
- Central Stats Module & xx & xxx & xxxx \\
+ Central Stats Module & xx  \\
  \hline
- Memory Management Unit & xx & xxx & xxxx \\
+ Memory Management Unit & xx  \\
  \hline\hline
- Total  & xx & xxx & xxxx \\
+ Total  & xx  \\
   \hline
 \end{tabular}
  \caption{Table showing the size of the modules}
@@ -432,6 +432,7 @@ Table~\ref{table:Size} shows the configuration of the tile local memory used in 
 \end{table}
 
 \subsection{Configuration of Data Caches}
+Table 5.3 shows the configuration of the data caches used for the simulations
 \begin{table}[h!]
 \begin{center}
  \begin{tabular}{|| c | c ||} 
@@ -453,6 +454,7 @@ Table~\ref{table:Size} shows the configuration of the tile local memory used in 
 \end{table}
 
 \subsection{Configuration of DDR}
+Table 5.4 shows the configuration of the DDR used for the simulations
 \begin{table}[h!]
 \begin{center}
  \begin{tabular}{|| c | c ||} 
@@ -461,7 +463,7 @@ Table~\ref{table:Size} shows the configuration of the tile local memory used in 
  \hline\hline
  \ \ \ \ \ \ \ \ Address Bits \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 64 \ \ \ \ \ \ \ \ \\ 
  \hline
- \ \ \ \ \ \ \ \ Data Width\ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ xx \ \ \ \ \ \ \ \ \\
+ \ \ \ \ \ \ \ \ Data Width\ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 32 \ \ \ \ \ \ \ \ \\
  \hline
  \ \ \ \ \ \ \ \ Size in GB \ \ \ \ \ \ \ \ & \ \ \ \ \ \ \ \ 1 \ \ \ \ \ \ \ \  \\
  \hline
@@ -480,12 +482,11 @@ The Gem5 simulator~\cite{gem5},~\cite{akshay} is a modular event driven platform
 \end{itemize}
  We use the Gem5 in Full System simulator mode in order to generate the trace file for our simulations. This mode results in higher accuracy than the SE mode.
 \section{Benchmarks}
-To evaluate the effectiveness of dynamic data migration, we need to choose some parallel benchmarks to run on the simulator. These benchmarks have to be executed with the Gem5 simulator in-order to have the memory access traces in a trace file which is then given as input to the simulator. For all our simulations, we make use of workloads from the PARSEC Benchmark Suite~\cite{lispaper},~\cite{trace}. We choose four parallel workloads covering three application domains and generate their trace files. The four workloads are: 
+To evaluate the effectiveness of dynamic data migration, we need to choose some parallel benchmarks to run on the simulator. These benchmarks have to be executed with the Gem5 simulator in-order to have the memory access traces in a trace file which is then given as input to the simulator. For all our simulations, we make use of workloads from the PARSEC Benchmark Suite~\cite{lispaper},~\cite{trace}. We choose three parallel workloads covering three application domains and generate their trace files. The three workloads are: 
 \begin{itemize}
 \item Blackscholes (Financial Analysis)
 \item Swaptions (Financial Analysis)
 \item Canneal (Engineering)
-\item Fluidanimate (Animation)
 \end{itemize}
 \section{Writing Shell Script}
 A shell script for running the migration command is written so that multiple simulations can run in parallel without the need to recompile the simulator. The maximum number of parallel simulations that we could run was four. This saved us considerable time in gathering results. 
@@ -502,25 +503,99 @@ The screen log file gives the virtual processing time (in nano seconds) of each 
 \subsection{Time Log File}
 The time log file consists of the breakdown of the virtual time (in nano seconds) that each processor took executing instructions on different tiles and on the individual components/modules like TLM, L1-Cache, NPC, NoC, Bus etc.
 \section{System Specifications}
-The simulations were run on a core i5 Intel processor with a Solid-State-Drive (SSD) ---? in-order to reduce the real time for the simulations. Ubuntu..
+The simulations were run on a core i5 Intel processor. The operating system is Ubuntu 16.04.4 LTS and th PC has a RAM of 15 GB.
 \chapter{Evaluation}
-This chapter illustrates the results gathered from the simulator. It gives the comparison of the execution time of the simulator with data migration on against the first touch and most accessed data placement. It also shows the effect on execution time of different TLM block size.
-\section{Dynamic Data Migration vs First Touch and Most Accessed}
-In this section the outcome of the simulation is analyzed and the performance of every workload is compared. Basically the execution time when dynamic data migration is turned on is compared with the execution time of data placed via first touch and most accessed schemes which have been explained in section xxx for every workload.
-\subsection{Blackscholes}
+This chapter illustrates the results gathered from the simulator. It gives the comparison of the execution time of the simulator with data migration on against the first touch and no data placement. It also shows the effect on execution time with varying block sizes and time intervals.
+\section{Dynamic Data Migration vs First Touch and No Data Placement}
+In this section the outcome of the simulation is analyzed and the performance of every benchmark is compared. Basically the execution time when dynamic data migration is turned on and data placement is none (i.e everything is in the DDR) is compared with the execution time of data placed via first touch and with no data placement with dynamic data migration turned off for the three benchmarks (trace files introduced in Section 5.3). Table 6.1 shows the execution times for the three benchmarks. The block size is one cache line and the time interval is 1000 nsec. The table is also illustrated as a bar graph in figure \ref{fig:Bla_cann_Swap_BS_1_T_1000.png}. For backscholes there has been a 20\% improvement in the execution time when DDM is ON versus DDM-OFF whereas for canneal the improvement is 6\%. Fow swaptions we don't see any improvement in the execution time because very few migrations were triggered by the system.\\
+\\
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c | c | c||} 
+ \hline
+ \ \textbf{Benchmark} & \textbf{DDM OFF - FT}  & \textbf{DDM ON - NONE}  & \textbf{DDM OFF - NONE}\\ [0.5 ex] 
+ \hline\hline
+  Blackscholes   &   3 762 137   &   16 954 398	    &  21 157 717 \\ 
+ \hline
+   Canneal  	&   3 498 151    &   38672029   	&   41 357 304   \\
+ \hline
+    Swaptions   &   9 836 531     &   133 304 375 	&   133 393 869   \\
+ \hline
+\end{tabular}
+ \caption{Execution times in (\textbf{in nano-seconds}). The block size is one cache line and the time interval is 1000 nsec}
+ \label{table:ExecTimes1}
+\end{center}
+\end{table}
+\\
+Table 6.2 shows the execution times for the three benchmarks when the block size is four cache lines and the time interval is 500 nsec. The table is also illustrated as a bar graph in figure \ref{fig:Bla_cann_Swap_BS_4_T_500.png}. For backscholes there has been a 46\% improvement in the execution time when DDM is ON versus DDM-OFF whereas for canneal the improvement is 47\%. Fow swaptions the improvement is 8\%.
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c | c | c||} 
+ \hline
+ \ \textbf{Benchmark} & \textbf{DDM OFF - FT}  & \textbf{DDM ON - NONE}  & \textbf{DDM OFF - NONE}\\ [0.5 ex] 
+ \hline\hline
+  Blackscholes   &   3 762 137   &   11 343 765	    &  21 157 717 \\ 
+ \hline
+   Canneal  	&   3 498 151    &   21 753 905   	&   41 357 304   \\
+ \hline
+    Swaptions   &   9 836 531     &   122 806 943 	&   133 393 869   \\
+ \hline
+\end{tabular}
+ \caption{Execution times in (\textbf{in nano-seconds}). The block size is four cache lines and the time interval is 500 nsec}
+ \label{table:ExecTimes2}
+\end{center}
+\end{table}
 
-\subsection{Swaptions}
+\begin{figure}
+  \includegraphics[width=0.7\linewidth]{Bla_cann_Swap_BS_1_T_1000.png}
+  \centering
+  \caption{Bar Chart comparing the execution times for all the three trace files}
+  \label{fig:Bla_cann_Swap_BS_1_T_1000.png}
+\end{figure}
 
-\subsection{Fluidanimate}
+\begin{figure}
+  \includegraphics[width=0.7\linewidth]{Bla_cann_Swap_BS_4_T_500.png}
+  \centering
+  \caption{Bar Chart comparing the execution times for all the three trace files}
+  \label{fig:Bla_cann_Swap_BS_4_T_500.png}
+\end{figure}
 
-\subsection{Canneal}
+\section{Blackscholes}
+The table shows the execution times for varying time intervals and block sizes. The results are also illustrated in figure \ref{fig:Blacksc_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is large (16 cache lines) and our time interval is small (200 nsec). The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. 
 
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c | c | c| c | c | c | c||} 
+ \hline
+ \ \textbf{BS} & \textbf{200ns}  & \textbf{500ns}  & \textbf{1000ns} & \textbf{10000ns} & \textbf{20000ns} & \textbf{50000ns} & \textbf{100000ns}\\ [0.5 ex] 
+ \hline\hline
+   1 & 14 425 857  & 15 268 789 &  16 954 398 & 19 292 264 & 20 803 545 & 20 850 647 &  211 57 717\\ 
+ \hline
+   2 & 13 651 220 & 12 785 944 & 14 249 915 & 20 017 107 & 20 448 252 & 20 904 470 & 21 041 269\\
+ \hline
+   4 & 8 631 100 & 11 343 765 & 14 782 794 & 20 981 453 & 19 811 044 & 20 896 761 & 20 876 219\\
+ \hline
+   8 & 9 872 980 & 9 092 486 & 12 989 437 & 19 478 459 & 18 086 612 & 17 918 226 & 19 444 638\\
+  \hline
+   16 & 4 764 657 & 9 092 486 & 12 989 437 & 19 478 459 & 18 086 612 & 17 918 226 & 19 444 638\\
+    \hline
+\end{tabular}
+ \caption{Blackscholes: execution times in (\textbf{in nano-seconds}) for varying block sizes and time intervals}
+ \label{table:ExecTimes2}
+\end{center}
+\end{table}
 
-\section{Dynamic Data Placement for Different TLM Block Size}
-In this section the output of the simulator is analyzed for different TLM Block sizes. 
+\begin{figure}
+  \includegraphics[width=0.7\linewidth]{Blacksc_var_bs_t.png}
+  \centering
+  \caption{Graph showing how the execution time varies with varying block size for Blackscholes}
+  \label{fig:Blacksc_var_bs_t.png}
+\end{figure}
 
-\section{Dynamic Data Placement for Different Time Interval (T$_{interval}$)}
-In this section the output of the simulator is analyzed for different Time Interval (T$_{interval}$).
+\section{Swaptions}
+
+\section{Canneal}
+
 \chapter{Summary and Future Work}
 This chapter will summarize the work done in the thesis and will give insights into how it can be used in future research. 
 \section{Summary}
