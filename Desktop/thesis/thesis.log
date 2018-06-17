@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.28)  17 JUN 2018 18:08
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.28)  17 JUN 2018 20:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1340,8 +1340,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 549--566
 
  []
 
-[42] [43 <./Bla_cann_Swap_BS_1_T_1000.png> <./Bla_cann_Swap_BS_4_T_500.png>]
-<BS_16_T_200.png, id=820, 463.7325pt x 290.58563pt>
+[42] [43 <./Bla_cann_Swap_BS_1_T_1000.png>] [44 <./Bla_cann_Swap_BS_4_T_500.png
+>] <BS_16_T_200.png, id=824, 463.7325pt x 290.58563pt>
 File: BS_16_T_200.png Graphic file (type png)
  <use BS_16_T_200.png>
 Package pdftex.def Info: BS_16_T_200.png used on input line 568.
@@ -1354,55 +1354,49 @@ Overfull \hbox (78.05179pt too wide) in paragraph at lines 581--596
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Blacksc_var_bs_t.png, id=824, 450.18187pt x 290.58563pt>
+<Blacksc_var_bs_t.png, id=828, 450.18187pt x 290.58563pt>
 File: Blacksc_var_bs_t.png Graphic file (type png)
 
 <use Blacksc_var_bs_t.png>
 Package pdftex.def Info: Blacksc_var_bs_t.png used on input line 602.
 (pdftex.def)             Requested size: 426.79141pt x 275.50053pt.
 
-<Blacksc_var_bs_fordiff_t.png, id=825, 545.78906pt x 326.72063pt>
+<Blacksc_var_bs_fordiff_t.png, id=829, 545.78906pt x 326.72063pt>
 File: Blacksc_var_bs_fordiff_t.png Graphic file (type png)
 
 <use Blacksc_var_bs_fordiff_t.png>
 Package pdftex.def Info: Blacksc_var_bs_fordiff_t.png used on input line 609.
 (pdftex.def)             Requested size: 426.79141pt x 255.48915pt.
- [44]
-Underfull \vbox (badness 1308) has occurred while \output is active []
-
- [45 <./BS_16_T_200.png>] [46 <./Blacksc_var_bs_t.png>]
+ [45] [46 <./BS_16_T_200.png>] [47 <./Blacksc_var_bs_t.png>]
 Overfull \hbox (78.05179pt too wide) in paragraph at lines 621--636
  [] 
  []
 
-<cann_var_bs_t.png, id=844, 572.1375pt x 353.06906pt>
+<cann_var_bs_t.png, id=848, 572.1375pt x 353.06906pt>
 File: cann_var_bs_t.png Graphic file (type png)
  <use cann_var_bs_t.png>
 Package pdftex.def Info: cann_var_bs_t.png used on input line 642.
 (pdftex.def)             Requested size: 426.79141pt x 263.37886pt.
 
-<Cann_var_bs_fordiff_t.png, id=845, 485.56406pt x 290.58563pt>
+<Cann_var_bs_fordiff_t.png, id=849, 485.56406pt x 290.58563pt>
 File: Cann_var_bs_fordiff_t.png Graphic file (type png)
 
 <use Cann_var_bs_fordiff_t.png>
 Package pdftex.def Info: Cann_var_bs_fordiff_t.png used on input line 649.
 (pdftex.def)             Requested size: 426.79141pt x 255.41019pt.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [47 <./Blacksc_var_bs_fordiff_t.png>] [48 <./cann_var_bs_t.png>]
+ [48]
 Overfull \hbox (46.46866pt too wide) in paragraph at lines 660--671
  [] 
  []
 
-<Swapt_var_bs_t.png, id=858, 450.18187pt x 276.28218pt>
+<Swapt_var_bs_t.png, id=856, 450.18187pt x 276.28218pt>
 File: Swapt_var_bs_t.png Graphic file (type png)
 
 <use Swapt_var_bs_t.png>
 Package pdftex.def Info: Swapt_var_bs_t.png used on input line 677.
 (pdftex.def)             Requested size: 426.79141pt x 261.9396pt.
 
-<Swap_var_bs_fordiff_t.png, id=859, 471.26062pt x 290.58563pt>
+<Swap_var_bs_fordiff_t.png, id=857, 471.26062pt x 290.58563pt>
 File: Swap_var_bs_fordiff_t.png Graphic file (type png)
 
 <use Swap_var_bs_fordiff_t.png>
@@ -1414,13 +1408,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 693--694
  []
 
 
-Underfull \vbox (badness 1242) has occurred while \output is active []
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [49 <./Cann_var_bs_fordiff_t.png>]
+ [49 <./Blacksc_var_bs_fordiff_t.png>] [50 <./cann_var_bs_t.png>]
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<FT_DDM_ON_OFF_BLACK.png, id=868, 463.7325pt x 290.58563pt>
+<FT_DDM_ON_OFF_BLACK.png, id=871, 463.7325pt x 290.58563pt>
 File: FT_DDM_ON_OFF_BLACK.png Graphic file (type png)
 
 <use FT_DDM_ON_OFF_BLACK.png>
@@ -1434,14 +1428,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 722--723
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [50 <./Swapt_var_bs_t.png>]
+
 Overfull \hbox (25.86314pt too wide) has occurred while \output is active
 [] |\OT1/cmss/m/n/10.95 6.3 Comparison of First Touch DDM ON with First Touch D
 DM OFF with DDM OFF Most Accessed[]
  []
 
-[51 <./Swap_var_bs_fordiff_t.png>] [52 <./FT_DDM_ON_OFF_BLACK.png>]
-<FT_DDM_ON_OFF_CANN.png, id=886, 463.7325pt x 290.58563pt>
+[51 <./Cann_var_bs_fordiff_t.png>] [52 <./Swapt_var_bs_t.png>]
+Overfull \hbox (25.86314pt too wide) has occurred while \output is active
+[] |\OT1/cmss/m/n/10.95 6.3 Comparison of First Touch DDM ON with First Touch D
+DM OFF with DDM OFF Most Accessed[]
+ []
+
+[53 <./Swap_var_bs_fordiff_t.png>] [54 <./FT_DDM_ON_OFF_BLACK.png>]
+<FT_DDM_ON_OFF_CANN.png, id=894, 463.7325pt x 290.58563pt>
 File: FT_DDM_ON_OFF_CANN.png Graphic file (type png)
 
 <use FT_DDM_ON_OFF_CANN.png>
@@ -1453,7 +1453,7 @@ Overfull \hbox (25.86314pt too wide) has occurred while \output is active
 DM OFF with DDM OFF Most Accessed[]
  []
 
-[53] [54 <./FT_DDM_ON_OFF_CANN.png>]
+[55 <./FT_DDM_ON_OFF_CANN.png>]
 Chapter 7.
 
 Underfull \hbox (badness 10000) in paragraph at lines 754--763
@@ -1480,7 +1480,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 754--763
 
  []
 
-[55
+[56
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 764--770
@@ -1492,10 +1492,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 764--770
 
  []
 
-[56] [57] [58
-
-
-] (./thesis.bbl
+[57] [58] (./thesis.bbl
 Underfull \hbox (badness 1028) in paragraph at lines 37--42
 []\OT1/cmr/m/n/12 R. Az-imi D. Tam and M. Stumm.  Thread clus-ter-ing: Sharing-
 aware
@@ -1514,6 +1511,8 @@ _ 2 . 3 . 0 / com . ibm .
  []
 
 [59
+
+
 
 ] [60]) [61] [62
 
@@ -1539,11 +1538,11 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 777.
 Here is how much of TeX's memory you used:
  16797 strings out of 493304
  295459 string characters out of 6139871
- 426816 words of memory out of 5000000
+ 427913 words of memory out of 5000000
  19709 multiletter control sequences out of 15000+600000
  16379 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 72i,9n,73p,1191b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 72i,9n,73p,1215b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/
@@ -1554,7 +1553,7 @@ c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (63 pages, 1420790 bytes).
+Output written on thesis.pdf (63 pages, 1421242 bytes).
 PDF statistics:
  1024 PDF objects out of 1200 (max. 8388607)
  881 compressed objects within 9 object streams

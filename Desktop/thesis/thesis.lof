@@ -24,16 +24,16 @@
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Flowchart showing how the free address space in TLM is calculated if the TLM is partially full.}}{36}{figure.4.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Bar Chart comparing the execution times for all the three trace files}}{43}{figure.6.1}
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Bar Chart comparing the execution times for all the three trace files}}{43}{figure.6.2}
-\contentsline {figure}{\numberline {6.3}{\ignorespaces Bar Chart comparing the execution times for all the three trace files}}{45}{figure.6.3}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Graph showing how the execution time varies with varying time intervals for Blackscholes}}{46}{figure.6.4}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Graph showing how the execution time varies with varying block sizes for Blackscholes}}{47}{figure.6.5}
-\contentsline {figure}{\numberline {6.6}{\ignorespaces Graph showing how the execution time varies with varying time intervals for Canneal}}{48}{figure.6.6}
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Graph showing how the execution time varies with varying block sizes for Canneal}}{49}{figure.6.7}
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Graph showing how the execution time varies with varying time intervals for Swaptions}}{50}{figure.6.8}
-\contentsline {figure}{\numberline {6.9}{\ignorespaces Graph showing how the execution time varies with varying block sizes for Swaptions}}{51}{figure.6.9}
-\contentsline {figure}{\numberline {6.10}{\ignorespaces Bar chart showing the execution time for first touch DDM ON and OFF and Most Accessed}}{52}{figure.6.10}
-\contentsline {figure}{\numberline {6.11}{\ignorespaces Bar chart showing the execution time for first touch DDM ON and OFF and Most Accessed}}{54}{figure.6.11}
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Bar chart comparing the execution times for block size of one cache line and time interval of 1000 nsec}}{43}{figure.6.1}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Bar chart comparing the execution times for block size of four cache lines and time interval of 500 nsec}}{44}{figure.6.2}
+\contentsline {figure}{\numberline {6.3}{\ignorespaces Bar chart comparing the execution times for block size of sixteen cache lines and time interval of 200 nsec}}{46}{figure.6.3}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Graph showing how the execution time varies with varying time intervals for blackscholes}}{47}{figure.6.4}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Graph showing how the execution time varies with varying block sizes for blackscholes}}{49}{figure.6.5}
+\contentsline {figure}{\numberline {6.6}{\ignorespaces Graph showing how the execution time varies with varying time intervals for canneal}}{50}{figure.6.6}
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Graph showing how the execution time varies with varying block sizes for canneal}}{51}{figure.6.7}
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Graph showing how the execution time varies with varying time intervals for swaptions}}{52}{figure.6.8}
+\contentsline {figure}{\numberline {6.9}{\ignorespaces Graph showing how the execution time varies with varying block sizes for swaptions}}{53}{figure.6.9}
+\contentsline {figure}{\numberline {6.10}{\ignorespaces Bar chart showing the execution time for First Touch DDM ON and OFF and Most Accessed}}{54}{figure.6.10}
+\contentsline {figure}{\numberline {6.11}{\ignorespaces Bar chart showing the execution time for First Touch DDM ON and OFF and Most Accessed}}{55}{figure.6.11}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -28,7 +28,7 @@
 \abstract{
 
 
-Current processor architectures have shifted from microarchitecture to macroarchitecture which implies that processors with multiple tiles and cores are introduced. These processors have non-uniform memory access (NUMA) properties where the memory access time depends on how close the memory (data) and tasks (cores) are located. In order to reduce the distance between the tasks and data, processors which have a distributed-shared memory architecture are introduced where the memory is distributed and shared among all the tiles. To study the effects on performance of a data and/or task management techniques we need to have simulator support for such schemes in the existing simulator. In this thesis the simulator support for a dynamic data migration (DDM) scheme is build into the current simulator and it's performance is evaluated. DDM migrates data at run time from one location to another so that the distance between the tasks and data is reduced. With a block size of four cache lines, a time interval of 500 nsec and no data placement we gained a speed up of 46\% and 48\% with DDM on compared to no dynamic data migration for blackscholes and canneal respectively.
+Current processor architectures have shifted from microarchitecture to macroarchitecture which implies that processors with multiple tiles and cores are introduced. These processors have non-uniform memory access (NUMA) properties where the memory access time depends on how close the memory (data) and tasks (cores) are located. In order to reduce the distance between the tasks and data, processors which have a distributed-shared memory architecture are introduced where the memory is distributed and shared among all the tiles. To study the effects on performance of data and/or task management techniques we need to have simulator support for such schemes in the existing simulator. In this thesis the simulator support for a dynamic data migration (DDM) scheme is build into the current simulator and it's performance is evaluated. DDM migrates data at run time from one location to another so that the distance between the tasks and data is reduced. With a block size of four cache lines, a time interval of 500 nsec and no data placement we gained a speed up of 46\% and 48\% with dynamic data migration turned on compared to no dynamic data migration for blackscholes and canneal respectively.
 }
 \makeabstract
 \clearpage
@@ -505,13 +505,13 @@ For backscholes there has been a 20\% improvement in the execution time when DDM
     Swaptions   &   9 836 531     &   133 304 375 	&   133 393 869   \\
  \hline
 \end{tabular}
- \caption{Execution times in (in nano-seconds). The block size is one cache line and the time interval is 1000 nsec}
+ \caption{Execution times (in nano-seconds) for a block size of one cache line and a time interval of 1000 nsec}
  \label{table:ExecTimes1}
 \end{center}
 \end{table}
 \\
 \subsection{Block Size of Four Cache Lines and Time Interval of 500 nsec}
-Table 6.2 shows the execution times for the three benchmarks when the block size is four cache lines and the time interval is 500 nsec. The table is also illustrated as a bar graph in figure \ref{fig:Bla_cann_Swap_BS_4_T_500.png}. Ideally dynamic data migration with no data placement should reach first touch but it does not in our benchmarks because in first touch the first access is from the TLM and that is faster whereas in DDM with no data placement every access goes to the DDR as at the start all the TLM's are empty. This gives quite a huge overhead since an access to the DDR can cost hundreds of clock cycles. Also, in our benchmarks there are few accesses to the same address so the cost of fetching data from the DDR stays dominant. However, for backscholes there has been a 46\% improvement in the execution time when DDM is ON versus DDM-OFF whereas for canneal the improvement is 47\%. For swaptions the improvement is 8\% due to the small number of migrations that has been triggered.\\
+Table 6.2 shows the execution times for the three benchmarks when the block size is four cache lines and the time interval is 500 nsec. The table is also illustrated as a bar graph in figure \ref{fig:Bla_cann_Swap_BS_4_T_500.png}. Ideally dynamic data migration with no data placement should reach first touch but it does not in our benchmarks because in first touch the first access is from the TLM and that is faster whereas in DDM with no data placement every access goes to the DDR as at the start all the TLM's are empty. This gives quite a huge overhead since an access to the DDR can cost hundreds of clock cycles. Also, in our benchmarks there are few accesses to the same address so the cost of fetching data from the DDR stays dominant. However, for backscholes there has been a 46\% improvement in the execution time (performance) when DDM is ON versus DDM-OFF whereas for canneal the improvement is 47\%. For swaptions the improvement is 8\% due to the small number of migrations that has been triggered.\\
 \\
 \begin{table}[h!]
 \begin{center}
@@ -526,7 +526,7 @@ Table 6.2 shows the execution times for the three benchmarks when the block size
     Swaptions   &   9 836 531     &   122 806 943 	&   133 393 869   \\
  \hline
 \end{tabular}
- \caption{Execution times in (in nano-seconds). The block size is four cache lines and the time interval is 500 nsec}
+ \caption{Execution times (in nano-seconds) for a block size of four cache lines and a time interval of 500 nsec}
  \label{table:ExecTimes2}
 \end{center}
 \end{table}
@@ -534,14 +534,14 @@ Table 6.2 shows the execution times for the three benchmarks when the block size
 \begin{figure}
   \includegraphics[width=\linewidth]{Bla_cann_Swap_BS_1_T_1000.png}
   \centering
-  \caption{Bar Chart comparing the execution times for all the three trace files}
+  \caption{Bar chart comparing the execution times for block size of one cache line and time interval of 1000 nsec}
   \label{fig:Bla_cann_Swap_BS_1_T_1000.png}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{Bla_cann_Swap_BS_4_T_500.png}
   \centering
-  \caption{Bar Chart comparing the execution times for all the three trace files}
+  \caption{Bar chart comparing the execution times for block size of four cache lines and time interval of 500 nsec}
   \label{fig:Bla_cann_Swap_BS_4_T_500.png}
 \end{figure}
 
@@ -559,7 +559,7 @@ Table 6.3 shows the execution times for the two benchmarks when the block size i
    Canneal  	&   3 498 151    &   24 963 785   	&   41 357 304   \\
  \hline
 \end{tabular}
- \caption{Execution times in (in nano-seconds). The block size is sixteen cache lines and the time interval is 200 nsec}
+ \caption{Execution times (in nano-seconds) for a block size of sixteen cache lines and a time interval of 200 nsec}
  \label{table:ExecTimes3}
 \end{center}
 \end{table}
@@ -567,7 +567,7 @@ Table 6.3 shows the execution times for the two benchmarks when the block size i
 \begin{figure}
   \includegraphics[width=\linewidth]{BS_16_T_200.png}
   \centering
-  \caption{Bar Chart comparing the execution times for all the three trace files}
+  \caption{Bar chart comparing the execution times for block size of sixteen cache lines and time interval of 200 nsec}
   \label{fig:BS_16_T_200.png}
 \end{figure}
 
@@ -593,7 +593,7 @@ Figure \ref{fig:Blacksc_var_bs_fordiff_t.png} illustrates how the execution time
    16 & 4 764 657 & 9 092 486 & 12 989 437 & 19 478 459 & 18 086 612 & 17 918 226 & 19 444 638\\
     \hline
 \end{tabular}
- \caption{Blackscholes: execution times in (in nano-seconds) for varying block sizes and time intervals}
+ \caption{Blackscholes: execution times (in nano-seconds) for varying block sizes and time intervals}
  \label{table:ExecTimes2}
 \end{center}
 \end{table}
@@ -601,14 +601,14 @@ Figure \ref{fig:Blacksc_var_bs_fordiff_t.png} illustrates how the execution time
 \begin{figure}
   \includegraphics[width=\linewidth]{Blacksc_var_bs_t.png}
   \centering
-  \caption{Graph showing how the execution time varies with varying time intervals for Blackscholes}
+  \caption{Graph showing how the execution time varies with varying time intervals for blackscholes}
   \label{fig:Blacksc_var_bs_t.png}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{Blacksc_var_bs_fordiff_t.png}
   \centering
-  \caption{Graph showing how the execution time varies with varying block sizes for Blackscholes}
+  \caption{Graph showing how the execution time varies with varying block sizes for blackscholes}
   \label{fig:Blacksc_var_bs_fordiff_t.png}
 \end{figure}
 
@@ -633,7 +633,7 @@ Table 6.4 shows the execution times for varying time intervals and block sizes f
    16 & 24 963 785 & 31 874 829 & 31 874 829 & 39 580 017 & 41 357 395 & 41 357 304 & 41 357 304 \\
     \hline
 \end{tabular}
- \caption{Canneal: execution times in (in nano-seconds) for varying block sizes and time intervals}
+ \caption{Canneal: execution times (in nano-seconds) for varying block sizes and time intervals}
  \label{table:ExecTimes2}
 \end{center}
 \end{table}
@@ -641,14 +641,14 @@ Table 6.4 shows the execution times for varying time intervals and block sizes f
 \begin{figure}
   \includegraphics[width=\linewidth]{cann_var_bs_t.png}
   \centering
-  \caption{Graph showing how the execution time varies with varying time intervals for Canneal}
+  \caption{Graph showing how the execution time varies with varying time intervals for canneal}
   \label{fig:cann_var_bs_t.png}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{Cann_var_bs_fordiff_t.png}
   \centering
-  \caption{Graph showing how the execution time varies with varying block sizes for Canneal}
+  \caption{Graph showing how the execution time varies with varying block sizes for canneal}
   \label{fig:Cann_var_bs_fordiff_t.png}
 \end{figure}
 
@@ -668,7 +668,7 @@ Table 6.5 shows the execution times for varying time intervals and block sizes f
    4 & 122 806 943 & 129 576 123 & 133 395 549 & 133 393 871 & 133 393 869 & 133 393 869 \\
  \hline
 \end{tabular}
- \caption{Swaptions: execution times in (in nano-seconds) for varying block sizes and time intervals}
+ \caption{Swaptions: execution times (in nano-seconds) for varying block sizes and time intervals}
  \label{table:ExecTimes3}
 \end{center}
 \end{table}
@@ -676,14 +676,14 @@ Table 6.5 shows the execution times for varying time intervals and block sizes f
 \begin{figure}
   \includegraphics[width=\linewidth]{Swapt_var_bs_t.png}
   \centering
-  \caption{Graph showing how the execution time varies with varying time intervals for Swaptions}
+  \caption{Graph showing how the execution time varies with varying time intervals for swaptions}
   \label{fig:Swapt_var_bs_t.png}
 \end{figure}
 
 \begin{figure}
   \includegraphics[width=\linewidth]{Swap_var_bs_fordiff_t.png}
   \centering
-  \caption{Graph showing how the execution time varies with varying block sizes for Swaptions}
+  \caption{Graph showing how the execution time varies with varying block sizes for swaptions}
   \label{fig:Swap_var_bs_fordiff_t.png}
 \end{figure}
 
@@ -714,7 +714,7 @@ This section gives a comparison of the execution time for blackscholes when data
 \begin{figure}
   \includegraphics[width=\linewidth]{FT_DDM_ON_OFF_BLACK.png}
   \centering
-  \caption{Bar chart showing the execution time for first touch DDM ON and OFF and Most Accessed}
+  \caption{Bar chart showing the execution time for First Touch DDM ON and OFF and Most Accessed}
   \label{fig:FT_DDM_ON_OFF_BLACK.png}
 \end{figure}
 
@@ -742,7 +742,7 @@ This section gives a comparison of the execution time for canneal when data is p
 \begin{figure}
   \includegraphics[width=\linewidth]{FT_DDM_ON_OFF_CANN.png}
   \centering
-  \caption{Bar chart showing the execution time for first touch DDM ON and OFF and Most Accessed}
+  \caption{Bar chart showing the execution time for First Touch DDM ON and OFF and Most Accessed}
   \label{fig:FT_DDM_ON_OFF_CANN.png}
 \end{figure}
 
