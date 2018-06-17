@@ -4,7 +4,6 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Table showing the size of the modules}}{35}{table.4.1}
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {5.1}{\ignorespaces TLM Configuration}}{36}{table.5.1}
 \contentsline {table}{\numberline {5.2}{\ignorespaces Address Range of each TLM}}{36}{table.5.2}
@@ -13,6 +12,8 @@
 \addvspace {10\p@ }
 \contentsline {table}{\numberline {6.1}{\ignorespaces Execution times in (\textbf {in nano-seconds}). The block size is one cache line and the time interval is 1000 nsec}}{40}{table.6.1}
 \contentsline {table}{\numberline {6.2}{\ignorespaces Execution times in (\textbf {in nano-seconds}). The block size is four cache lines and the time interval is 500 nsec}}{41}{table.6.2}
-\contentsline {table}{\numberline {6.3}{\ignorespaces Blackscholes: execution times in (\textbf {in nano-seconds}) for varying block sizes and time intervals}}{43}{table.6.3}
+\contentsline {table}{\numberline {6.3}{\ignorespaces Blackscholes: execution times in (\textbf {in nano-seconds}) for varying block sizes and time intervals}}{42}{table.6.3}
+\contentsline {table}{\numberline {6.4}{\ignorespaces Canneal: execution times in (\textbf {in nano-seconds}) for varying block sizes and time intervals}}{44}{table.6.4}
+\contentsline {table}{\numberline {6.5}{\ignorespaces Swaptions: execution times in (\textbf {in nano-seconds}) for varying block sizes and time intervals}}{44}{table.6.5}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

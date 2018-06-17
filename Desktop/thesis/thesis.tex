@@ -28,7 +28,7 @@
 \abstract{
 
 
-Current processor architectures have shifted from microarchitecture to macroarchitecture which implies that processors with multiple tiles and cores are introduced. These processors have non-uniform memory access (NUMA) properties where the memory access time depends on how close the memory (data) and tasks (cores) are located. In order to reduce the distance between the tasks and data, processors which have a distributed-shared memory architecture are introduced where the memory is distributed and shared among all the tiles. We use a similar architecture called the Invasive Architecture which is a multi-tile multi-core processor with a distributed-shared memory architecture. To study the effects on performance of a data and/or task management techniques we need to have simulator support for such schemes in the existing simulator. In this thesis the simulator support for a dynamic data migration (DDM) scheme is build into the current simulator and it's performance is evaluated. DDM migrates data at run time from one location to another so that the distance between the tasks and data is reduced which in turn hopefully saves execution time which would have otherwise been used in transferring data back and forth.
+Current processor architectures have shifted from microarchitecture to macroarchitecture which implies that processors with multiple tiles and cores are introduced. These processors have non-uniform memory access (NUMA) properties where the memory access time depends on how close the memory (data) and tasks (cores) are located. In order to reduce the distance between the tasks and data, processors which have a distributed-shared memory architecture are introduced where the memory is distributed and shared among all the tiles. To study the effects on performance of a data and/or task management techniques we need to have simulator support for such schemes in the existing simulator. In this thesis the simulator support for a dynamic data migration (DDM) scheme is build into the current simulator and it's performance is evaluated. DDM migrates data at run time from one location to another so that the distance between the tasks and data is reduced. With a block size of four cache lines, a time interval of 500 nsec and no data placement we gained a speed up of 46\% and 48\% with DDM on compared to no dynamic data migration for blackscholes and canneal respectively.
 }
 \makeabstract
 \clearpage
@@ -364,29 +364,8 @@ In the simulator the main modules added because of the dynamic data migration sc
   \item One Central Stats module 
   \item One Memory Management Unit
 \end{itemize}
-Also, the memory requirements increases due to these modules as shown in the table below. 
-\begin{table}[h!]
-\begin{center}
- \begin{tabular}{||c c ||} 
- \hline
- Module & Size \\ [0.5 ex] 
- \hline\hline
- Cache Stats Module & xx \\ 
- \hline
- Central Stats Module & xx  \\
- \hline
- Memory Management Unit & xx  \\
- \hline\hline
- Total  & xx  \\
-  \hline
-\end{tabular}
- \caption{Table showing the size of the modules}
- \label{table:modules}
-\end{center}
-\end{table}
-\\ 
-\\
-complexity of the algorithm
+The memory requirements increases due to these modules. 
+
 \chapter{Experimental Setup}
 This chapter will lay out the programs that assisted in running the simulations. Moreover, it will also illustrate the specifications of the machine that were utilized to run the experiments.
 \section{Configuration of Component Modules}
@@ -547,21 +526,21 @@ Table 6.2 shows the execution times for the three benchmarks when the block size
 \end{table}
 
 \begin{figure}
-  \includegraphics[width=0.7\linewidth]{Bla_cann_Swap_BS_1_T_1000.png}
+  \includegraphics[width=\linewidth]{Bla_cann_Swap_BS_1_T_1000.png}
   \centering
   \caption{Bar Chart comparing the execution times for all the three trace files}
   \label{fig:Bla_cann_Swap_BS_1_T_1000.png}
 \end{figure}
 
 \begin{figure}
-  \includegraphics[width=0.7\linewidth]{Bla_cann_Swap_BS_4_T_500.png}
+  \includegraphics[width=\linewidth]{Bla_cann_Swap_BS_4_T_500.png}
   \centering
   \caption{Bar Chart comparing the execution times for all the three trace files}
   \label{fig:Bla_cann_Swap_BS_4_T_500.png}
 \end{figure}
 
 \section{Blackscholes}
-The table shows the execution times for varying time intervals and block sizes. The results are also illustrated in figure \ref{fig:Blacksc_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is large (16 cache lines) and our time interval is small (200 nsec). The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. 
+Table 6.3 shows the execution times for varying time intervals and block sizes for blackscholes. The results are also illustrated in figure \ref{fig:Blacksc_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is large (16 cache lines) and our time interval is small (200 nsec). The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. 
 
 \begin{table}[h!]
 \begin{center}
@@ -586,32 +565,99 @@ The table shows the execution times for varying time intervals and block sizes. 
 \end{table}
 
 \begin{figure}
-  \includegraphics[width=0.7\linewidth]{Blacksc_var_bs_t.png}
+  \includegraphics[width=\linewidth]{Blacksc_var_bs_t.png}
   \centering
-  \caption{Graph showing how the execution time varies with varying block size for Blackscholes}
+  \caption{Graph showing how the execution time varies with varying block sizes and time intervals for Blackscholes}
   \label{fig:Blacksc_var_bs_t.png}
 \end{figure}
 
-\section{Swaptions}
-
 \section{Canneal}
+Table 6.4 shows the execution times for varying time intervals and block sizes for canneal. The results are also illustrated in figure \ref{fig:cann_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is 4 cache lines and our time interval is 500 nsec. The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. 
+
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c | c| c | c | c | c||} 
+ \hline
+ \ \textbf{BS}  & \textbf{500ns}  & \textbf{1 000ns} & \textbf{10 000ns} & \textbf{20 000ns} & \textbf{50 000ns} & \textbf{100 000ns}\\ [0.5 ex] 
+ \hline\hline
+   1 & 34 615 158 &  38 672 029 & 41 357 391 & 41 357 355 & 41 354 429 &  41 350 129 \\ 
+ \hline
+   2 & 28 026 014 & 35 936 653 & 41 357 748 & 41 357 458 & 41 357 304 & 41 357 304 \\
+ \hline
+   4 & 21 753 905 & 35 370 422 & 41 052 980 & 41 357 365 & 41 357 304 & 41 357 304 \\
+ \hline
+   8 & 31 874 829 & 31 874 829 & 39 580 017 & 41 357 395 & 41 357 304 & 41 357 304 \\
+  \hline
+   16 & 31 874 829 & 31 874 829 & 39 580 017 & 41 357 395 & 41 357 304 & 41 357 304 \\
+    \hline
+\end{tabular}
+ \caption{Canneal: execution times in (\textbf{in nano-seconds}) for varying block sizes and time intervals}
+ \label{table:ExecTimes2}
+\end{center}
+\end{table}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{cann_var_bs_t.png}
+  \centering
+  \caption{Graph showing how the execution time varies with varying block sizes and time intervals for Canneal}
+  \label{fig:cann_var_bs_t.png}
+\end{figure}
+
+\section{Swaptions}
+Table 6.5 shows the execution times for varying time intervals and block sizes for swaptions. The results are also illustrated in figure \ref{fig:Swapt_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is 4 cache lines and our time interval is 500 nsec. The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. 
+
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c | c| c | c | c | c||} 
+ \hline
+ \ \textbf{BS}  & \textbf{500ns}  & \textbf{1 000ns} & \textbf{10 000ns} & \textbf{20 000ns} & \textbf{50 000ns} & \textbf{100 000ns}\\ [0.5 ex] 
+ \hline\hline
+   1 & 129 737 475 &  133 304 375 & 133 398 867 & 133 393 869 & 133 328 254 &  133 393 869 \\ 
+ \hline
+   2 & 123 952 879 & 132 674 834 & 133 335 126 & 133 393 895 & 133 393 869 & 133 393 869 \\
+ \hline
+   4 & 122 806 943 & 129 576 123 & 133 395 549 & 133 393 871 & 133 393 869 & 133 393 869 \\
+ \hline
+\end{tabular}
+ \caption{Swaptions: execution times in (\textbf{in nano-seconds}) for varying block sizes and time intervals}
+ \label{table:ExecTimes3}
+\end{center}
+\end{table}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Swapt_var_bs_t.png}
+  \centering
+  \caption{Graph showing how the execution time varies with varying block sizes and time intervals for Swaptions}
+  \label{fig:Swapt_var_bs_t.png}
+\end{figure}
+
+\section{Comparison of First Touch DDM ON with First Touch DDM OFF}
+This section gives a comparison of the execution time when data is placed on the TLM using first touch policy and then the simulation is run first with dynamic migration turned on and then without dynamic data migration. As can be seen in figure \ref{fig:FT_DDM_ON_OFF_BLACK.png} the performance improves by 6\% when dynamic data migration is turned on. 
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{FT_DDM_ON_OFF_BLACK.png}
+  \centering
+  \caption{Bar chart showing the execution time for first touch DDM ON and OFF}
+  \label{fig:FT_DDM_ON_OFF_BLACK.png}
+\end{figure}
 
 \chapter{Summary and Future Work}
 This chapter will summarize the work done in the thesis and will give insights into how it can be used in future research. 
+
 \section{Summary}
-The semi-conductor industry is moving towards developing a single chip multi-tile multi-core processor. Hence, parallel programming is experiencing a rapid growth with the advent of system on chip (SoC) architectures. Because of multiple tiles and cores on one chip these multi-tile multi-core processors deal with data processing at a high scale and complexity. Therefore, the bottleneck has shifted from computational complexities to data management techniques. In this thesis a dynamic data migration scheme has been introduced for a distributed-shared memory architecture with multiple cores and multiple tiles.\\
+The semi-conductor industry is moving towards developing a single chip multi-tile multi-core processor. Hence, parallel programming is experiencing a rapid growth with the advent of system on chip (SoC) architectures. These processors have non-uniform memory access (NUMA) properties where the memory access time depends on how close the memory (data) and tasks (cores) are located. In order to reduce the distance between the tasks and data, processors which have a distributed-shared memory architecture are introduced where the memory is distributed and shared among all the tiles. Because of multiple tiles and cores and a distributed-shared memory architecture on one chip these multi-tile multi-core processors deal with data processing at a high scale and complexity. Therefore, we need smart memory management techniques to tackle this issue. In this thesis a dynamic data migration scheme has been introduced for a distributed-shared memory architecture with multiple cores and multiple tiles.\\
 \\
-The basic concept is to bring data and tasks close together to save execution time used in transferring data back and forth. We use data migration to achieve this goal and keep the task placement constant. In our architecture we have a tile local memory (TLM) which is distributed and shared among all the tiles. We use two metrics which determine whether migration shall take place or not; \textit{Local TLM Accesses} and \textit{Remote TLM Accesses}. A \textit{Local TLM Access} is basically a L1 or L2 cache hit or if a core is accessing the Tile Local Memory (TLM) of the tile it sits on. A \textit{Remote TLM Access} is a miss in both the L1 and L2 caches or in other words it is a scenario when a core is accessing data from the TLM of another tile. \\
+The basic concept is to bring data and tasks close together to save execution time used in transferring data back and forth. We use data migration to achieve this goal and keep the task placement constant. In our architecture we have a tile local memory (TLM) which is distributed and shared among all the tiles. We use two metrics which determine whether a migration shall take place or not; \textit{Local TLM Accesses} and \textit{Remote TLM Accesses}. A \textit{Local TLM Access} is basically a L1 or L2 cache hit or if a core is accessing the Tile Local Memory (TLM) of the tile it sits on. A \textit{Remote TLM Access} is a miss in both the L1 and L2 caches or in other words it is a scenario when a core is accessing data from the TLM of another tile or the DDR. \\
 \\
-The system continuously monitors the number of local and remote accesses to every TLM block. The size of a TLM block can vary from one cache line to multiple cache lines and is set by the user at compile time. All these local and remote accesses metrics are sent to a Central Stats Module for evaluation at every specific time interval (T$_{interval}$) which is set by the user at compile time. In the Central Stats Module the metrics are evaluated and it determines whether a specific TLM block needs to be migrated or not.\\
+The system continuously monitors the number of local and remote accesses to every TLM block. The size of a TLM block can vary from one cache line to multiple cache lines and is set by the user at compile time. All these local and remote accesses metrics are sent to a Central Stats Module for evaluation at every specific time interval (T$_{interval}$) which is also set by the user at compile time. In the Central Stats Module the metrics are evaluated and it determines whether a specific TLM block needs to be migrated or not.\\
 \\
 The system has the functionality to keep track of all the migrations carried out in a module called the Memory Management Unit (MMU) which sits between the trace file and the cores. The MMU has a vector address table which grows and shrinks dynamically. Whenever a new trace is to be executed; the system searches for the address in the MMU. If there is a entry corresponding to that address the MMU translates it to the new address where the data has been migrated to. If there is no entry for that address the trace is executed as it is. \\
 \\
-In addition to this, the system keeps track of the free space available in all the TLM's. Whenever a migration is triggered the system needs to make sure that there is free space in the TLM for data to be migrated in. In case there is no free space, data is migrated to the DDR in order to make space for the incoming data if need arises. If there is free space the migration is simply carried out. When a migration is triggered, invalidations need to be send for that address and the MMU needs to be updated after a successful migration. Any accesses to a address for which a migration is being carried out needs to be stalled until the migration has been successfully carried out and the MMU has been updated. Also, if one migration is being carried out and another migration is triggered for that same address; the second migration request needs to be carried out after the first one has been completed. \\
+In addition to this, the system keeps track of the free space available in all the TLM's. Whenever a migration is triggered the system needs to make sure that there is free space in the TLM for data to be migrated in. In case there is no free space, the data is swapped. If there is free space the migration is simply carried out. When a migration is triggered, invalidations need to be send for that address and the MMU needs to be updated after a successful migration. Any accesses to a address for which a migration is being carried out needs to be stalled until the migration has been successfully carried out and the MMU has been updated. Also, if one migration is being carried out and another migration is triggered for that same address; the second migration request needs to be carried out after the first one has been completed. \\
 \section{Future Work}
-Currently, when a access to a DRAM is made that data is cached in the L1 cache of the core or the L2 cache of the tile. This results in accesses to that data (TLM Block) to be considered as \textit{local accesses} as there is a cache hit. However, when this data (cache line) is evicted from the cache it is written back to the DDR instead of the tile local memory (TLM). This adds a huge overhead as the DDR is accessed multiple times in case of eviction. This is not a realistic scenario since in real life when data is evicted from the cache it is written to the RAM instead of the hard disk. In order to mimic this realistic scenario we use the First Touch policy to place data statically on the TLM's at compile time and then run the dynamic data migration algorithm. However, this needs to be augmented into the simulator so that in future all data resides in the DDR instead of the TLM at compile time and is \textit{migrated} to the TLM of the core which accesses it first.\\
+Currently, the MMU has a address translation table that grows dynamically. Before every trace is executed the entire table is searched for that address. This adds a huge delay when the trace file is large. A better way to do this would be to have a one to one mapping instead of a vector that grows dynamically. In that case, for every trace only one location would be checked instead of going through the whole translation table and it would result in the real time of the simulation being much less. Also, the algorithm to determine whether migrations shall be triggered or not can be enhanced and made faster. Currently, all the data is send from the local Cache Stats module to the Central Stats module and all the addresses are searched through brute force. A better way to do this would be to sort everything locally in the cache stats modules and then sent to the central stats modules as it will make searching for addresses efficient.\\
 \\
-Another improvement in the simulator would be to make the data migration scheme self adaptable. Currently, we set the time interval at which all the stats are sent to the Central Stats Module and the TLM Block Size at compile time. In future the system can evaluate its cost function before a data migration takes place and then evaluate the effect of the migration once it is carried out. By keeping track of the effect the system can change its cost function dynamically by changing the time interval, TLM Block Size and migration threshold value at runtime.\\
+Another improvement in the simulator would be to make the data migration scheme self adaptable. Currently, we set the time interval at which all the stats are sent to the Central Stats Module and the TLM Block size at compile time. In future the system can evaluate its cost function before a data migration takes place and then evaluate the effect of the migration once it is carried out. By keeping track of the effect the system can change its cost function dynamically by changing the time interval, TLM Block size and migration threshold value at runtime.\\
 \\
 The current simulator can be further enhanced by adding task migration support to it in order to evaluate the effect of both data and task migration at the same time.
 % --- Bibliography
