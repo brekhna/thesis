@@ -9,7 +9,7 @@
   % de,                   % uncomment if your thesis is in German
   author=Iffat Brekhna, % your name
   title={Simulator Support for Dynamic Data Migration on a Distributed Shared Memory Architecture},
-  date={June 21, 2018}, % submission date (today is used if unset)
+  date={June 18, 2018}, % submission date (today is used if unset)
   type=master,        % thesis type [master, bachelor, research, internship, diplom]
   advisor=Sven Rheindt M.Sc, % your advisor (typically some PhD. student)
   supervisor=Prof. Dr. sc. techn. Andreas Herkersdorf, % your supervisor
@@ -573,7 +573,8 @@ Table 6.3 shows the execution times for the two benchmarks when the block size i
 
 \section{Performance of Benchmarks With Varying Block Sizes and Time Intervals}
 \subsection{Blackscholes}
-Table 6.3 shows the execution times for varying time intervals and block sizes for blackscholes. The results are also illustrated in figure \ref{fig:Blacksc_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is large (16 cache lines) and our time interval is small (200 nsec). The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. 
+Table 6.3 shows the execution times for varying time intervals and block sizes for blackscholes. The results depicting how the execution time varies with varying time intervals are illustrated in figure \ref{fig:Blacksc_var_bs_t.png}. It can be seen in figure \ref{fig:Blacksc_var_bs_t.png} that we get the best performance when our block size is large (16 cache lines) and our time interval is small (200 nsec). The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered.
+Figure \ref{fig:Blacksc_var_bs_fordiff_t.png} illustrates how the execution time changes with varying the block sizes. It can be seen that the best performance for all block sizes is with the lowest time interval. Increasing the time interval results in increasing the execution time which signifies a decrease in performance. 
 
 \begin{table}[h!]
 \begin{center}
@@ -613,7 +614,7 @@ Table 6.3 shows the execution times for varying time intervals and block sizes f
 
 
 \subsection{Canneal}
-Table 6.4 shows the execution times for varying time intervals and block sizes for canneal. The results are also illustrated in figure \ref{fig:cann_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is 4 cache lines and our time interval is 500 nsec. The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. 
+Table 6.4 shows the execution times for varying time intervals and block sizes for canneal. The results depicting how the execution time varies with varying time intervals are illustrated in figure \ref{fig:cann_var_bs_t.png}. It can be seen in the figure \ref{fig:cann_var_bs_t.png} that we get the best performance when our block size is 4 cache lines and our time interval is 500 nsec. However, when the time interval increases the performance decreases to quite an extend. The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. Figure \ref{fig:Cann_var_bs_fordiff_t.png} illustrates how the execution time changes with varying the block sizes. It can be seen that the best performance is with a block size of four and time interval of 500 nsec but it is not very stable as there is a peak in the curve. A stable solution is to have a time interval of 200 nsec which is stable for a larger block size range. 
 
 \begin{table}[h!]
 \begin{center}
@@ -652,7 +653,7 @@ Table 6.4 shows the execution times for varying time intervals and block sizes f
 \end{figure}
 
 \subsection{Swaptions}
-Table 6.5 shows the execution times for varying time intervals and block sizes for swaptions. The results are also illustrated in figure \ref{fig:Swapt_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is 4 cache lines and our time interval is 500 nsec. The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. 
+Table 6.5 shows the execution times for varying time intervals and block sizes for swaptions. The results with varying time intervals are illustrated in figure \ref{fig:Swapt_var_bs_t.png}. It can be seen in the figure that we get the best performance when our block size is 4 cache lines and our time interval is 500 nsec. The graphs saturates for all block sizes at larger time intervals since very few migrations get triggered. In figure \ref{fig:Swap_var_bs_fordiff_t.png} the results are plotted with varying the block sizes. The simulation is efficient when the time interval is the smallest.
 
 \begin{table}[h!]
 \begin{center}
@@ -687,16 +688,64 @@ Table 6.5 shows the execution times for varying time intervals and block sizes f
 \end{figure}
 
 
+\section{Comparison of First Touch DDM ON with First Touch DDM OFF with DDM OFF Most Accessed}
+\subsection{Blackscholes}
+This section gives a comparison of the execution time for blackscholes when data is placed on the TLM using first touch (FT) policy and then the simulation is run first with dynamic migration turned on and then without dynamic data migration and when data is placed on the TLM's using the most accessed (MA) policy (DDM Off). The simulation was run with a block size of one and a time interval of 500 nsec. The results are listed in table 6.7 and illustrated in figure \ref{fig:FT_DDM_ON_OFF_BLACK.png}. As can be seen in figure \ref{fig:FT_DDM_ON_OFF_BLACK.png} the performance improves by only 6\% when dynamic data migration is turned on. This might be due to the trace file being parallel and so every core just works with the data on its TLM and there is no need for migrations because even the most accessed gives the same performance as first touch.\\
 
-\section{Comparison of First Touch DDM ON with First Touch DDM OFF}
-This section gives a comparison of the execution time when data is placed on the TLM using first touch policy and then the simulation is run first with dynamic migration turned on and then without dynamic data migration. As can be seen in figure \ref{fig:FT_DDM_ON_OFF_BLACK.png} the performance improves by 6\% when dynamic data migration is turned on. 
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c ||} 
+ \hline
+ \ \textbf{Blackscholes}  & \textbf{Execution Time (nsec)}\\ [0.5 ex] 
+ \hline\hline
+   DDM ON - FT & 3 503 249 \\ 
+ \hline
+   DDM OFF - FT & 3 762 137 \\
+ \hline
+   DDR OFF - MA & 3 764 493 \\
+ \hline
+\end{tabular}
+ \caption{Execution times for different data placement mechanisms}
+ \label{table:ExecTimes4}
+\end{center}
+\end{table}
+
 
 \begin{figure}
   \includegraphics[width=\linewidth]{FT_DDM_ON_OFF_BLACK.png}
   \centering
-  \caption{Bar chart showing the execution time for first touch DDM ON and OFF}
+  \caption{Bar chart showing the execution time for first touch DDM ON and OFF and Most Accessed}
   \label{fig:FT_DDM_ON_OFF_BLACK.png}
 \end{figure}
+
+\subsection{Canneal}
+This section gives a comparison of the execution time for canneal when data is placed on the TLM using first touch (FT) policy and then the simulation is run first with dynamic migration turned on and then without dynamic data migration and when data is placed on the TLM's using the most accessed (MA) policy (DDM Off). The simulation was run with a block size of one and a time interval of 500 nsec. The results are listed in table 6.8 and illustrated in figure \ref{fig:FT_DDM_ON_OFF_CANN.png}. As can be seen in figure \ref{fig:FT_DDM_ON_OFF_CANN.png} the performance deteriorates when dynamic data migration is turned on. This might be due to the trace file being parallel and so every core just works with the data on its TLM and there is no need for migrations. For this example also the most accessed gives the same performance as first touch. So to study the effects of dynamic data migration we need better benchmarks. \\
+
+\begin{table}[h!]
+\begin{center}
+ \begin{tabular}{|| c | c ||} 
+ \hline
+ \ \textbf{Canneal}  & \textbf{Execution Time (nsec)}\\ [0.5 ex] 
+ \hline\hline
+   DDM ON - FT & 3 498 302 \\ 
+ \hline
+   DDM OFF - FT & 3 498 151 \\
+ \hline
+   DDR OFF - MA & 3 469 242 \\
+ \hline
+\end{tabular}
+ \caption{Execution times for different data placement mechanisms}
+ \label{table:ExecTimes5}
+\end{center}
+\end{table}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{FT_DDM_ON_OFF_CANN.png}
+  \centering
+  \caption{Bar chart showing the execution time for first touch DDM ON and OFF and Most Accessed}
+  \label{fig:FT_DDM_ON_OFF_CANN.png}
+\end{figure}
+
 
 \chapter{Summary and Future Work}
 This chapter will summarize the work done in the thesis and will give insights into how it can be used in future research. 

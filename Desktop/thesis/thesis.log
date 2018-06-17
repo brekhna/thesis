@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.28)  17 JUN 2018 17:22
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2017.9.28)  17 JUN 2018 18:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -910,7 +910,7 @@ LaTeX Font Info:    Try loading font information for OT1+phv on input line 24.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
-<TUM_Logo_blau_rgb_p.png, id=272, 742.775pt x 391.4625pt>
+<TUM_Logo_blau_rgb_p.png, id=280, 742.775pt x 391.4625pt>
 File: TUM_Logo_blau_rgb_p.png Graphic file (type png)
 
 <use TUM_Logo_blau_rgb_p.png>
@@ -942,34 +942,34 @@ Underfull \vbox (badness 1776) has occurred while \output is active []
  [4
 
 
-])
+]
+[5])
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
-
-[5] (./thesis.lof [6
+ [6] (./thesis.lof [7
 
 
 ])
 \tf@lof=\write6
 \openout6 = `thesis.lof'.
 
- [7] (./thesis.lot)
+ [8] (./thesis.lot)
 \tf@lot=\write7
 \openout7 = `thesis.lot'.
 
- [8
+ [9
 
 
 ]
 Chapter 1.
-<powerwall.png, id=492, 863.225pt x 440.64626pt>
+<powerwall.png, id=515, 863.225pt x 440.64626pt>
 File: powerwall.png Graphic file (type png)
  <use powerwall.png>
 Package pdftex.def Info: powerwall.png used on input line 53.
 (pdftex.def)             Requested size: 426.79141pt x 217.8617pt.
 
-<memorywall.png, id=497, 1117.17375pt x 550.055pt>
+<memorywall.png, id=520, 1117.17375pt x 550.055pt>
 File: memorywall.png Graphic file (type png)
  <use memorywall.png>
 Package pdftex.def Info: memorywall.png used on input line 61.
@@ -984,10 +984,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--72
 
  []
 
-[9
+[10
 
 
- <./powerwall.png>] [10 <./memorywall.png>]
+ <./powerwall.png>] [11 <./memorywall.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 73--74
 
  []
@@ -997,7 +997,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 75--76
 
  []
 
-<multi-core,tile.png, id=519, 494.84875pt x 480.79625pt>
+<multi-core,tile.png, id=541, 494.84875pt x 480.79625pt>
 File: multi-core,tile.png Graphic file (type png)
 
 <use multi-core,tile.png>
@@ -1012,14 +1012,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 85--88
 
  []
 
-[11]
+[12]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
  (/usr/share/texlive/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
- [12 <./multi-core,tile.png>] [13]
+ [13 <./multi-core,tile.png>] [14]
 Chapter 2.
 
 Underfull \hbox (badness 10000) in paragraph at lines 101--103
@@ -1031,9 +1031,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 101--103
 
  []
 
-[14
+[15
 
-] <tile.png, id=547, 675.27281pt x 282.30469pt>
+] <tile.png, id=569, 675.27281pt x 282.30469pt>
 File: tile.png Graphic file (type png)
  <use tile.png>
 Package pdftex.def Info: tile.png used on input line 123.
@@ -1053,7 +1053,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 131--136
 
  []
 
-[15 <./tile.png>]
+[16 <./tile.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
@@ -1063,7 +1063,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 137--140
 
  []
 
-[16]
+[17]
 Underfull \hbox (badness 10000) in paragraph at lines 141--142
 
  []
@@ -1078,7 +1078,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
-[17]
+[18]
 Underfull \hbox (badness 10000) in paragraph at lines 151--158
 
  []
@@ -1093,15 +1093,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 151--158
 
  []
 
-<meshconnected.png, id=596, 612.78937pt x 349.305pt>
+<meshconnected.png, id=618, 612.78937pt x 349.305pt>
 File: meshconnected.png Graphic file (type png)
  <use meshconnected.png>
 Package pdftex.def Info: meshconnected.png used on input line 164.
 (pdftex.def)             Requested size: 298.75269pt x 170.29749pt.
 
-[18] [19 <./meshconnected.png>]
+[19] [20 <./meshconnected.png>]
 Chapter 3.
-<processor.png, id=619, 698.61pt x 356.0803pt>
+<processor.png, id=642, 698.61pt x 356.0803pt>
 File: processor.png Graphic file (type png)
  <use processor.png>
 Package pdftex.def Info: processor.png used on input line 176.
@@ -1116,16 +1116,16 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--183
 
  []
 
-[20
+[21
 
-] <localaccesses.png, id=628, 688.82344pt x 392.96812pt>
+] <localaccesses.png, id=650, 688.82344pt x 392.96812pt>
 File: localaccesses.png Graphic file (type png)
 
 <use localaccesses.png>
 Package pdftex.def Info: localaccesses.png used on input line 186.
 (pdftex.def)             Requested size: 426.79141pt x 243.48181pt.
 
-<remoteaccesses.png, id=630, 688.82344pt x 393.72093pt>
+<remoteaccesses.png, id=652, 688.82344pt x 393.72093pt>
 File: remoteaccesses.png Graphic file (type png)
 
 <use remoteaccesses.png>
@@ -1134,20 +1134,20 @@ Package pdftex.def Info: remoteaccesses.png used on input line 194.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [21 <./processor.png>] [22 <./localaccesses.png> <./remoteaccesses.png>]
-<moduleconnections.png, id=643, 703.12688pt x 320.69812pt>
+ [22 <./processor.png>] [23 <./localaccesses.png> <./remoteaccesses.png>]
+<moduleconnections.png, id=665, 703.12688pt x 320.69812pt>
 File: moduleconnections.png Graphic file (type png)
 
 <use moduleconnections.png>
 Package pdftex.def Info: moduleconnections.png used on input line 204.
 (pdftex.def)             Requested size: 426.79141pt x 194.65665pt.
- <traceFile.png, id=645, 405.01312pt x 378.66469pt>
+ <traceFile.png, id=667, 405.01312pt x 378.66469pt>
 File: traceFile.png Graphic file (type png)
 
 <use traceFile.png>
 Package pdftex.def Info: traceFile.png used on input line 212.
 (pdftex.def)             Requested size: 298.75269pt x 279.32346pt.
- [23 <./moduleconnections.png>] [24 <./traceFile.png>]
+ [24 <./moduleconnections.png>] [25 <./traceFile.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 245--248
 
  []
@@ -1157,7 +1157,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 249--251
 
  []
 
-[25] [26]
+[26] [27]
 Chapter 4.
 
 Underfull \hbox (badness 10000) in paragraph at lines 268--269
@@ -1169,13 +1169,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 271--274
 
  []
 
-<insidetile.png, id=682, 818.05624pt x 401.5pt>
+<insidetile.png, id=704, 818.05624pt x 401.5pt>
 File: insidetile.png Graphic file (type png)
  <use insidetile.png>
 Package pdftex.def Info: insidetile.png used on input line 278.
 (pdftex.def)             Requested size: 426.79141pt x 209.47348pt.
 
-<processorsynopsys.png, id=683, 481.8pt x 360.34625pt>
+<processorsynopsys.png, id=705, 481.8pt x 360.34625pt>
 File: processorsynopsys.png Graphic file (type png)
 
 <use processorsynopsys.png>
@@ -1186,9 +1186,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 275--289
 
  []
 
-[27
+[28
 
-] <approachOfSolution1.png, id=692, 703.12688pt x 380.92313pt>
+] <approachOfSolution1.png, id=714, 703.12688pt x 380.92313pt>
 File: approachOfSolution1.png Graphic file (type png)
 
 <use approachOfSolution1.png>
@@ -1199,7 +1199,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 290--299
 
  []
 
-<tiletomigrate.png, id=694, 675.27281pt x 394.47375pt>
+<tiletomigrate.png, id=716, 675.27281pt x 394.47375pt>
 File: tiletomigrate.png Graphic file (type png)
  <use tiletomigrate.png>
 Package pdftex.def Info: tiletomigrate.png used on input line 303.
@@ -1207,7 +1207,7 @@ Package pdftex.def Info: tiletomigrate.png used on input line 303.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [28 <./insidetile.png>] [29 <./processorsynopsys.png>]
+ [29 <./insidetile.png>] [30 <./processorsynopsys.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 309--314
 
  []
@@ -1222,23 +1222,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 309--314
 
  []
 
-[30 <./approachOfSolution1.png>]
+[31 <./approachOfSolution1.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [31 <./tiletomigrate.png>] <tlmstats.png, id=717, 697.10437pt x 401.24907pt>
+ [32 <./tiletomigrate.png>] <tlmstats.png, id=739, 697.10437pt x 401.24907pt>
 File: tlmstats.png Graphic file (type png)
 
 <use tlmstats.png>
 Package pdftex.def Info: tlmstats.png used on input line 317.
 (pdftex.def)             Requested size: 426.79141pt x 245.66158pt.
- <localandremote.png, id=719, 412.54124pt x 395.97937pt>
+ <localandremote.png, id=741, 412.54124pt x 395.97937pt>
 File: localandremote.png Graphic file (type png)
 
 <use localandremote.png>
 Package pdftex.def Info: localandremote.png used on input line 325.
 (pdftex.def)             Requested size: 256.07744pt x 245.80074pt.
- [32 <./tlmstats.png>]
-<freespace.png, id=727, 632.3625pt x 391.4625pt>
+ [33 <./tlmstats.png>]
+<freespace.png, id=750, 632.3625pt x 391.4625pt>
 File: freespace.png Graphic file (type png)
  <use freespace.png>
 Package pdftex.def Info: freespace.png used on input line 334.
@@ -1248,27 +1248,27 @@ Underfull \hbox (badness 10000) in paragraph at lines 345--346
 
  []
 
-<tlmpartiallyempty.png, id=728, 493.845pt x 395.97937pt>
+<tlmpartiallyempty.png, id=751, 493.845pt x 395.97937pt>
 File: tlmpartiallyempty.png Graphic file (type png)
 
 <use tlmpartiallyempty.png>
 Package pdftex.def Info: tlmpartiallyempty.png used on input line 349.
 (pdftex.def)             Requested size: 298.75269pt x 239.5471pt.
- [33 <./localandremote.png>]
+ [34 <./localandremote.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 355--356
 
  []
 
-[34 <./freespace.png>]
+[35 <./freespace.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 359--362
 
  []
 
-[35 <./tlmpartiallyempty.png>]
+[36 <./tlmpartiallyempty.png>]
 Chapter 5.
-[36
+[37
 
-] [37]
+] [38]
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
 (Font)              using `OT1/cmss/bx/n' instead on input line 472.
@@ -1278,7 +1278,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 481--482
 
  []
 
-[38] [39]
+[39] [40]
 Chapter 6.
 
 Underfull \hbox (badness 10000) in paragraph at lines 489--490
@@ -1305,7 +1305,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 491--513
 
  []
 
-[40
+[41
 
 ]
 Overfull \hbox (23.47253pt too wide) in paragraph at lines 518--529
@@ -1317,14 +1317,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 514--533
 
  []
 
-<Bla_cann_Swap_BS_1_T_1000.png, id=783, 450.9347pt x 278.54062pt>
+<Bla_cann_Swap_BS_1_T_1000.png, id=805, 450.9347pt x 278.54062pt>
 File: Bla_cann_Swap_BS_1_T_1000.png Graphic file (type png)
 
 <use Bla_cann_Swap_BS_1_T_1000.png>
 Package pdftex.def Info: Bla_cann_Swap_BS_1_T_1000.png used on input line 535.
 (pdftex.def)             Requested size: 426.79141pt x 263.64304pt.
 
-<Bla_cann_Swap_BS_4_T_500.png, id=784, 449.42906pt x 278.54062pt>
+<Bla_cann_Swap_BS_4_T_500.png, id=806, 449.42906pt x 278.54062pt>
 File: Bla_cann_Swap_BS_4_T_500.png Graphic file (type png)
 
 <use Bla_cann_Swap_BS_4_T_500.png>
@@ -1340,124 +1340,162 @@ Underfull \hbox (badness 10000) in paragraph at lines 549--566
 
  []
 
-[41] [42 <./Bla_cann_Swap_BS_1_T_1000.png> <./Bla_cann_Swap_BS_4_T_500.png>]
-<BS_16_T_200.png, id=797, 463.7325pt x 290.58563pt>
+[42] [43 <./Bla_cann_Swap_BS_1_T_1000.png> <./Bla_cann_Swap_BS_4_T_500.png>]
+<BS_16_T_200.png, id=820, 463.7325pt x 290.58563pt>
 File: BS_16_T_200.png Graphic file (type png)
  <use BS_16_T_200.png>
 Package pdftex.def Info: BS_16_T_200.png used on input line 568.
 (pdftex.def)             Requested size: 426.79141pt x 267.444pt.
 
-Overfull \hbox (78.05179pt too wide) in paragraph at lines 580--595
+Overfull \hbox (78.05179pt too wide) in paragraph at lines 581--596
  [] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<Blacksc_var_bs_t.png, id=799, 450.18187pt x 290.58563pt>
+<Blacksc_var_bs_t.png, id=824, 450.18187pt x 290.58563pt>
 File: Blacksc_var_bs_t.png Graphic file (type png)
 
 <use Blacksc_var_bs_t.png>
-Package pdftex.def Info: Blacksc_var_bs_t.png used on input line 601.
+Package pdftex.def Info: Blacksc_var_bs_t.png used on input line 602.
 (pdftex.def)             Requested size: 426.79141pt x 275.50053pt.
 
-<Blacksc_var_bs_fordiff_t.png, id=800, 545.78906pt x 326.72063pt>
+<Blacksc_var_bs_fordiff_t.png, id=825, 545.78906pt x 326.72063pt>
 File: Blacksc_var_bs_fordiff_t.png Graphic file (type png)
 
 <use Blacksc_var_bs_fordiff_t.png>
-Package pdftex.def Info: Blacksc_var_bs_fordiff_t.png used on input line 608.
+Package pdftex.def Info: Blacksc_var_bs_fordiff_t.png used on input line 609.
 (pdftex.def)             Requested size: 426.79141pt x 255.48915pt.
+ [44]
+Underfull \vbox (badness 1308) has occurred while \output is active []
 
-Overfull \hbox (78.05179pt too wide) in paragraph at lines 620--635
+ [45 <./BS_16_T_200.png>] [46 <./Blacksc_var_bs_t.png>]
+Overfull \hbox (78.05179pt too wide) in paragraph at lines 621--636
  [] 
  []
 
-[43]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<cann_var_bs_t.png, id=807, 572.1375pt x 353.06906pt>
+<cann_var_bs_t.png, id=844, 572.1375pt x 353.06906pt>
 File: cann_var_bs_t.png Graphic file (type png)
  <use cann_var_bs_t.png>
-Package pdftex.def Info: cann_var_bs_t.png used on input line 641.
+Package pdftex.def Info: cann_var_bs_t.png used on input line 642.
 (pdftex.def)             Requested size: 426.79141pt x 263.37886pt.
 
-<Cann_var_bs_fordiff_t.png, id=808, 485.56406pt x 290.58563pt>
+<Cann_var_bs_fordiff_t.png, id=845, 485.56406pt x 290.58563pt>
 File: Cann_var_bs_fordiff_t.png Graphic file (type png)
 
 <use Cann_var_bs_fordiff_t.png>
-Package pdftex.def Info: Cann_var_bs_fordiff_t.png used on input line 648.
+Package pdftex.def Info: Cann_var_bs_fordiff_t.png used on input line 649.
 (pdftex.def)             Requested size: 426.79141pt x 255.41019pt.
 
-Overfull \hbox (46.46866pt too wide) in paragraph at lines 659--670
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [47 <./Blacksc_var_bs_fordiff_t.png>] [48 <./cann_var_bs_t.png>]
+Overfull \hbox (46.46866pt too wide) in paragraph at lines 660--671
  [] 
  []
 
-[44 <./BS_16_T_200.png>] [45 <./Blacksc_var_bs_t.png>]
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<Swapt_var_bs_t.png, id=820, 450.18187pt x 276.28218pt>
+<Swapt_var_bs_t.png, id=858, 450.18187pt x 276.28218pt>
 File: Swapt_var_bs_t.png Graphic file (type png)
 
 <use Swapt_var_bs_t.png>
-Package pdftex.def Info: Swapt_var_bs_t.png used on input line 676.
+Package pdftex.def Info: Swapt_var_bs_t.png used on input line 677.
 (pdftex.def)             Requested size: 426.79141pt x 261.9396pt.
 
-<Swap_var_bs_fordiff_t.png, id=821, 471.26062pt x 290.58563pt>
+<Swap_var_bs_fordiff_t.png, id=859, 471.26062pt x 290.58563pt>
 File: Swap_var_bs_fordiff_t.png Graphic file (type png)
 
 <use Swap_var_bs_fordiff_t.png>
-Package pdftex.def Info: Swap_var_bs_fordiff_t.png used on input line 683.
+Package pdftex.def Info: Swap_var_bs_fordiff_t.png used on input line 684.
 (pdftex.def)             Requested size: 426.79141pt x 263.16965pt.
- [46 <./Blacksc_var_bs_fordiff_t.png>] [47 <./cann_var_bs_t.png>] <FT_DDM_ON_OF
-F_BLACK.png, id=834, 450.9347pt x 276.28218pt>
+
+Underfull \hbox (badness 10000) in paragraph at lines 693--694
+
+ []
+
+
+Underfull \vbox (badness 1242) has occurred while \output is active []
+
+ [49 <./Cann_var_bs_fordiff_t.png>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<FT_DDM_ON_OFF_BLACK.png, id=868, 463.7325pt x 290.58563pt>
 File: FT_DDM_ON_OFF_BLACK.png Graphic file (type png)
 
 <use FT_DDM_ON_OFF_BLACK.png>
-Package pdftex.def Info: FT_DDM_ON_OFF_BLACK.png used on input line 695.
-(pdftex.def)             Requested size: 426.79141pt x 261.50539pt.
- [48 <./Cann_var_bs_fordiff_t.png>] [49 <./Swapt_var_bs_t.png>] [50 <./Swap_var
-_bs_fordiff_t.png>] [51 <./FT_DDM_ON_OFF_BLACK.png>]
+Package pdftex.def Info: FT_DDM_ON_OFF_BLACK.png used on input line 715.
+(pdftex.def)             Requested size: 426.79141pt x 267.444pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 722--723
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [50 <./Swapt_var_bs_t.png>]
+Overfull \hbox (25.86314pt too wide) has occurred while \output is active
+[] |\OT1/cmss/m/n/10.95 6.3 Comparison of First Touch DDM ON with First Touch D
+DM OFF with DDM OFF Most Accessed[]
+ []
+
+[51 <./Swap_var_bs_fordiff_t.png>] [52 <./FT_DDM_ON_OFF_BLACK.png>]
+<FT_DDM_ON_OFF_CANN.png, id=886, 463.7325pt x 290.58563pt>
+File: FT_DDM_ON_OFF_CANN.png Graphic file (type png)
+
+<use FT_DDM_ON_OFF_CANN.png>
+Package pdftex.def Info: FT_DDM_ON_OFF_CANN.png used on input line 743.
+(pdftex.def)             Requested size: 426.79141pt x 267.444pt.
+
+Overfull \hbox (25.86314pt too wide) has occurred while \output is active
+[] |\OT1/cmss/m/n/10.95 6.3 Comparison of First Touch DDM ON with First Touch D
+DM OFF with DDM OFF Most Accessed[]
+ []
+
+[53] [54 <./FT_DDM_ON_OFF_CANN.png>]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--714
+Underfull \hbox (badness 10000) in paragraph at lines 754--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--714
+Underfull \hbox (badness 10000) in paragraph at lines 754--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--714
+Underfull \hbox (badness 10000) in paragraph at lines 754--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--714
+Underfull \hbox (badness 10000) in paragraph at lines 754--763
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 705--714
+Underfull \hbox (badness 10000) in paragraph at lines 754--763
 
  []
 
-[52
+[55
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 715--721
+Underfull \hbox (badness 10000) in paragraph at lines 764--770
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 715--721
+Underfull \hbox (badness 10000) in paragraph at lines 764--770
 
  []
 
-[53] [54] (./thesis.bbl
+[56] [57] [58
+
+
+] (./thesis.bbl
 Underfull \hbox (badness 1028) in paragraph at lines 37--42
 []\OT1/cmr/m/n/12 R. Az-imi D. Tam and M. Stumm.  Thread clus-ter-ing: Sharing-
 aware
@@ -1475,22 +1513,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 60--64
 _ 2 . 3 . 0 / com . ibm .
  []
 
-[55
+[59
 
-
-
-] [56]) [57] [58
+] [60]) [61] [62
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 728.
- [59]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 728.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 777.
+ [63]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 777.
  (./thesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 728.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 728.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 777.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 777.
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 5792F6094AC03EBAA0965016E28DC205;4907.
+(rerunfilecheck)             Checksum: 19E0F6DC89B65D4EAE68831EAE4B6E0C;5073.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1498,13 +1534,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 728.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 777.
  ) 
 Here is how much of TeX's memory you used:
- 16778 strings out of 493304
- 295141 string characters out of 6139871
- 429521 words of memory out of 5000000
- 19700 multiletter control sequences out of 15000+600000
+ 16797 strings out of 493304
+ 295459 string characters out of 6139871
+ 426816 words of memory out of 5000000
+ 19709 multiletter control sequences out of 15000+600000
  16379 words of font info for 41 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
  72i,9n,73p,1191b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1518,10 +1554,10 @@ c/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
 onts/cm/cmti12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb8a.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb>
-Output written on thesis.pdf (59 pages, 1409026 bytes).
+Output written on thesis.pdf (63 pages, 1420790 bytes).
 PDF statistics:
- 978 PDF objects out of 1000 (max. 8388607)
- 841 compressed objects within 9 object streams
- 205 named destinations out of 1000 (max. 500000)
- 686 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1024 PDF objects out of 1200 (max. 8388607)
+ 881 compressed objects within 9 object streams
+ 214 named destinations out of 1000 (max. 500000)
+ 707 words of extra memory for PDF output out of 10000 (max. 10000000)
 
