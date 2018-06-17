@@ -61,12 +61,16 @@
 \contentsline {subsection}{\numberline {5.6.2}Time Log File}{39}{subsection.5.6.2}
 \contentsline {section}{\numberline {5.7}System Specifications}{39}{section.5.7}
 \contentsline {chapter}{\numberline {6}Evaluation}{40}{chapter.6}
-\contentsline {section}{\numberline {6.1}Dynamic Data Migration vs First Touch and No Data Placement}{40}{section.6.1}
-\contentsline {section}{\numberline {6.2}Blackscholes}{41}{section.6.2}
-\contentsline {section}{\numberline {6.3}Canneal}{42}{section.6.3}
-\contentsline {section}{\numberline {6.4}Swaptions}{44}{section.6.4}
-\contentsline {section}{\numberline {6.5}Comparison of First Touch DDM ON with First Touch DDM OFF}{44}{section.6.5}
-\contentsline {chapter}{\numberline {7}Summary and Future Work}{47}{chapter.7}
-\contentsline {section}{\numberline {7.1}Summary}{47}{section.7.1}
-\contentsline {section}{\numberline {7.2}Future Work}{48}{section.7.2}
-\contentsline {chapter}{\nonumberline Bibliography}{51}{chapter*.13}
+\contentsline {section}{\numberline {6.1}Dynamic Data Migration vs First Touch vs No Data Placement}{40}{section.6.1}
+\contentsline {subsection}{\numberline {6.1.1}Block Size of One Cache Line and Time Interval of 1000 nsec}{40}{subsection.6.1.1}
+\contentsline {subsection}{\numberline {6.1.2}Block Size of Four Cache Lines and Time Interval of 500 nsec}{41}{subsection.6.1.2}
+\contentsline {subsection}{\numberline {6.1.3}Block Size of Sixteen Cache Lines and Time Interval of 200 nsec}{43}{subsection.6.1.3}
+\contentsline {section}{\numberline {6.2}Performance of Benchmarks With Varying Block Sizes and Time Intervals}{43}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}Blackscholes}{43}{subsection.6.2.1}
+\contentsline {subsection}{\numberline {6.2.2}Canneal}{43}{subsection.6.2.2}
+\contentsline {subsection}{\numberline {6.2.3}Swaptions}{44}{subsection.6.2.3}
+\contentsline {section}{\numberline {6.3}Comparison of First Touch DDM ON with First Touch DDM OFF}{46}{section.6.3}
+\contentsline {chapter}{\numberline {7}Summary and Future Work}{52}{chapter.7}
+\contentsline {section}{\numberline {7.1}Summary}{52}{section.7.1}
+\contentsline {section}{\numberline {7.2}Future Work}{53}{section.7.2}
+\contentsline {chapter}{\nonumberline Bibliography}{55}{chapter*.13}
